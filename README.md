@@ -1,2 +1,2 @@
 # projetointegrador2026
-habitos saudaveis
+Diario de habitos saudaveis
