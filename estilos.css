@@ -1,0 +1,97 @@
+:root {
+    --bg: #f8fafc;
+    --primary: #4ade80;
+    --text: #1e293b;
+    --card: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 { font-size: 1.5rem; margin-bottom: 5px; }
+header p { color: #64748b; font-size: 0.9rem; }
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--card);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card span { font-size: 0.75rem; color: #64748b; }
+.stat-card strong { font-size: 1.2rem; color: var(--primary); }
+
+.habit-list h2 { font-size: 1.1rem; margin-bottom: 15px; }
+
+.habit-item {
+    background: var(--card);
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.habit-item:hover { transform: translateY(-2px); }
+
+.habit-item input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.habit-item label {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.icon { font-size: 1.5rem; margin-right: 15px; }
+.text strong { display: block; font-size: 1rem; }
+.text small { color: #94a3b8; font-size: 0.8rem; }
+
+
+input:checked + label .text strong {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--text);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
