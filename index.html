@@ -3,29 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diário de Hábitos Saúdaveis- Início</title>
+    <title>Diário de Hábitos Saudáveis - Início</title>
+    <style>
+        /* Reset básico e tipografia */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #ffffff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Estilização da Logo */
+        .Logo {
+            height: 50px;
+            width: auto;
+            border-radius: 8px; /* Deixa as bordas da logo suaves */
+        }
+
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #2c7a7b;
+            background-color: #f0fdfa;
+        }
+
+        /* Botão Menu (Hambúrguer para Mobile) */
+        .botaoMenu {
+            display: none; /* Escondido no Desktop */
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .botaoMenu div {
+            width: 25px;
+            height: 3px;
+            background-color: #2c7a7b;
+            border-radius: 2px;
+        }
+
+        /* Responsividade (Celular) */
+        @media (max-width: 768px) {
+            .botaoMenu {
+                display: flex;
+            }
+
+            nav {
+                display: none; /* Aqui você precisaria de um JS simples para abrir o menu */
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-
         <img class="Logo" src="pasta-de-imagens/images.jpg" alt="Logo">
+        
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="checklist.html">Check List</a>
+            <a href="importancia-cuidar-saude.html">Saúde</a>
+            <a href="#">Contato</a>
+        </nav>
+
         <button class="botaoMenu">
             <div></div>
             <div></div>
             <div></div>
         </button>
-
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="checklist.html">Check List</a>
-            <a href="importancia-cuidar-saude.html">Importância de cuidar da saúde</a>
-            <a href="">Contato</a>
-        </nav>
-
     </header>
 
-
+    <!-- Conteúdo Sugerido para a Home -->
+    <main style="padding: 40px 5%; text-align: center;">
+        <h1 style="color: #2c7a7b; font-size: 2.5rem;">Bem-vindo ao seu Diário</h1>
+        <p style="margin-top: 20px; font-size: 1.2rem; color: #64748b;">
+            Pequenos passos diários levam a grandes transformações.
+        </p>
+    </main>
     
 </body>
 </html>
