@@ -13,76 +13,98 @@
             --cor-fundo: #f7f9fc;
         }
 
-  header {
-            background-color: #ffffff;
-            padding: 1rem 5%;
+        /* Animação de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: var(--cor-fundo);
+            color: #2f3542;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            color: var(--cor-mente);
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--cor-fisico);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            color: var(--cor-fisico);
+            margin-top: 30px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            gap: 10px;
         }
 
-        /* Estilização da Logo */
-        .Logo {
-            height: 50px;
-            width: auto;
-            border-radius: 8px; /* Deixa as bordas da logo suaves */
+        /* Estilização dos Ícones/Lista */
+        ul {
+            list-style: none;
+            padding: 0;
         }
 
-        /* Menu de Navegação */
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #64748b;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 5px 10px;
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid var(--cor-agua);
             border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
         }
 
-        nav a:hover {
-            color: #2c7a7b;
-            background-color: #f0fdfa;
+        li:hover {
+            transform: translateX(10px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            background-color: #f0f7ff;
         }
 
-        /* Botão Menu (Hambúrguer para Mobile) */
-        .botaoMenu {
-            display: none; /* Escondido no Desktop */
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
+        li strong {
+            color: var(--cor-agua);
         }
 
-        .botaoMenu div {
-            width: 25px;
-            height: 3px;
-            background-color: #2c7a7b;
-            border-radius: 2px;
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #747d8c;
+            font-style: italic;
+            animation: fadeInUp 1.2s ease-out;
         }
 
-        /* Responsividade (Celular) */
-        @media (max-width: 768px) {
-            .botaoMenu {
-                display: flex;
-            }
-
-            nav {
-                display: none; /* Aqui você precisaria de um JS simples para abrir o menu */
-            }
+        /* Destaque para Hidratação */
+        .agua-badge {
+            color: var(--cor-agua);
+            font-weight: bold;
+            text-decoration: underline;
         }
-    </style>
-</head>
-<body>
-
     </style>
 </head>
 <body>
