@@ -11,9 +11,17 @@
     <div class="container">
         <header>
             <h1>O que conseguiu fazer hoje?</h1>
-            <label for="data">Data:</label>
-<input type="date" id="data" name="data">
-        </header>
+           <p>Data atual: <span id="data-atual"></span></p>
+
+<script>
+    // Obtém a data atual
+    var data = new Date();
+    // Formata a data (DD/MM/AAAA)
+    var dataFormatada = data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear();
+    // Insere no elemento span
+    document.getElementById('data-atual').innerText = dataFormatada;
+</script>
+</header>
 
         <section class="stats">
             <div class="stat-card">
