@@ -5,20 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Importância da Saúde</title>
     <style>
+        /* Variáveis de Cores */
+        :root {
+            --cor-mente: #6a89cc;    /* Azul sereno */
+            --cor-fisico: #38ada9;   /* Verde energia */
+            --cor-agua: #4a69bd;     /* Azul hidratação */
+            --cor-fundo: #f7f9fc;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            color: #333;
+            background-color: var(--cor-fundo);
+            color: #2f3542;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
         h1 {
-            color: #2c3e50;
+            color: var(--cor-mente);
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--cor-fisico);
+            display: inline-block;
+            padding-bottom: 10px;
         }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out;
+        }
+
         h2 {
-            color: #27ae60;
+            color: var(--cor-fisico);
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Estilização dos Ícones/Lista */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid var(--cor-agua);
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            background-color: #f0f7ff;
+        }
+
+        li strong {
+            color: var(--cor-agua);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #747d8c;
+            font-style: italic;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* Destaque para Hidratação */
+        .agua-badge {
+            color: var(--cor-agua);
+            font-weight: bold;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -29,17 +114,17 @@
     </header>
 
     <section>
-        <p>Cuidar da saúde é cultivar equilíbrio, bem-estar e qualidade de vida. Saúde não significa apenas a ausência de doenças, mas um estado de completo bem-estar físico, mental e social.</p>
+        <p>Cuidar da saúde é cultivar <strong>equilíbrio</strong>, bem-estar e qualidade de vida. Saúde não significa apenas a ausência de doenças, mas um estado de completo bem-estar físico, mental e social.</p>
         
         <h2>Por que se cuidar?</h2>
         <p>Investir na sua saúde hoje garante uma vida mais longa, produtiva e feliz. O autocuidado fortalece o sistema imunológico, melhora a autoestima e reduz o estresse da vida moderna.</p>
         
         <h2>Pilares de uma Vida Saudável</h2>
         <ul>
-            <li><strong>Alimentação Equilibrada:</strong> Comer bem garante nutrientes essenciais.</li>
-            <li><strong>Exercícios Físicos:</strong> Praticar atividades regularmente melhora o humor e a disposição.</li>
-            <li><strong>Sono de Qualidade:</strong> Dormir bem é essencial para a recuperação mental e física.</li>
-            <li><strong>Hidratação:</strong> Beber água é fundamental para o funcionamento do corpo.</li>
+            <li><strong>🧠 Saúde Mental:</strong> Praticar o autoconhecimento e o descanso reduz a ansiedade.</li>
+            <li><strong>🏃 Atividade Física:</strong> Movimentar o corpo libera endorfina e melhora o humor.</li>
+            <li><strong>💧 Hidratação Constante:</strong> Beber água limpa as toxinas e mantém o foco mental.</li>
+            <li><strong>😴 Sono de Qualidade:</strong> O repouso é o momento onde sua mente se organiza.</li>
         </ul>
         
         <h2>Prevenção é Amor</h2>
@@ -47,7 +132,7 @@
     </section>
 
     <footer>
-        <p><em>"Cuidar do seu corpo é a forma mais direta de cuidar da sua vida."</em></p>
+        <p>"Cuidar do seu corpo é a única casa que você tem para morar."</p>
     </footer>
 
 </body>
