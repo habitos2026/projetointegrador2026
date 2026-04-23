@@ -13,6 +13,87 @@
             --cor-fundo: #f7f9fc;
         }
 
+  header {
+            background-color: #ffffff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Estilização da Logo */
+        .Logo {
+            height: 50px;
+            width: auto;
+            border-radius: 8px; /* Deixa as bordas da logo suaves */
+        }
+
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #2c7a7b;
+            background-color: #f0fdfa;
+        }
+
+        /* Botão Menu (Hambúrguer para Mobile) */
+        .botaoMenu {
+            display: none; /* Escondido no Desktop */
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .botaoMenu div {
+            width: 25px;
+            height: 3px;
+            background-color: #2c7a7b;
+            border-radius: 2px;
+        }
+
+        /* Responsividade (Celular) */
+        @media (max-width: 768px) {
+            .botaoMenu {
+                display: flex;
+            }
+
+            nav {
+                display: none; /* Aqui você precisaria de um JS simples para abrir o menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img class="Logo" src="pasta-de-imagens/images.jpg" alt="Logo">
+        
+        <nav>
+            <a href="index.html">Início</a>
+             <a href="importancia-cuidar-saude.html">Saúde</a>
+            <a href="checklist.html">Check List</a>
+            <a href="#">Contato</a>
+        </nav>
+
+        
         /* Animação de Entrada */
         @keyframes fadeInUp {
             from {
