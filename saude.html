@@ -3,7 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <header>
+    <title>A Importância da Saúde</title>
+    <style>
+        /* Variáveis de Cores */
+        :root {
+            --cor-mente: #6a89cc;    /* Azul sereno */
+            --cor-fisico: #38ada9;   /* Verde energia */
+            --cor-agua: #4a69bd;     /* Azul hidratação */
+            --cor-fundo: #f7f9fc;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: var(--cor-fundo);
+            color: #2f3542;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            color: var(--cor-mente);
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--cor-fisico);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            color: var(--cor-fisico);
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Estilização dos Ícones/Lista */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid var(--cor-agua);
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            background-color: #f0f7ff;
+        }
+
+        li strong {
+            color: var(--cor-agua);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #747d8c;
+            font-style: italic;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* Destaque para Hidratação */
+        .agua-badge {
+            color: var(--cor-agua);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
         <h1>A Importância de Cuidar da Saúde</h1>
     </header>
 
@@ -19,7 +125,6 @@
             <li><strong>🏃 Atividade Física:</strong> Movimentar o corpo libera endorfina e melhora o humor.</li>
             <li><strong>💧 Hidratação Constante:</strong> Beber água limpa as toxinas e mantém o foco mental.</li>
             <li><strong>😴 Sono de Qualidade:</strong> O repouso é o momento onde sua mente se organiza.</li>
-            <li><strong> 🍎 Boa Alimentação:</strong> Se alimentar corretamente é importante para uma boa qualidade de vida, consumindo alimentos naturais, proteínas etc.</li>
         </ul>
         
         <h2>Prevenção é Amor</h2>
