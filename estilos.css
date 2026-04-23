@@ -95,3 +95,135 @@ input:checked + label .text strong {
     font-weight: bold;
     cursor: pointer;
 }
+
+Teste a IA diretamente nos seus apps favoritos … Use o Gemini para criar rascunhos e editar conteúdo, e tenha acesso à IA de última geração do Google com o Gemini Pro por R$ 96,99 R$ 0 durante 1 mês
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;/*atributo*/
+}
+
+header{
+    height: 5rem;
+    background-color: rgb(70, 160, 235);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+
+
+header nav{
+display: flex;
+align-items: center;
+gap: 0.5rem;
+
+}
+
+.topoMenu, .finalMenu{
+display: none;
+}
+
+header nav a{
+    color: white;
+    transition: color 0.5s;
+}
+
+
+header nav a:hover{
+    color: yellow;
+}
+
+header .logo{
+    height: 35%;/*declarar a largura tem que ajustar os dois*/
+}
+
+.botaoMenu{
+    border: none;
+    background-color: transparent;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor:pointer;
+}
+
+.botaoMenu div{
+    width: 1.8rem;
+    height: 2px;
+    background-color: white;
+    transition: background 0.5s;
+}
+
+.botaoMenu:hover div{
+        background-color: yellow;
+    }
+
+
+@media screen and (max-width: 950px){
+
+        header nav{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            right: -100%;
+            background-color: rgb(245,245,245);
+            transition: right 0.5s;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 3rem;
+
+
+        }
+
+
+        header nav a{
+        color: rgb(128,128,128);
+        width: 100% ;
+        border-bottom: 1px solid rgb(220,220,220);
+        padding-top: 0.5rem;
+    }
+     
+    header nav a:hover{
+      color: rgb(0,80,120);
+    }
+
+    .botaoMenu{
+        display: flex;
+    }
+
+    .topoMenu{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    }
+
+
+    .topoMenu h3{
+    color: rgb(0,80,120);
+    }
+
+    .topoMenu button{
+        border: none;
+        background-color: transparent;
+        color: rgb(0, 80, 120);
+        cursor: pointer;
+
+    }
+
+    .finalMenu{
+        display: block;
+        margin-top: 1.5rem;
+        color: rgb(128,126,128);
+    }
+}
+
+    
