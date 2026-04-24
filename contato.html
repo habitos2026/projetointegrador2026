@@ -9,16 +9,17 @@
 
 <style>
 
-/* FUNDO BONITO */
-body {
+/* ÁREA SÓ DO CONTATO */
+.contato-page {
     background: linear-gradient(135deg, #0f766e, #38bdf8);
     min-height: 100vh;
+    padding: 40px 10px;
 }
 
-/* CARD CENTRAL */
+/* CARD */
 .contato-box {
     max-width: 500px;
-    margin: 60px auto;
+    margin: auto;
     background: white;
     padding: 30px;
     border-radius: 20px;
@@ -44,14 +45,15 @@ body {
     margin-bottom: 20px;
 }
 
-/* INPUTS */
-form {
+/* FORM */
+.contato-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-input, textarea {
+.contato-form input,
+.contato-form textarea {
     padding: 12px;
     border-radius: 10px;
     border: 1px solid #cbd5e1;
@@ -60,13 +62,14 @@ input, textarea {
     font-size: 1rem;
 }
 
-input:focus, textarea:focus {
+.contato-form input:focus,
+.contato-form textarea:focus {
     border-color: #0f766e;
     box-shadow: 0 0 8px rgba(15,118,110,0.3);
 }
 
 /* BOTÃO */
-button {
+.contato-form button {
     padding: 12px;
     border: none;
     border-radius: 10px;
@@ -77,12 +80,12 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
+.contato-form button:hover {
     background: #115e59;
     transform: scale(1.03);
 }
 
-/* TEXTO EXTRA */
+/* TEXTO */
 .info {
     text-align: center;
     margin-top: 15px;
@@ -96,25 +99,27 @@ button:hover {
 
 <body>
 
-<!-- MENU -->
 <div id="menu"></div>
 
-<div class="contato-box">
-    <h1>Fale com a gente 💬</h1>
+<div class="contato-page">
 
-    <form>
-        <input type="text" placeholder="Seu nome" required>
-        <input type="email" placeholder="Seu email" required>
-        <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
-        <button type="submit">Enviar mensagem</button>
-    </form>
+    <div class="contato-box">
+        <h1>Fale com a gente 💬</h1>
 
-    <div class="info">
-        Respondemos o mais rápido possível 🚀
+        <form class="contato-form">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
+            <button type="submit">Enviar mensagem</button>
+        </form>
+
+        <div class="info">
+            Respondemos o mais rápido possível 🚀
+        </div>
     </div>
+
 </div>
 
-<!-- MENU SCRIPT -->
 <script>
 fetch("menu.html")
 .then(res => res.text())
