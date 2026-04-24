@@ -1,5 +1,5 @@
 <header>
-    <img class="Logo" src="pasta-de-imagens/pasta-de-imagensimages.jpg" alt="Logo">
+    <img class="Logo" src="pasta-de-imagens/pasta-de-imagensimages.jpg">
 
     <nav id="menuNav">
         <a href="index.html">Início</a>
@@ -14,3 +14,10 @@
         <div></div>
     </button>
 </header>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menuNav");
+    menu.style.right = (menu.style.right === "0px") ? "-100%" : "0";
+}
+</script>
