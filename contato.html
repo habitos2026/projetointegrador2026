@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato</title>
 
-    <style>
-       <div id="menu"></div>
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<main>
+    <h1>Contato</h1>
+
+    <form>
+        <input type="text" placeholder="Nome"><br><br>
+        <input type="email" placeholder="Email"><br><br>
+        <textarea placeholder="Mensagem"></textarea><br><br>
+        <button>Enviar</button>
+    </form>
+</main>
 
 <script>
 fetch("menu.html")
@@ -15,107 +30,9 @@ fetch("menu.html")
     document.getElementById("menu").innerHTML = data;
 });
 </script>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
 
-        body {
-            background-color: #f8fafc;
-        }
-
-        /* MENU */
-        header {
-            height: 5rem;
-            background-color: #22c55e;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-        }
-
-        header nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        header nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }
-
-        header nav a:hover {
-            background-color: #16a34a;
-        }
-
-        .logo {
-            height: 40px;
-        }
-
-        /* CONTEÚDO */
-        main {
-            text-align: center;
-            padding: 40px;
-        }
-
-        form {
-            max-width: 400px;
-            margin: auto;
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        input, textarea {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #22c55e;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #16a34a;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <img class="logo" src="pasta-de-imagens/images.jpg" alt="Logo">
-
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="saude.html">Saúde</a>
-        <a href="checklist.html">Check List</a>
-        <a href="contato.html">Contato</a>
-    </nav>
-</header>
-
-<main>
-    <h1>Fale com a gente 💬</h1>
-    <p>Envie sua mensagem abaixo</p>
-
-    <form>
-        <input type="text" placeholder="Seu nome" required>
-        <input type="email" placeholder="Seu email" required>
-        <textarea placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-</main>
+</body>
+</html>
 
 </body>
 </html>
