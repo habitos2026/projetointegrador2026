@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Importância da Saúde</title>
     <style>
+        <div id="menu"></div>
+
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
         /* Variáveis de Cores */
         :root {
             --cor-mente: #6a89cc;    /* Azul sereno */
