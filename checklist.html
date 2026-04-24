@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+<div id="menu"></div>
 
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
     <div class="container">
         <header>
             <h1>O que conseguiu fazer hoje?</h1>
