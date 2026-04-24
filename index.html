@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diário de Hábitos Saudáveis - Início</title>
     <style>
+        <div id="menu"></div>
+
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
         /* Reset básico e tipografia */
         * {
             margin: 0;
