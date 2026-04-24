@@ -165,3 +165,83 @@ nav {
     margin-top: 20px;
     color: #64748b;
 }
+/* ===== PÁGINA CONTATO ===== */
+
+.pagina-contato {
+    background: linear-gradient(135deg, #0f766e, #38bdf8);
+    min-height: 100vh;
+}
+
+/* CENTRALIZA */
+.pagina-contato main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* CARD */
+.pagina-contato form {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: subir 0.5s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TÍTULO */
+.pagina-contato h1 {
+    text-align: center;
+    color: #0f766e;
+    margin-bottom: 15px;
+}
+
+/* INPUTS */
+.pagina-contato input,
+.pagina-contato textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.pagina-contato input:focus,
+.pagina-contato textarea:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 8px rgba(15,118,110,0.3);
+}
+
+/* BOTÃO */
+.pagina-contato button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #0f766e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pagina-contato button:hover {
+    background: #115e59;
+    transform: scale(1.05);
+}
