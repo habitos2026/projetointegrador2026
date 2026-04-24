@@ -6,6 +6,15 @@
     <title>Contato</title>
 
     <style>
+       <div id="menu"></div>
+
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
         * {
             margin: 0;
             padding: 0;
