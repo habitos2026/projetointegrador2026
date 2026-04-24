@@ -1,228 +1,95 @@
-:root {
-    --bg: #f8fafc;
-    --primary: #4ade80;
-    --text: #1e293b;
-    --card: #ffffff;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 400px;
-}
-
-header {
-    margin-bottom: 30px;
-}
-
-header h1 { font-size: 1.5rem; margin-bottom: 5px; }
-header p { color: #64748b; font-size: 0.9rem; }
-
-.stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.stat-card {
-    background: var(--card);
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-}
-
-.stat-card span { font-size: 0.75rem; color: #64748b; }
-.stat-card strong { font-size: 1.2rem; color: var(--primary); }
-
-.habit-list h2 { font-size: 1.1rem; margin-bottom: 15px; }
-
-.habit-item {
-    background: var(--card);
-    margin-bottom: 12px;
-    padding: 15px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s;
-}
-
-.habit-item:hover { transform: translateY(-2px); }
-
-.habit-item input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    accent-color: var(--primary);
-}
-
-.habit-item label {
-    display: flex;
-    align-items: center;
-    margin-left: 15px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.icon { font-size: 1.5rem; margin-right: 15px; }
-.text strong { display: block; font-size: 1rem; }
-.text small { color: #94a3b8; font-size: 0.8rem; }
-
-
-input:checked + label .text strong {
-    text-decoration: line-through;
-    color: #94a3b8;
-}
-
-.add-btn {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 12px;
-    background-color: var(--text);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-*{
+/* RESET */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-a{
-    text-decoration: none;/*atributo*/
+body {
+    background: #f8fafc;
+    color: #334155;
 }
 
-header{
-    height: 5rem;
-    background-color: rgb(70, 160, 235);
+/* HEADER */
+header {
+    height: 70px;
+    background: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-
-
-header nav{
-display: flex;
-align-items: center;
-gap: 0.5rem;
-
+.Logo {
+    height: 50px;
 }
 
-.topoMenu, .finalMenu{
-display: none;
+/* MENU */
+nav {
+    display: flex;
+    gap: 20px;
 }
 
-header nav a{
-    color: white;
-    transition: color 0.5s;
+nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
 }
 
-
-header nav a:hover{
-    color: yellow;
+nav a:hover {
+    color: #2c7a7b;
 }
 
-header .logo{
-    height: 50%;/*declarar a largura tem que ajustar os dois*/
-}
-
-.botaoMenu{
-    border: none;
-    background-color: transparent;
+/* BOTÃO MOBILE */
+.botaoMenu {
     display: none;
     flex-direction: column;
-    gap: 6px;
-    cursor:pointer;
+    gap: 5px;
+    background: none;
+    border: none;
 }
 
-.botaoMenu div{
-    width: 1.8rem;
-    height: 2px;
-    background-color: white;
-    transition: background 0.5s;
+.botaoMenu div {
+    width: 25px;
+    height: 3px;
+    background: #2c7a7b;
 }
 
-.botaoMenu:hover div{
-        background-color: yellow;
+/* MOBILE */
+@media (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 30px;
+        transition: 0.3s;
     }
 
-
-@media screen and (max-width: 950px){
-
-        header nav{
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            right: -100%;
-            background-color: rgb(245,245,245);
-            transition: right 0.5s;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 3rem;
-
-
-        }
-
-
-        header nav a{
-        color: rgb(128,128,128);
-        width: 100% ;
-        border-bottom: 1px solid rgb(220,220,220);
-        padding-top: 0.5rem;
-    }
-     
-    header nav a:hover{
-      color: rgb(0,80,120);
-    }
-
-    .botaoMenu{
+    .botaoMenu {
         display: flex;
     }
-
-    .topoMenu{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 1rem;
-    }
-
-
-    .topoMenu h3{
-    color: rgb(0,80,120);
-    }
-
-    .topoMenu button{
-        border: none;
-        background-color: transparent;
-        color: rgb(0, 80, 120);
-        cursor: pointer;
-
-    }
-
-    .finalMenu{
-        display: block;
-        margin-top: 1.5rem;
-        color: rgb(128,126,128);
-    }
 }
 
+/* CONTEÚDO */
+main {
+    padding: 40px 5%;
+    text-align: center;
+}
+
+h1 {
+    color: #2c7a7b;
+}
+
+p {
+    margin-top: 15px;
+}
     
