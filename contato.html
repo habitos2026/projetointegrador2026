@@ -6,23 +6,115 @@
 <title>Contato</title>
 
 <link rel="stylesheet" href="estilos.css">
+
+<style>
+
+/* FUNDO BONITO */
+body {
+    background: linear-gradient(135deg, #0f766e, #38bdf8);
+    min-height: 100vh;
+}
+
+/* CARD CENTRAL */
+.contato-box {
+    max-width: 500px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: subir 0.6s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contato-box h1 {
+    text-align: center;
+    color: #0f766e;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 8px rgba(15,118,110,0.3);
+}
+
+/* BOTÃO */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #0f766e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #115e59;
+    transform: scale(1.03);
+}
+
+/* TEXTO EXTRA */
+.info {
+    text-align: center;
+    margin-top: 15px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+</style>
+
 </head>
 
 <body>
 
+<!-- MENU -->
 <div id="menu"></div>
 
-<main>
-    <h1>Contato</h1>
+<div class="contato-box">
+    <h1>Fale com a gente 💬</h1>
 
     <form>
-        <input type="text" placeholder="Nome"><br><br>
-        <input type="email" placeholder="Email"><br><br>
-        <textarea placeholder="Mensagem"></textarea><br><br>
-        <button>Enviar</button>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu email" required>
+        <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
+        <button type="submit">Enviar mensagem</button>
     </form>
-</main>
 
+    <div class="info">
+        Respondemos o mais rápido possível 🚀
+    </div>
+</div>
+
+<!-- MENU SCRIPT -->
 <script>
 fetch("menu.html")
 .then(res => res.text())
@@ -30,9 +122,6 @@ fetch("menu.html")
     document.getElementById("menu").innerHTML = data;
 });
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
