@@ -60,22 +60,6 @@ p {
     margin-bottom: 15px;
 }
 
-/* CHECKLIST */
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-}
-
-.habit-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
 /* IMC */
 .imc-box input,
 .imc-box button {
