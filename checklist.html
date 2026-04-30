@@ -237,6 +237,15 @@ function calc(){
     }
 }
 </script>
+    <script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
+
+
 
 </body>
 </html>
