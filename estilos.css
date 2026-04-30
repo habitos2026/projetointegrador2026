@@ -83,15 +83,18 @@ p {
     margin-bottom: 10px;
     padding: 10px;
 }
-.bannerIndex {
-    max-height: 250px;
+.bannerIndex{
+    height: 16rem;
     overflow: hidden;
 }
 
-.bannerIndex img {
+.bannerIndex img{
+    display: block;
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
+
 
 .imc-box {
     margin-top: 20px;
@@ -125,4 +128,12 @@ p {
 #resultado {
     margin-top: 15px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 950px){
+
+     .bannerIndex{
+    height: 35rem;
+}
+
 }
