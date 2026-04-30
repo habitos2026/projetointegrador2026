@@ -2,9 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IMC</title>
-
 <link rel="stylesheet" href="estilos.css">
 </head>
 
@@ -13,65 +11,26 @@
 <div id="menu"></div>
 
 <main>
-    <h1>IMC</h1>
+<h1>IMC</h1>
 
-    <h2>Afinal, o que é IMC e para que serve?</h2>
+<div class="imc-box">
+<input id="peso" placeholder="Peso">
+<input id="altura" placeholder="Altura">
 
-    <p style="text-align: justify;">
-        O IMC (Índice de Massa Corporal) é uma medida internacional baseada no peso e altura, usada para avaliar se uma pessoa está no peso ideal, com sobrepeso ou obesidade.  
-        Ele é calculado por uma fórmula simples e serve como um indicador rápido de saúde, embora não diferencie massa muscular de gordura corporal.
-    </p>
+<button onclick="calc()">Calcular</button>
 
-    <!-- 🔥 AQUI ESTÁ O QUE FALTAVA -->
-    <div class="imc-box">
-
-        <h3>Calcular IMC</h3>
-
-        <input id="peso" type="number" placeholder="Peso (kg)">
-        <input id="altura" type="number" placeholder="Altura (ex: 1.75)">
-
-        <button onclick="calcularIMC()">Calcular</button>
-
-        <div id="resultado" class="imc-resultado"></div>
-
-    </div>
+<p id="res"></p>
+</div>
 </main>
+
 <script>
-function calcularIMC() {
-    let peso = parseFloat(document.getElementById("peso").value);
-    let altura = parseFloat(document.getElementById("altura").value);
-    let resultado = document.getElementById("resultado");
+fetch("menu.html").then(r=>r.text()).then(d=>menu.innerHTML=d);
 
-    if (!peso || !altura) {
-        resultado.innerHTML = "Preencha peso e altura corretamente.";
-        return;
-    }
-
-    let imc = peso / (altura * altura);
-    let classificacao = "";
-
-    if (imc < 18.5) {
-        classificacao = "Abaixo do peso";
-    } else if (imc < 24.9) {
-        classificacao = "Peso normal";
-    } else if (imc < 29.9) {
-        classificacao = "Sobrepeso";
-    } else {
-        classificacao = "Obesidade";
-    }
-
-    resultado.innerHTML =
-        "Seu IMC é: " + imc.toFixed(2) + "<br>" +
-        "Classificação: " + classificacao;
+function calc(){
+let p=peso.value,a=altura.value;
+let imc=p/(a*a);
+res.innerHTML="IMC: "+imc.toFixed(2);
 }
-</script>
-    
-<script>
-fetch("menu.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("menu").innerHTML = data;
-});
 </script>
 
 </body>
