@@ -8,61 +8,277 @@
 <link rel="stylesheet" href="estilos.css">
 
 <style>
-/* SÓ O CHECKLIST (não mexe no resto do site) */
 
-.check-container {
-    max-width: 500px;
+/* ANIMAÇÃO */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TEXTO */
+.intro {
+    max-width: 800px;
     margin: 40px auto;
+    padding: 20px;
+    animation: subir 0.6s ease;
+}
+
+.intro h1 {
+    color: #0f766e;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #374151;
+}
+
+/* CONTAINER */
+.check-container {
+    max-width: 520px;
+    margin: 30px auto 60px;
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    animation: subir 0.7s ease;
 }
 
 /* TÍTULO */
-.check-container h1 {
+.check-container h2 {
     text-align: center;
     color: #0f766e;
+    margin-bottom: 10px;
 }
 
 /* DATA */
 .check-container input[type="date"] {
     display: block;
     margin: 10px auto 20px;
-    padding: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
 /* PROGRESSO */
 .progresso {
     text-align: center;
-    margin-bottom: 10px;
     font-weight: bold;
+    margin-bottom: 10px;
     color: #0f766e;
 }
 
 /* BARRA */
 .barra {
     width: 100%;
-    height: 10px;
+    height: 12px;
     background: #e5e7eb;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .barra span {
     display: block;
     height: 100%;
     width: 0%;
-    background: #0f766e;
-    transition: 0.3s;
+    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    transition: 0.4s;
 }
 
 /* ITENS */
 .habit-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.habit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.habit-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: #0f766e;
+}
+
+/* TEXTO */
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+.text strong {
+    color: #111827;
+}
+
+.text small {
+    color: #6b7280;
+}
+
+/* MARCADO */
+.habit-item input:checked + label .text strong {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* FRASE FINAL */
+.msg {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #16a34a;
+}
+
+/* ANIMAÇÃO EM CASCATA */
+.habit-item {
+    animation: subir 0.5s ease;
+}
+
+.habit-item:nth-child(1){animation-delay:0.1s;}
+.habit-item:nth-child(2){animation-delay:0.2s;}
+.habit-item:nth-child(3){animation-delay:0.3s;}
+.habit-item:nth-child(4){animation-delay:0.4s;}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div id="menu"></div>
+
+<!-- TEXTO EXPLICATIVO -->
+<section class="intro">
+
+<h1>Checklist de Hábitos Saudáveis</h1>
+
+<p>
+Manter hábitos saudáveis é uma das formas mais simples e eficientes de melhorar sua qualidade de vida. Pequenas ações feitas diariamente têm um impacto enorme no seu bem-estar físico e mental.
+</p>
+
+<p>
+A ideia deste checklist é ajudar você a acompanhar sua rotina, criando consistência. Quando você transforma ações em hábitos, elas deixam de ser difíceis e passam a fazer parte do seu dia naturalmente.
+</p>
+
+<p>
+Use a lista abaixo para marcar o que você já realizou hoje e acompanhar sua evolução ao longo do tempo.
+</p>
+
+</section>
+
+<!-- CHECKLIST -->
+<div class="check-container">
+
+<h2>Seu dia de hoje</h2>
+
+<input type="date">
+
+<div class="progresso">
+Progresso: <span id="pct">0%</span>
+</div>
+
+<div class="barra">
+<span id="bar"></span>
+</div>
+
+<!-- ITENS -->
+<div class="habit-item">
+<input type="checkbox" id="h1" onchange="calc()">
+<label for="h1">
+<div class="text">
+<strong>Beber 2L de água</strong>
+<small>Hidratação do corpo 💧</small>
+</div>
+</label>
+</div>
+
+<div class="habit-item">
+<input type="checkbox" id="h2" onchange="calc()">
+<label for="h2">
+<div class="text">
+<strong>Meditar ou relaxar</strong>
+<small>Saúde mental 🧘</small>
+</div>
+</label>
+</div>
+
+<div class="habit-item">
+<input type="checkbox" id="h3" onchange="calc()">
+<label for="h3">
+<div class="text">
+<strong>Comer frutas</strong>
+<small>Alimentação saudável 🍎</small>
+</div>
+</label>
+</div>
+
+<div class="habit-item">
+<input type="checkbox" id="h4" onchange="calc()">
+<label for="h4">
+<div class="text">
+<strong>Evitar alimentos processados</strong>
+<small>Qualidade alimentar 🥗</small>
+</div>
+</label>
+</div>
+
+<p id="msg" class="msg"></p>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function calc(){
+    let checks = document.querySelectorAll("input[type='checkbox']");
+    let total = checks.length;
+    let marcados = 0;
+
+    checks.forEach(c => {
+        if(c.checked) marcados++;
+    });
+
+    let pct = Math.round((marcados/total)*100);
+
+    document.getElementById("pct").innerText = pct + "%";
+    document.getElementById("bar").style.width = pct + "%";
+
+    if(pct === 100){
+        document.getElementById("msg").innerText = "Parabéns! Você completou tudo hoje! 🚀";
+    } else if(pct >= 50){
+        document.getElementById("msg").innerText = "Boa! Você está no caminho certo 👏";
+    } else {
+        document.getElementById("msg").innerText = "";
+    }
+}
+</script>
+
+<!-- MENU SCRIPT -->
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
+
+</body>
+</html>    gap: 10px;
     background: #f9fafb;
     padding: 12px;
     border-radius: 10px;
