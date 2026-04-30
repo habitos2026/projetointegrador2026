@@ -4,7 +4,7 @@
    CHECKLIST ISOLADO
 ========================= */
 
-.check-container {
+.container {
     max-width: 500px;
     margin: 40px auto;
     background: white;
@@ -14,19 +14,19 @@
 }
 
 /* HEADER */
-.check-container header {
+.container header {
     text-align: center;
     margin-bottom: 20px;
 }
 
 /* STATS */
-.check-container .stats {
+.container .stats {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
 }
 
-.check-container .stat-card {
+.container .stat-card {
     background: #f1f5f9;
     padding: 15px;
     border-radius: 12px;
@@ -35,7 +35,7 @@
 }
 
 /* ITEM */
-.check-container .habit-item {
+.container .habit-item {
     background: #f8fafc;
     margin-bottom: 10px;
     padding: 15px;
@@ -46,12 +46,12 @@
     transition: 0.2s;
 }
 
-.check-container .habit-item:hover {
+.container .habit-item:hover {
     transform: scale(1.02);
 }
 
 /* LABEL */
-.check-container label {
+.container label {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -60,14 +60,14 @@
 }
 
 /* CHECKBOX */
-.check-container input {
+.container input {
     width: 18px;
     height: 18px;
     accent-color: #0f766e;
 }
 
 /* TEXTO */
-.check-container .text {
+.container .text {
     display: flex;
     flex-direction: column;
 }
