@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diário de Hábitos Saudáveis📝</title>
     <link rel="stylesheet" href="estilos.css">
+<style>
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeUp 0.6s ease;
+}
+
+h1, h2, p {
+    animation: fadeUp 0.8s ease;
+}
+
+.frase {
+    font-weight: bold;
+    color: #0f766e;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeUp 1s ease;
+}
+
+.habit-item {
+    transition: 0.25s ease;
+}
+
+.habit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.habit-item input:checked + label {
+    opacity: 0.6;
+}
+
+.habit-item input:checked + label strong {
+    text-decoration: line-through;
+}
+</style>
+
 </head>
 
 <body>
