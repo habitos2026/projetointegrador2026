@@ -1,6 +1,5 @@
-
 /* =========================
-   BASE GLOBAL
+   RESET
 ========================= */
 * {
     margin: 0;
@@ -28,6 +27,12 @@ header {
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
+    z-index: 1000;
+}
+
+.Logo {
+    height: 45px;
+    width: auto;
 }
 
 nav a {
@@ -35,6 +40,7 @@ nav a {
     text-decoration: none;
     color: #374151;
     font-weight: 500;
+    transition: 0.3s;
 }
 
 nav a:hover {
@@ -42,7 +48,7 @@ nav a:hover {
 }
 
 /* =========================
-   CONTEÚDO GERAL (ARTIGOS)
+   CONTEÚDO
 ========================= */
 main {
     max-width: 850px;
@@ -73,9 +79,8 @@ p {
 }
 
 /* =========================
-   IMC (SEÇÃO PROFISSIONAL)
+   IMC
 ========================= */
-
 .imc-box {
     margin-top: 30px;
     padding: 25px;
@@ -87,7 +92,6 @@ p {
 .imc-box h3 {
     color: #0f766e;
     margin-bottom: 15px;
-    font-size: 18px;
 }
 
 .imc-box input {
@@ -116,5 +120,4 @@ p {
 .imc-resultado {
     margin-top: 15px;
     font-weight: bold;
-    color: #111827;
 }
