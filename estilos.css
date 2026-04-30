@@ -1,136 +1,109 @@
 
 /* =========================
-   RESET
+   CHECKLIST (HÁBITOS)
 ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-/* IMPEDIR LAYOUT QUEBRAR */
-body {
-    background: #f5f7fb;
-    color: #1f2937;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* =========================
-   IMAGENS (CORREÇÃO DO BUG)
-========================= */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* =========================
-   MENU
-========================= */
-header {
+.container {
+    max-width: 500px;
+    margin: 40px auto;
     background: white;
-    height: 70px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* HEADER DO CHECKLIST */
+.container header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 12px;
+    width: 48%;
+    text-align: center;
+}
+
+.stat-card strong {
+    color: #0f766e;
+    font-size: 1.2rem;
+}
+
+/* LISTA */
+.habit-list h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* ITEM DO HÁBITO */
+.habit-item {
+    background: #f8fafc;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    gap: 10px;
+    transition: 0.2s;
 }
 
-.Logo {
-    height: 45px;
-    width: auto;
+.habit-item:hover {
+    transform: scale(1.02);
 }
 
-nav a {
-    margin-left: 18px;
-    text-decoration: none;
-    color: #374151;
-    font-weight: 500;
+/* CHECKBOX */
+.habit-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: #0f766e;
 }
 
-nav a:hover {
-    color: #0f766e;
-}
-
-/* =========================
-   CONTEÚDO GERAL
-========================= */
-main {
-    max-width: 850px;
-    margin: 50px auto;
-    background: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-}
-
-/* TEXTO */
-h1 {
-    color: #0f766e;
-    margin-bottom: 15px;
-}
-
-h2 {
-    margin-bottom: 15px;
-    color: #111827;
-}
-
-p {
-    font-size: 17px;
-    margin-bottom: 18px;
-    text-align: justify;
-    color: #374151;
-}
-
-/* =========================
-   IMC
-========================= */
-.imc-box {
-    margin-top: 25px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #ecfeff;
-    border: 1px solid #a5f3fc;
-}
-
-.imc-box input {
+/* TEXTO DO HÁBITO */
+.habit-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
+    cursor: pointer;
 }
 
-.imc-box button {
+.icon {
+    font-size: 1.3rem;
+}
+
+/* TEXTO INTERNO */
+.text strong {
+    display: block;
+    font-size: 15px;
+}
+
+.text small {
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* BOTÃO */
+.add-btn {
     width: 100%;
+    margin-top: 15px;
     padding: 12px;
+    border: none;
+    border-radius: 12px;
     background: #0f766e;
     color: white;
-    border: none;
-    border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.imc-resultado {
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-/* =========================
-   BANNER (SE TIVER)
-========================= */
-.bannerIndex {
-    max-height: 300px;
-    overflow: hidden;
-}
-
-.bannerIndex img {
-    width: 100%;
-    object-fit: cover;
+.add-btn:hover {
+    background: #115e59;
 }
