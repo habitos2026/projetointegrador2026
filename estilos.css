@@ -245,3 +245,23 @@ nav {
     background: #115e59;
     transform: scale(1.05);
 }
+
+.bannerIndex{
+    height: 16rem;
+    overflow: hidden;
+}
+
+.bannerIndex img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 950px){
+
+  .bannerIndex{
+    height: 35rem;
+}
+
+}
