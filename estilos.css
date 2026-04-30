@@ -1,73 +1,85 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
+body {
+    background: #f5f7fb;
+    color: #1f2937;
+}
 
-/* =========================
-   CHECKLIST ISOLADO
-========================= */
+/* IMAGENS SEGURAS */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
+/* MENU */
+header {
+    background: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.Logo {
+    height: 40px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #374151;
+}
+
+nav a:hover {
+    color: #0f766e;
+}
+
+/* CONTEÚDO */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #0f766e;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* CHECKLIST */
 .container {
     max-width: 500px;
     margin: 40px auto;
     background: white;
     padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 15px;
 }
 
-/* HEADER */
-.container header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* STATS */
-.container .stats {
+.habit-item {
     display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.container .stat-card {
-    background: #f1f5f9;
-    padding: 15px;
-    border-radius: 12px;
-    width: 48%;
-    text-align: center;
-}
-
-/* ITEM */
-.container .habit-item {
-    background: #f8fafc;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: 0.2s;
 }
 
-.container .habit-item:hover {
-    transform: scale(1.02);
-}
-
-/* LABEL */
-.container label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* IMC */
+.imc-box input,
+.imc-box button {
     width: 100%;
-    cursor: pointer;
-}
-
-/* CHECKBOX */
-.container input {
-    width: 18px;
-    height: 18px;
-    accent-color: #0f766e;
-}
-
-/* TEXTO */
-.container .text {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 10px;
 }
