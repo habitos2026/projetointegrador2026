@@ -107,3 +107,6 @@
 .add-btn:hover {
     background: #115e59;
 }
+body {
+    background: red !important;
+}
