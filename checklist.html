@@ -3,100 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diário de Hábitos Saudáveis📝</title>
+    <title>Checklist de Hábitos</title>
+
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
 
-<!-- MENU NO TOPO -->
+<!-- MENU -->
 <div id="menu"></div>
 
-<div class="container">
+<!-- CHECKLIST -->
+<div class="check-container">
+
     <header>
         <h1>O que conseguiu fazer hoje?</h1>
 
         <label for="data">Data:</label>
-        <input type="date" id="data" name="data">
+        <input type="date" id="data">
     </header>
 
+    <!-- STATUS -->
     <section class="stats">
         <div class="stat-card">
             <span>Meta Diária</span>
-            <strong>75%</strong>
+            <strong id="meta">0%</strong>
         </div>
+
         <div class="stat-card">
-            <span>Sequência (Streak)</span>
-            <strong>12 Dias</strong>
+            <span>Sequência</span>
+            <strong>12 dias</strong>
         </div>
     </section>
 
-    <main class="habit-list">
-        <h2>Checklist✅</h2>
-        
+    <!-- LISTA -->
+    <section class="habit-list">
+        <h2>Checklist ✅</h2>
+
         <div class="habit-item">
-            <input type="checkbox" id="habit1">
-            <label for="habit1">
+            <input type="checkbox" id="h1" onchange="atualizar()">
+            <label for="h1">
                 <span class="icon">💧</span>
                 <div class="text">
-                    <strong>Bebi 2L de Água</strong>
+                    <strong>Bebi 2L de água</strong>
                     <small>Saúde física</small>
                 </div>
             </label>
         </div>
 
         <div class="habit-item">
-            <input type="checkbox" id="habit2">
-            <label for="habit2">
-                <span class="icon">🧘🏻</span>
+            <input type="checkbox" id="h2" onchange="atualizar()">
+            <label for="h2">
+                <span class="icon">🧘</span>
                 <div class="text">
                     <strong>Meditei</strong>
-                    <small>Saúde mental • 10 min</small>
+                    <small>Saúde mental</small>
                 </div>
             </label>
         </div>
 
         <div class="habit-item">
-            <input type="checkbox" id="habit3">
-            <label for="habit3">
+            <input type="checkbox" id="h3" onchange="atualizar()">
+            <label for="h3">
                 <span class="icon">🍎</span>
                 <div class="text">
-                    <strong>Comi uma Fruta</strong>
+                    <strong>Comi fruta</strong>
                     <small>Alimentação</small>
                 </div>
             </label>
         </div>
 
         <div class="habit-item">
-            <input type="checkbox" id="habit4">
-            <label for="habit4">
-                <span class="icon">🥗🥕</span>
+            <input type="checkbox" id="h4" onchange="atualizar()">
+            <label for="h4">
+                <span class="icon">🥗</span>
                 <div class="text">
-                    <strong>Acrescentei legumes/verduras nas minhas refeições</strong>
+                    <strong>Comi verduras</strong>
                     <small>Alimentação</small>
                 </div>
             </label>
         </div>
-    </main>
+
+    </section>
 
     <button class="add-btn">+ Adicionar Hábito</button>
 
-    <nav>
-        <div class="Acima">
-            <h3>Meta Diária</h3>
-        </div>
-        <p class="Abaixo"> Hábitos Para Saúde. 2026</p>
-    </nav>
-
 </div>
 
-<!-- SCRIPT DO MENU -->
+<!-- MENU SCRIPT -->
 <script>
 fetch("menu.html")
 .then(res => res.text())
 .then(data => {
     document.getElementById("menu").innerHTML = data;
 });
+</script>
+
+<!-- SCRIPT DO CHECKLIST -->
+<script>
+function atualizar() {
+    let checks = document.querySelectorAll(".habit-item input");
+    let marcados = 0;
+
+    checks.forEach(c => {
+        if (c.checked) marcados++;
+    });
+
+    let total = checks.length;
+    let porcentagem = Math.round((marcados / total) * 100);
+
+    document.getElementById("meta").innerText = porcentagem + "%";
+}
 </script>
 
 </body>
