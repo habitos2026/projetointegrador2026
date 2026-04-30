@@ -8,97 +8,141 @@
 <link rel="stylesheet" href="estilos.css">
 
 <style>
-/* ANIMAÇÃO SUAVE */
 @keyframes fadeUp {
-    from {opacity:0; transform:translateY(20px);}
+    from {opacity:0; transform:translateY(25px);}
     to {opacity:1; transform:translateY(0);}
 }
 
-/* BARRA DE PROGRESSO */
-.progress-box {
+/* CONTAINER */
+.check-container {
+    max-width: 520px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    animation: fadeUp 0.6s ease;
+}
+
+/* TÍTULO */
+.check-container h1 {
+    text-align: center;
+    color: #0f766e;
+}
+
+/* DATA */
+.check-container input[type="date"] {
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* PROGRESSO */
+.progresso {
+    text-align: center;
     margin: 15px 0;
+    font-weight: bold;
+    color: #0f766e;
 }
 
-.progress-bar {
+/* BARRA */
+.barra {
     width: 100%;
-    height: 10px;
+    height: 12px;
     background: #e5e7eb;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
+    margin-bottom: 25px;
 }
 
-.progress-bar span {
+.barra span {
     display: block;
     height: 100%;
     width: 0%;
-    background: #0f766e;
-    transition: 0.4s;
+    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    transition: 0.4s ease;
 }
 
-/* ANIMAÇÃO ITENS */
+/* ITENS */
+.habit-item {
+    background: #f9fafb;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.habit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* CHECK */
+.habit-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: #0f766e;
+}
+
+/* TEXTO */
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* MARCADO */
+.habit-item input:checked + label {
+    opacity: 0.6;
+}
+
+.habit-item input:checked + label strong {
+    text-decoration: line-through;
+}
+
+/* ANIMAÇÃO EM CASCATA */
 .habit-item {
     animation: fadeUp 0.5s ease;
 }
 
-/* HOVER MELHOR */
-.habit-item:hover {
-    transform: translateY(-2px);
-}
-
-/* CHECK */
-.habit-item input:checked + label strong {
-    text-decoration: line-through;
-    opacity: 0.6;
-}
+.habit-item:nth-child(1) { animation-delay: 0.1s; }
+.habit-item:nth-child(2) { animation-delay: 0.2s; }
+.habit-item:nth-child(3) { animation-delay: 0.3s; }
+.habit-item:nth-child(4) { animation-delay: 0.4s; }
 </style>
-
 </head>
 
 <body>
 
 <div id="menu"></div>
 
-<div class="container">
+<div class="check-container">
 
-<header>
-    <h1>O que conseguiu fazer hoje?</h1>
+<h1>Checklist Diário</h1>
 
-    <label for="data">Data:</label>
-    <input type="date" id="data">
-</header>
+<input type="date" id="data">
 
-<!-- PROGRESSO -->
-<div class="progress-box">
-    <p><strong>Meta:</strong> <span id="porcentagem">0%</span></p>
-
-    <div class="progress-bar">
-        <span id="barra"></span>
-    </div>
+<div class="progresso">
+Meta: <span id="porcentagem">0%</span>
 </div>
 
-<section class="stats">
-    <div class="stat-card">
-        <span>Meta Diária</span>
-        <strong id="metaTexto">0%</strong>
-    </div>
-    <div class="stat-card">
-        <span>Sequência</span>
-        <strong>12 Dias</strong>
-    </div>
-</section>
+<div class="barra">
+    <span id="barra"></span>
+</div>
 
-<!-- LISTA -->
-<div class="habit-list">
-
-<h2>Checklist ✅</h2>
-
+<!-- ITENS -->
 <div class="habit-item">
     <input type="checkbox" id="h1" onchange="atualizar()">
     <label for="h1">
-        <span class="icon">💧</span>
         <div class="text">
             <strong>Bebi 2L de Água</strong>
             <small>Saúde física</small>
+            <span class="icon">💧</span>
         </div>
     </label>
 </div>
@@ -106,10 +150,10 @@
 <div class="habit-item">
     <input type="checkbox" id="h2" onchange="atualizar()">
     <label for="h2">
-        <span class="icon">🧘</span>
         <div class="text">
-            <strong>Meditei</strong>
+             <strong>Meditei</strong>
             <small>Saúde mental</small>
+             <span class="icon">🧘</span>
         </div>
     </label>
 </div>
@@ -117,10 +161,10 @@
 <div class="habit-item">
     <input type="checkbox" id="h3" onchange="atualizar()">
     <label for="h3">
-        <span class="icon">🍎</span>
         <div class="text">
-            <strong>Comi uma fruta</strong>
+             <strong>Comi uma fruta</strong>
             <small>Alimentação</small>
+            <span class="icon">🍎</span>
         </div>
     </label>
 </div>
@@ -128,17 +172,15 @@
 <div class="habit-item">
     <input type="checkbox" id="h4" onchange="atualizar()">
     <label for="h4">
-        <span class="icon">🥗</span>
         <div class="text">
             <strong>Comi saudável</strong>
             <small>Nutrição</small>
+            <span class="icon">🥗</span>
         </div>
     </label>
 </div>
 
 </div>
-
-<button class="add-btn">+ Adicionar Hábito</button>
 
 </div>
 
@@ -155,17 +197,14 @@ function atualizar(){
     let porcentagem = Math.round((marcados/total)*100);
 
     document.getElementById("porcentagem").innerText = porcentagem + "%";
-    document.getElementById("metaTexto").innerText = porcentagem + "%";
     document.getElementById("barra").style.width = porcentagem + "%";
 }
 </script>
 
 <script>
 fetch("menu.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("menu").innerHTML = data;
-});
+.then(r=>r.text())
+.then(d=>menu.innerHTML=d);
 </script>
 
 </body>
