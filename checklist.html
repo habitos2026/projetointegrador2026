@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diário de Hábitos Saudáveis📝</title>
-    <link rel="stylesheet" href="estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist</title>
+
+<link rel="stylesheet" href="estilos.css">
+
 <style>
+/* ANIMAÇÃO */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity:0; transform:translateY(25px);}
+    to {opacity:1; transform:translateY(0);}
 }
 
-main {
+/* CONTAINER */
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
     animation: fadeUp 0.6s ease;
 }
 
-h1, h2, p {
-    animation: fadeUp 0.8s ease;
+/* TÍTULO */
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.frase {
+/* DATA */
+input[type="date"] {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+/* PROGRESSO */
+.progresso {
+    text-align: center;
+    margin: 20px 0;
     font-weight: bold;
     color: #0f766e;
-    text-align: center;
-    margin-top: 20px;
-    animation: fadeUp 1s ease;
 }
 
+/* BARRA */
+.barra {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barra span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #0f766e;
+    transition: 0.3s;
+}
+
+/* ITENS */
 .habit-item {
-    transition: 0.25s ease;
+    background: #f8fafc;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.25s;
 }
 
 .habit-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* CHECK */
+.habit-item input {
+    width: 18px;
+    height: 18px;
 }
 
 .habit-item input:checked + label {
@@ -49,102 +91,99 @@ h1, h2, p {
 .habit-item input:checked + label strong {
     text-decoration: line-through;
 }
+
+/* TEXTO */
+.text {
+    display: flex;
+    flex-direction: column;
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- MENU NO TOPO -->
 <div id="menu"></div>
 
 <div class="container">
-    <header>
-        <h1>O que conseguiu fazer hoje?</h1>
 
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data">
-    </header>
+<h1>Checklist Diário</h1>
 
-    <section class="stats">
-        <div class="stat-card">
-            <span>Meta Diária</span>
-            <strong>75%</strong>
-        </div>
-        <div class="stat-card">
-            <span>Sequência (Streak)</span>
-            <strong>12 Dias</strong>
-        </div>
-    </section>
+<input type="date">
 
-    <main class="habit-list">
-        <h2>Checklist✅</h2>
-        
-        <div class="habit-item">
-            <input type="checkbox" id="habit1">
-            <label for="habit1">
-                <span class="icon">💧</span>
-                <div class="text">
-                    <strong>Bebi 2L de Água</strong>
-                    <small>Saúde física</small>
-                </div>
-            </label>
-        </div>
+<div class="progresso">
+Meta: <span id="porcentagem">0%</span>
+</div>
 
-        <div class="habit-item">
-            <input type="checkbox" id="habit2">
-            <label for="habit2">
-                <span class="icon">🧘🏻</span>
-                <div class="text">
-                    <strong>Meditei</strong>
-                    <small>Saúde mental • 10 min</small>
-                </div>
-            </label>
-        </div>
+<div class="barra">
+    <span id="barra"></span>
+</div>
 
-        <div class="habit-item">
-            <input type="checkbox" id="habit3">
-            <label for="habit3">
-                <span class="icon">🍎</span>
-                <div class="text">
-                    <strong>Comi uma Fruta</strong>
-                    <small>Alimentação</small>
-                </div>
-            </label>
-        </div>
+<!-- ITENS -->
+<div class="habit-item">
+<input type="checkbox" onchange="atualizar()">
+<label>
+<div class="text">
+<strong>Beber água</strong>
+<small>Saúde física</small>
+</div>
+</label>
+</div>
 
-        <div class="habit-item">
-            <input type="checkbox" id="habit4">
-            <label for="habit4">
-                <span class="icon">🥗🥕</span>
-                <div class="text">
-                    <strong>Acrescentei legumes/verduras nas minhas refeições</strong>
-                    <small>Alimentação</small>
-                </div>
-            </label>
-        </div>
-    </main>
+<div class="habit-item">
+<input type="checkbox" onchange="atualizar()">
+<label>
+<div class="text">
+<strong>Exercício</strong>
+<small>Corpo</small>
+</div>
+</label>
+</div>
 
-    <button class="add-btn">+ Adicionar Hábito</button>
+<div class="habit-item">
+<input type="checkbox" onchange="atualizar()">
+<label>
+<div class="text">
+<strong>Meditar</strong>
+<small>Mente</small>
+</div>
+</label>
+</div>
 
-    <nav>
-        <div class="Acima">
-            <h3>Meta Diária</h3>
-        </div>
-        <p class="Abaixo"> Hábitos Para Saúde. 2026</p>
-    </nav>
+<div class="habit-item">
+<input type="checkbox" onchange="atualizar()">
+<label>
+<div class="text">
+<strong>Alimentação saudável</strong>
+<small>Nutrição</small>
+</div>
+</label>
+</div>
 
 </div>
 
-<!-- SCRIPT DO MENU -->
+<script>
+function atualizar(){
+    let checks = document.querySelectorAll("input[type='checkbox']");
+    let total = checks.length;
+    let marcados = 0;
+
+    checks.forEach(c => {
+        if(c.checked) marcados++;
+    });
+
+    let porcentagem = Math.round((marcados/total)*100);
+
+    document.getElementById("porcentagem").innerText = porcentagem + "%";
+    document.getElementById("barra").style.width = porcentagem + "%";
+}
+</script>
+
 <script>
 fetch("menu.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("menu").innerHTML = data;
-});
+.then(r=>r.text())
+.then(d=>menu.innerHTML=d);
 </script>
 
 </body>
 </html>
-
