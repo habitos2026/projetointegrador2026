@@ -14,11 +14,21 @@
 
 <main>
 
-<h1>Calculadora de IMC</h1>
+<h1>Índice de Massa Corporal (IMC)</h1>
 
+<h2>O que é IMC?</h2>
 <p>
-O IMC (Índice de Massa Corporal) ajuda a identificar se você está no peso ideal.
+O IMC (Índice de Massa Corporal) é uma medida utilizada para avaliar se uma pessoa está dentro do peso ideal. 
+Ele é calculado a partir do peso e da altura e serve como um indicador simples de saúde.
 </p>
+
+<h2>Para que serve?</h2>
+<p>
+O IMC ajuda a identificar possíveis problemas relacionados ao peso, como baixo peso, sobrepeso ou obesidade. 
+Embora não leve em conta a composição corporal (músculo x gordura), ele é amplamente utilizado como referência inicial.
+</p>
+
+<h2>Calcule seu IMC</h2>
 
 <div class="imc-box">
 
@@ -30,6 +40,18 @@ O IMC (Índice de Massa Corporal) ajuda a identificar se você está no peso ide
 <div id="resultado"></div>
 
 </div>
+
+<h2>Classificação do IMC</h2>
+<p>
+A classificação geralmente segue este padrão:
+</p>
+
+<ul>
+<li>Abaixo de 18.5 → Abaixo do peso</li>
+<li>18.5 a 24.9 → Peso normal</li>
+<li>25 a 29.9 → Sobrepeso</li>
+<li>30 ou mais → Obesidade</li>
+</ul>
 
 </main>
 
@@ -53,8 +75,8 @@ function calcularIMC() {
     else classificacao = "Obesidade";
 
     resultado.innerHTML =
-        "IMC: " + imc.toFixed(2) + "<br>" +
-        classificacao;
+        "Seu IMC é: " + imc.toFixed(2) + "<br>" +
+        "Classificação: " + classificacao;
 }
 </script>
 
