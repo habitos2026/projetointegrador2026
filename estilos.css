@@ -1,9 +1,10 @@
 
+
 /* =========================
-   CHECKLIST (HÁBITOS)
+   CHECKLIST ISOLADO
 ========================= */
 
-.container {
+.check-container {
     max-width: 500px;
     margin: 40px auto;
     background: white;
@@ -12,20 +13,20 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* HEADER DO CHECKLIST */
-.container header {
+/* HEADER */
+.check-container header {
     text-align: center;
     margin-bottom: 20px;
 }
 
 /* STATS */
-.stats {
+.check-container .stats {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
 }
 
-.stat-card {
+.check-container .stat-card {
     background: #f1f5f9;
     padding: 15px;
     border-radius: 12px;
@@ -33,19 +34,8 @@
     text-align: center;
 }
 
-.stat-card strong {
-    color: #0f766e;
-    font-size: 1.2rem;
-}
-
-/* LISTA */
-.habit-list h2 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-/* ITEM DO HÁBITO */
-.habit-item {
+/* ITEM */
+.check-container .habit-item {
     background: #f8fafc;
     margin-bottom: 10px;
     padding: 15px;
@@ -56,19 +46,12 @@
     transition: 0.2s;
 }
 
-.habit-item:hover {
+.check-container .habit-item:hover {
     transform: scale(1.02);
 }
 
-/* CHECKBOX */
-.habit-item input {
-    width: 18px;
-    height: 18px;
-    accent-color: #0f766e;
-}
-
-/* TEXTO DO HÁBITO */
-.habit-item label {
+/* LABEL */
+.check-container label {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -76,37 +59,15 @@
     cursor: pointer;
 }
 
-.icon {
-    font-size: 1.3rem;
+/* CHECKBOX */
+.check-container input {
+    width: 18px;
+    height: 18px;
+    accent-color: #0f766e;
 }
 
-/* TEXTO INTERNO */
-.text strong {
-    display: block;
-    font-size: 15px;
-}
-
-.text small {
-    color: #64748b;
-    font-size: 12px;
-}
-
-/* BOTÃO */
-.add-btn {
-    width: 100%;
-    margin-top: 15px;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    background: #0f766e;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.add-btn:hover {
-    background: #115e59;
-}
-body {
-    background: red !important;
+/* TEXTO */
+.check-container .text {
+    display: flex;
+    flex-direction: column;
 }
