@@ -1,96 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diário de Hábitos Saudáveis📝</title>
-    <link rel="stylesheet" href="estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist</title>
+
+<link rel="stylesheet" href="estilos.css">
+
+<style>
+/* ANIMAÇÃO SUAVE */
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* BARRA DE PROGRESSO */
+.progress-box {
+    margin: 15px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #0f766e;
+    transition: 0.4s;
+}
+
+/* ANIMAÇÃO ITENS */
+.habit-item {
+    animation: fadeUp 0.5s ease;
+}
+
+/* HOVER MELHOR */
+.habit-item:hover {
+    transform: translateY(-2px);
+}
+
+/* CHECK */
+.habit-item input:checked + label strong {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+</style>
+
 </head>
 
 <body>
 
-<!-- MENU NO TOPO -->
 <div id="menu"></div>
 
 <div class="container">
-    <header>
-        <h1>O que conseguiu fazer hoje?</h1>
 
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data">
-    </header>
+<header>
+    <h1>O que conseguiu fazer hoje?</h1>
 
-    <section class="stats">
-        <div class="stat-card">
-            <span>Meta Diária</span>
-            <strong>75%</strong>
+    <label for="data">Data:</label>
+    <input type="date" id="data">
+</header>
+
+<!-- PROGRESSO -->
+<div class="progress-box">
+    <p><strong>Meta:</strong> <span id="porcentagem">0%</span></p>
+
+    <div class="progress-bar">
+        <span id="barra"></span>
+    </div>
+</div>
+
+<section class="stats">
+    <div class="stat-card">
+        <span>Meta Diária</span>
+        <strong id="metaTexto">0%</strong>
+    </div>
+    <div class="stat-card">
+        <span>Sequência</span>
+        <strong>12 Dias</strong>
+    </div>
+</section>
+
+<!-- LISTA -->
+<div class="habit-list">
+
+<h2>Checklist ✅</h2>
+
+<div class="habit-item">
+    <input type="checkbox" id="h1" onchange="atualizar()">
+    <label for="h1">
+        <span class="icon">💧</span>
+        <div class="text">
+            <strong>Bebi 2L de Água</strong>
+            <small>Saúde física</small>
         </div>
-        <div class="stat-card">
-            <span>Sequência (Streak)</span>
-            <strong>12 Dias</strong>
-        </div>
-    </section>
+    </label>
+</div>
 
-    <main class="habit-list">
-        <h2>Checklist✅</h2>
-        
-        <div class="habit-item">
-            <input type="checkbox" id="habit1">
-            <label for="habit1">
-                <span class="icon">💧</span>
-                <div class="text">
-                    <strong>Bebi 2L de Água</strong>
-                    <small>Saúde física</small>
-                </div>
-            </label>
+<div class="habit-item">
+    <input type="checkbox" id="h2" onchange="atualizar()">
+    <label for="h2">
+        <span class="icon">🧘</span>
+        <div class="text">
+            <strong>Meditei</strong>
+            <small>Saúde mental</small>
         </div>
+    </label>
+</div>
 
-        <div class="habit-item">
-            <input type="checkbox" id="habit2">
-            <label for="habit2">
-                <span class="icon">🧘🏻</span>
-                <div class="text">
-                    <strong>Meditei</strong>
-                    <small>Saúde mental • 10 min</small>
-                </div>
-            </label>
+<div class="habit-item">
+    <input type="checkbox" id="h3" onchange="atualizar()">
+    <label for="h3">
+        <span class="icon">🍎</span>
+        <div class="text">
+            <strong>Comi uma fruta</strong>
+            <small>Alimentação</small>
         </div>
+    </label>
+</div>
 
-        <div class="habit-item">
-            <input type="checkbox" id="habit3">
-            <label for="habit3">
-                <span class="icon">🍎</span>
-                <div class="text">
-                    <strong>Comi uma Fruta</strong>
-                    <small>Alimentação</small>
-                </div>
-            </label>
+<div class="habit-item">
+    <input type="checkbox" id="h4" onchange="atualizar()">
+    <label for="h4">
+        <span class="icon">🥗</span>
+        <div class="text">
+            <strong>Comi saudável</strong>
+            <small>Nutrição</small>
         </div>
-
-        <div class="habit-item">
-            <input type="checkbox" id="habit4">
-            <label for="habit4">
-                <span class="icon">🥗🥕</span>
-                <div class="text">
-                    <strong>Acrescentei legumes/verduras nas minhas refeições</strong>
-                    <small>Alimentação</small>
-                </div>
-            </label>
-        </div>
-    </main>
-
-    <button class="add-btn">+ Adicionar Hábito</button>
-
-    <nav>
-        <div class="Acima">
-            <h3>Meta Diária</h3>
-        </div>
-        <p class="Abaixo"> Hábitos Para Saúde. 2026</p>
-    </nav>
+    </label>
+</div>
 
 </div>
 
-<!-- SCRIPT DO MENU -->
+<button class="add-btn">+ Adicionar Hábito</button>
+
+</div>
+
+<script>
+function atualizar(){
+    let checks = document.querySelectorAll("input[type='checkbox']");
+    let total = checks.length;
+    let marcados = 0;
+
+    checks.forEach(c => {
+        if(c.checked) marcados++;
+    });
+
+    let porcentagem = Math.round((marcados/total)*100);
+
+    document.getElementById("porcentagem").innerText = porcentagem + "%";
+    document.getElementById("metaTexto").innerText = porcentagem + "%";
+    document.getElementById("barra").style.width = porcentagem + "%";
+}
+</script>
+
 <script>
 fetch("menu.html")
 .then(res => res.text())
