@@ -17,31 +17,6 @@ body {
     background: #f5f7fb;
 }
 
-/* MENU */
-header {
-    height: 70px;
-    background: #22c55e;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    opacity: 0.8;
-}
-
-.logo {
-    height: 40px;
-}
-
 /* TEXTO */
 .intro {
     max-width: 800px;
@@ -63,6 +38,183 @@ header nav a:hover {
 .check-container {
     max-width: 520px;
     margin: 20px auto 50px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.check-container h2 {
+    text-align: center;
+    color: #0f766e;
+}
+
+/* DATA */
+.check-container input[type="date"] {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+/* PROGRESSO */
+.progresso {
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #16a34a;
+}
+
+/* BARRA */
+.barra {
+    height: 10px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.barra span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #22c55e;
+    transition: 0.3s;
+}
+
+/* ITENS */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: scale(1.02);
+}
+
+.item input {
+    width: 18px;
+    height: 18px;
+}
+
+/* MARCADO */
+input:checked + span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* MENSAGEM */
+.msg {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- MENU PADRÃO DO SITE -->
+<div id="menu"></div>
+
+<!-- TEXTO -->
+<section class="intro">
+<h1>Hábitos Saudáveis e Qualidade de Vida</h1>
+
+<p>
+Manter hábitos saudáveis é essencial para garantir bem-estar físico, mental e social. Pequenas ações diárias podem gerar grandes resultados ao longo do tempo.
+</p>
+
+<p>
+O hábito é um comportamento repetido que se torna automático. Já a saúde envolve equilíbrio do corpo, da mente e das relações sociais.
+</p>
+
+<p>
+Use o checklist abaixo para acompanhar sua rotina e melhorar sua qualidade de vida.
+</p>
+</section>
+
+<!-- CHECKLIST -->
+<div class="check-container">
+
+<h2>Checklist Diário</h2>
+
+<input type="date">
+
+<div class="progresso">
+Meta: <span id="pct">0%</span>
+</div>
+
+<div class="barra">
+<span id="bar"></span>
+</div>
+
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>💧 Beber água</span>
+</label>
+
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>🧘 Meditar</span>
+</label>
+
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>🍎 Comer fruta</span>
+</label>
+
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>🥗 Alimentação saudável</span>
+</label>
+
+<p id="msg" class="msg"></p>
+
+</div>
+
+<!-- SCRIPT CHECKLIST -->
+<script>
+function calc(){
+    let c = document.querySelectorAll("input[type='checkbox']");
+    let total = c.length;
+    let marcados = 0;
+
+    c.forEach(x => {
+        if(x.checked) marcados++;
+    });
+
+    let pct = Math.round((marcados/total)*100);
+
+    document.getElementById("pct").innerText = pct + "%";
+    document.getElementById("bar").style.width = pct + "%";
+
+    if(pct === 100){
+        document.getElementById("msg").innerText = "Parabéns! 🎉";
+    } else {
+        document.getElementById("msg").innerText = "";
+    }
+}
+</script>
+
+<!-- SCRIPT MENU -->
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
+
+</body>
+</html>    margin: 20px auto 50px;
     background: white;
     padding: 25px;
     border-radius: 15px;
