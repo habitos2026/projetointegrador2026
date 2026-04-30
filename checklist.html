@@ -5,12 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checklist</title>
 
-<link rel="stylesheet" href="estilos.css">
-
 <style>
-@keyframes fadeUp {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+}
+
+/* MENU */
+header {
+    height: 70px;
+    background: #22c55e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    opacity: 0.8;
+}
+
+.logo {
+    height: 40px;
 }
 
 /* TEXTO */
@@ -18,7 +47,6 @@
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    animation: fadeUp 0.6s ease;
 }
 
 .intro h1 {
@@ -29,7 +57,6 @@
 .intro p {
     margin-bottom: 15px;
     text-align: justify;
-    color: #374151;
 }
 
 /* CHECKLIST */
@@ -37,101 +64,82 @@
     max-width: 520px;
     margin: 20px auto 50px;
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    animation: fadeUp 0.7s ease;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* TÍTULO */
 .check-container h2 {
     text-align: center;
     color: #0f766e;
-    margin-bottom: 10px;
 }
 
 /* DATA */
 .check-container input[type="date"] {
     display: block;
-    margin: 15px auto;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    margin: 10px auto;
+    padding: 8px;
 }
 
 /* PROGRESSO */
 .progresso {
     text-align: center;
-    margin: 15px 0;
+    margin: 10px 0;
     font-weight: bold;
-    color: #0f766e;
+    color: #16a34a;
 }
 
 /* BARRA */
 .barra {
-    width: 100%;
-    height: 12px;
-    background: #e5e7eb;
-    border-radius: 20px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .barra span {
     display: block;
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #0f766e, #14b8a6);
-    transition: 0.4s;
+    background: #22c55e;
+    transition: 0.3s;
 }
 
 /* ITENS */
-.habit-item {
-    background: #f9fafb;
-    margin-bottom: 12px;
-    padding: 15px;
-    border-radius: 14px;
+.item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    transition: 0.25s;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
-.habit-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+.item:hover {
+    transform: scale(1.02);
 }
 
-/* CHECK */
-.habit-item input {
+.item input {
     width: 18px;
     height: 18px;
-    accent-color: #0f766e;
-}
-
-/* TEXTO */
-.text {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
 
 /* MARCADO */
-.habit-item input:checked + label {
+input:checked + span {
+    text-decoration: line-through;
     opacity: 0.6;
 }
 
-.habit-item input:checked + label strong {
-    text-decoration: line-through;
-}
-
 /* MENSAGEM */
-.mensagem {
+.msg {
     text-align: center;
-    margin-top: 15px;
+    color: green;
     font-weight: bold;
-    color: #16a34a;
+    margin-top: 10px;
 }
 </style>
 
@@ -139,22 +147,32 @@
 
 <body>
 
-<div id="menu"></div>
+<!-- MENU FIXO -->
+<header>
+<img class="logo" src="pasta-de-imagens/images.jpg">
 
-<!-- TEXTO EXPLICATIVO -->
+<nav>
+<a href="index.html">Início</a>
+<a href="saude.html">Saúde</a>
+<a href="checklist.html">Check List</a>
+<a href="contato.html">Contato</a>
+</nav>
+</header>
+
+<!-- TEXTO -->
 <section class="intro">
 <h1>Hábitos Saudáveis e Qualidade de Vida</h1>
 
 <p>
-Manter hábitos saudáveis é essencial para garantir bem-estar físico, mental e social. Pequenas ações realizadas diariamente podem gerar grandes mudanças ao longo do tempo.
+Manter hábitos saudáveis é essencial para garantir bem-estar físico, mental e social. Pequenas ações diárias podem gerar grandes resultados ao longo do tempo.
 </p>
 
 <p>
-O hábito é um comportamento que se repete até se tornar automático na rotina. Já a saúde vai além da ausência de doenças, envolvendo equilíbrio emocional, qualidade de vida e boas relações.
+O hábito é um comportamento repetido que se torna automático. Já a saúde envolve equilíbrio do corpo, da mente e das relações sociais.
 </p>
 
 <p>
-Este checklist foi criado para te ajudar a acompanhar suas atividades diárias e desenvolver consistência. Marque o que você realizou e acompanhe seu progresso.
+Use o checklist abaixo para acompanhar sua rotina e melhorar sua qualidade de vida.
 </p>
 </section>
 
@@ -166,76 +184,58 @@ Este checklist foi criado para te ajudar a acompanhar suas atividades diárias e
 <input type="date">
 
 <div class="progresso">
-Meta: <span id="porcentagem">0%</span>
+Meta: <span id="pct">0%</span>
 </div>
 
 <div class="barra">
-    <span id="barra"></span>
+<span id="bar"></span>
 </div>
 
-<div class="habit-item">
-<input type="checkbox" onchange="atualizar()">
-<label class="text">
-<strong>Bebi 2L de Água</strong>
-<span>💧</span>
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>💧 Beber água</span>
 </label>
-</div>
 
-<div class="habit-item">
-<input type="checkbox" onchange="atualizar()">
-<label class="text">
-<strong>Meditei</strong>
-<span>🧘</span>
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>🧘 Meditar</span>
 </label>
-</div>
 
-<div class="habit-item">
-<input type="checkbox" onchange="atualizar()">
-<label class="text">
-<strong>Comi uma fruta</strong>
-<span>🍎</span>
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>🍎 Comer fruta</span>
 </label>
-</div>
 
-<div class="habit-item">
-<input type="checkbox" onchange="atualizar()">
-<label class="text">
-<strong>Alimentação saudável</strong>
-<span>🥗</span>
+<label class="item">
+<input type="checkbox" onchange="calc()">
+<span>🥗 Alimentação saudável</span>
 </label>
-</div>
 
-<div id="mensagem" class="mensagem"></div>
+<p id="msg" class="msg"></p>
 
 </div>
 
 <script>
-function atualizar(){
-    let checks = document.querySelectorAll("input[type='checkbox']");
-    let total = checks.length;
+function calc(){
+    let c = document.querySelectorAll("input[type='checkbox']");
+    let total = c.length;
     let marcados = 0;
 
-    checks.forEach(c => {
-        if(c.checked) marcados++;
+    c.forEach(x => {
+        if(x.checked) marcados++;
     });
 
-    let porcentagem = Math.round((marcados/total)*100);
+    let pct = Math.round((marcados/total)*100);
 
-    document.getElementById("porcentagem").innerText = porcentagem + "%";
-    document.getElementById("barra").style.width = porcentagem + "%";
+    document.getElementById("pct").innerText = pct + "%";
+    document.getElementById("bar").style.width = pct + "%";
 
-    if(porcentagem === 100){
-        document.getElementById("mensagem").innerText = "Parabéns! Você completou tudo 🎉";
+    if(pct === 100){
+        document.getElementById("msg").innerText = "Parabéns! 🎉";
     } else {
-        document.getElementById("mensagem").innerText = "";
+        document.getElementById("msg").innerText = "";
     }
 }
-</script>
-
-<script>
-fetch("menu.html")
-.then(r=>r.text())
-.then(d=>menu.innerHTML=d);
 </script>
 
 </body>
