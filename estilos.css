@@ -83,3 +83,43 @@ p {
     margin-bottom: 10px;
     padding: 10px;
 }
+.bannerIndex {
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.bannerIndex img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.imc-box {
+    margin-top: 20px;
+}
+
+.imc-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.imc-box button {
+    width: 100%;
+    padding: 12px;
+    background: #0f766e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.imc-box button:hover {
+    background: #115e59;
+}
+
+#resultado {
+    margin-top: 15px;
+    font-weight: bold;
+}
