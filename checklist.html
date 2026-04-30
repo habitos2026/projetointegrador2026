@@ -5,224 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checklist</title>
 
+<link rel="stylesheet" href="estilos.css">
+
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+/* SÓ O CHECKLIST (não mexe no resto do site) */
 
-body {
-    background: #f5f7fb;
-}
-
-/* TEXTO */
-.intro {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.intro h1 {
-    color: #0f766e;
-    margin-bottom: 15px;
-}
-
-.intro p {
-    margin-bottom: 15px;
-    text-align: justify;
-}
-
-/* CHECKLIST */
 .check-container {
-    max-width: 520px;
-    margin: 20px auto 50px;
+    max-width: 500px;
+    margin: 40px auto;
     background: white;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.check-container h2 {
-    text-align: center;
-    color: #0f766e;
-}
-
-/* DATA */
-.check-container input[type="date"] {
-    display: block;
-    margin: 10px auto;
-    padding: 8px;
-}
-
-/* PROGRESSO */
-.progresso {
-    text-align: center;
-    margin: 10px 0;
-    font-weight: bold;
-    color: #16a34a;
-}
-
-/* BARRA */
-.barra {
-    height: 10px;
-    background: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.barra span {
-    display: block;
-    height: 100%;
-    width: 0%;
-    background: #22c55e;
-    transition: 0.3s;
-}
-
-/* ITENS */
-.item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f1f5f9;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.item:hover {
-    transform: scale(1.02);
-}
-
-.item input {
-    width: 18px;
-    height: 18px;
-}
-
-/* MARCADO */
-input:checked + span {
-    text-decoration: line-through;
-    opacity: 0.6;
-}
-
-/* MENSAGEM */
-.msg {
-    text-align: center;
-    color: green;
-    font-weight: bold;
-    margin-top: 10px;
-}
-</style>
-
-</head>
-
-<body>
-
-<!-- MENU PADRÃO DO SITE -->
-<div id="menu"></div>
-
-<!-- TEXTO -->
-<section class="intro">
-<h1>Hábitos Saudáveis e Qualidade de Vida</h1>
-
-<p>
-Manter hábitos saudáveis é essencial para garantir bem-estar físico, mental e social. Pequenas ações diárias podem gerar grandes resultados ao longo do tempo.
-</p>
-
-<p>
-O hábito é um comportamento repetido que se torna automático. Já a saúde envolve equilíbrio do corpo, da mente e das relações sociais.
-</p>
-
-<p>
-Use o checklist abaixo para acompanhar sua rotina e melhorar sua qualidade de vida.
-</p>
-</section>
-
-<!-- CHECKLIST -->
-<div class="check-container">
-
-<h2>Checklist Diário</h2>
-
-<input type="date">
-
-<div class="progresso">
-Meta: <span id="pct">0%</span>
-</div>
-
-<div class="barra">
-<span id="bar"></span>
-</div>
-
-<label class="item">
-<input type="checkbox" onchange="calc()">
-<span>💧 Beber água</span>
-</label>
-
-<label class="item">
-<input type="checkbox" onchange="calc()">
-<span>🧘 Meditar</span>
-</label>
-
-<label class="item">
-<input type="checkbox" onchange="calc()">
-<span>🍎 Comer fruta</span>
-</label>
-
-<label class="item">
-<input type="checkbox" onchange="calc()">
-<span>🥗 Alimentação saudável</span>
-</label>
-
-<p id="msg" class="msg"></p>
-
-</div>
-
-<!-- SCRIPT CHECKLIST -->
-<script>
-function calc(){
-    let c = document.querySelectorAll("input[type='checkbox']");
-    let total = c.length;
-    let marcados = 0;
-
-    c.forEach(x => {
-        if(x.checked) marcados++;
-    });
-
-    let pct = Math.round((marcados/total)*100);
-
-    document.getElementById("pct").innerText = pct + "%";
-    document.getElementById("bar").style.width = pct + "%";
-
-    if(pct === 100){
-        document.getElementById("msg").innerText = "Parabéns! 🎉";
-    } else {
-        document.getElementById("msg").innerText = "";
-    }
-}
-</script>
-
-<!-- SCRIPT MENU -->
-<script>
-fetch("menu.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("menu").innerHTML = data;
-});
-</script>
-
-</body>
-</html>    margin: 20px auto 50px;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* TÍTULO */
-.check-container h2 {
+.check-container h1 {
     text-align: center;
     color: #0f766e;
 }
@@ -230,22 +28,23 @@ fetch("menu.html")
 /* DATA */
 .check-container input[type="date"] {
     display: block;
-    margin: 10px auto;
+    margin: 10px auto 20px;
     padding: 8px;
 }
 
 /* PROGRESSO */
 .progresso {
     text-align: center;
-    margin: 10px 0;
+    margin-bottom: 10px;
     font-weight: bold;
-    color: #16a34a;
+    color: #0f766e;
 }
 
 /* BARRA */
 .barra {
+    width: 100%;
     height: 10px;
-    background: #ddd;
+    background: #e5e7eb;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -255,43 +54,43 @@ fetch("menu.html")
     display: block;
     height: 100%;
     width: 0%;
-    background: #22c55e;
+    background: #0f766e;
     transition: 0.3s;
 }
 
 /* ITENS */
-.item {
+.habit-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #f1f5f9;
-    padding: 10px;
+    background: #f9fafb;
+    padding: 12px;
     border-radius: 10px;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
-.item:hover {
-    transform: scale(1.02);
-}
-
-.item input {
+.habit-item input {
     width: 18px;
     height: 18px;
 }
 
+/* TEXTO */
+.habit-item span {
+    font-weight: 500;
+}
+
 /* MARCADO */
-input:checked + span {
+.habit-item input:checked + span {
     text-decoration: line-through;
-    opacity: 0.6;
+    color: #9ca3af;
 }
 
 /* MENSAGEM */
 .msg {
     text-align: center;
-    color: white;
-    font-weight: bold;
     margin-top: 10px;
+    color: green;
+    font-weight: bold;
 }
 </style>
 
@@ -299,39 +98,12 @@ input:checked + span {
 
 <body>
 
-<!-- MENU FIXO -->
-<header>
-<img class="logo" src="pasta-de-imagens/images.jpg">
+<!-- MENU (não mexe nisso) -->
+<div id="menu"></div>
 
-<nav>
-<a href="index.html">Início</a>
-<a href="saude.html">Saúde</a>
-<a href="checklist.html">Check List</a>
-<a href="contato.html">Contato</a>
-</nav>
-</header>
-
-<!-- TEXTO -->
-<section class="intro">
-<h1>Hábitos Saudáveis e Qualidade de Vida</h1>
-
-<p>
-Manter hábitos saudáveis é essencial para garantir bem-estar físico, mental e social. Pequenas ações diárias podem gerar grandes resultados ao longo do tempo.
-</p>
-
-<p>
-O hábito é um comportamento repetido que se torna automático. Já a saúde envolve equilíbrio do corpo, da mente e das relações sociais.
-</p>
-
-<p>
-Use o checklist abaixo para acompanhar sua rotina e melhorar sua qualidade de vida.
-</p>
-</section>
-
-<!-- CHECKLIST -->
 <div class="check-container">
 
-<h2>Checklist Diário</h2>
+<h1>Checklist Diário</h1>
 
 <input type="date">
 
@@ -343,24 +115,25 @@ Meta: <span id="pct">0%</span>
 <span id="bar"></span>
 </div>
 
-<label class="item">
+<!-- ITENS -->
+<label class="habit-item">
 <input type="checkbox" onchange="calc()">
-<span>💧 Beber água</span>
+<span>💧 Bebi 2L de água</span>
 </label>
 
-<label class="item">
+<label class="habit-item">
 <input type="checkbox" onchange="calc()">
-<span>🧘 Meditar</span>
+<span>🧘 Meditei</span>
 </label>
 
-<label class="item">
+<label class="habit-item">
 <input type="checkbox" onchange="calc()">
-<span>🍎 Comer fruta</span>
+<span>🍎 Comi uma fruta</span>
 </label>
 
-<label class="item">
+<label class="habit-item">
 <input type="checkbox" onchange="calc()">
-<span>🥗 Alimentação saudável</span>
+<span>🥗 Comi saudável</span>
 </label>
 
 <p id="msg" class="msg"></p>
@@ -369,15 +142,15 @@ Meta: <span id="pct">0%</span>
 
 <script>
 function calc(){
-    let c = document.querySelectorAll("input[type='checkbox']");
-    let total = c.length;
+    let checks = document.querySelectorAll(".habit-item input");
+    let total = checks.length;
     let marcados = 0;
 
-    c.forEach(x => {
-        if(x.checked) marcados++;
+    checks.forEach(c => {
+        if(c.checked) marcados++;
     });
 
-    let pct = Math.round((marcados/total)*100);
+    let pct = Math.round((marcados / total) * 100);
 
     document.getElementById("pct").innerText = pct + "%";
     document.getElementById("bar").style.width = pct + "%";
@@ -389,15 +162,14 @@ function calc(){
     }
 }
 </script>
-    <script>
+
+<script>
 fetch("menu.html")
 .then(res => res.text())
 .then(data => {
     document.getElementById("menu").innerHTML = data;
 });
 </script>
-
-
 
 </body>
 </html>
