@@ -9,25 +9,45 @@
 
 <style>
 @keyframes fadeUp {
-    from {opacity:0; transform:translateY(25px);}
+    from {opacity:0; transform:translateY(20px);}
     to {opacity:1; transform:translateY(0);}
 }
 
-/* CONTAINER */
+/* TEXTO */
+.intro {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    animation: fadeUp 0.6s ease;
+}
+
+.intro h1 {
+    color: #0f766e;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #374151;
+}
+
+/* CHECKLIST */
 .check-container {
     max-width: 520px;
-    margin: 50px auto;
+    margin: 20px auto 50px;
     background: white;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    animation: fadeUp 0.6s ease;
+    animation: fadeUp 0.7s ease;
 }
 
 /* TÍTULO */
-.check-container h1 {
+.check-container h2 {
     text-align: center;
     color: #0f766e;
+    margin-bottom: 10px;
 }
 
 /* DATA */
@@ -62,7 +82,7 @@
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, #0f766e, #14b8a6);
-    transition: 0.4s ease;
+    transition: 0.4s;
 }
 
 /* ITENS */
@@ -93,7 +113,8 @@
 /* TEXTO */
 .text {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /* MARCADO */
@@ -105,27 +126,44 @@
     text-decoration: line-through;
 }
 
-/* ANIMAÇÃO EM CASCATA */
-.habit-item {
-    animation: fadeUp 0.5s ease;
+/* MENSAGEM */
+.mensagem {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #16a34a;
 }
-
-.habit-item:nth-child(1) { animation-delay: 0.1s; }
-.habit-item:nth-child(2) { animation-delay: 0.2s; }
-.habit-item:nth-child(3) { animation-delay: 0.3s; }
-.habit-item:nth-child(4) { animation-delay: 0.4s; }
 </style>
+
 </head>
 
 <body>
 
 <div id="menu"></div>
 
+<!-- TEXTO EXPLICATIVO -->
+<section class="intro">
+<h1>Hábitos Saudáveis e Qualidade de Vida</h1>
+
+<p>
+Manter hábitos saudáveis é essencial para garantir bem-estar físico, mental e social. Pequenas ações realizadas diariamente podem gerar grandes mudanças ao longo do tempo.
+</p>
+
+<p>
+O hábito é um comportamento que se repete até se tornar automático na rotina. Já a saúde vai além da ausência de doenças, envolvendo equilíbrio emocional, qualidade de vida e boas relações.
+</p>
+
+<p>
+Este checklist foi criado para te ajudar a acompanhar suas atividades diárias e desenvolver consistência. Marque o que você realizou e acompanhe seu progresso.
+</p>
+</section>
+
+<!-- CHECKLIST -->
 <div class="check-container">
 
-<h1>Checklist Diário</h1>
+<h2>Checklist Diário</h2>
 
-<input type="date" id="data">
+<input type="date">
 
 <div class="progresso">
 Meta: <span id="porcentagem">0%</span>
@@ -135,52 +173,39 @@ Meta: <span id="porcentagem">0%</span>
     <span id="barra"></span>
 </div>
 
-<!-- ITENS -->
 <div class="habit-item">
-    <input type="checkbox" id="h1" onchange="atualizar()">
-    <label for="h1">
-        <div class="text">
-            <strong>Bebi 2L de Água</strong>
-            <small>Saúde física</small>
-            <span class="icon">💧</span>
-        </div>
-    </label>
+<input type="checkbox" onchange="atualizar()">
+<label class="text">
+<strong>Bebi 2L de Água</strong>
+<span>💧</span>
+</label>
 </div>
 
 <div class="habit-item">
-    <input type="checkbox" id="h2" onchange="atualizar()">
-    <label for="h2">
-        <div class="text">
-             <strong>Meditei</strong>
-            <small>Saúde mental</small>
-             <span class="icon">🧘</span>
-        </div>
-    </label>
+<input type="checkbox" onchange="atualizar()">
+<label class="text">
+<strong>Meditei</strong>
+<span>🧘</span>
+</label>
 </div>
 
 <div class="habit-item">
-    <input type="checkbox" id="h3" onchange="atualizar()">
-    <label for="h3">
-        <div class="text">
-             <strong>Comi uma fruta</strong>
-            <small>Alimentação</small>
-            <span class="icon">🍎</span>
-        </div>
-    </label>
+<input type="checkbox" onchange="atualizar()">
+<label class="text">
+<strong>Comi uma fruta</strong>
+<span>🍎</span>
+</label>
 </div>
 
 <div class="habit-item">
-    <input type="checkbox" id="h4" onchange="atualizar()">
-    <label for="h4">
-        <div class="text">
-            <strong>Comi saudável</strong>
-            <small>Nutrição</small>
-            <span class="icon">🥗</span>
-        </div>
-    </label>
+<input type="checkbox" onchange="atualizar()">
+<label class="text">
+<strong>Alimentação saudável</strong>
+<span>🥗</span>
+</label>
 </div>
 
-</div>
+<div id="mensagem" class="mensagem"></div>
 
 </div>
 
@@ -198,6 +223,12 @@ function atualizar(){
 
     document.getElementById("porcentagem").innerText = porcentagem + "%";
     document.getElementById("barra").style.width = porcentagem + "%";
+
+    if(porcentagem === 100){
+        document.getElementById("mensagem").innerText = "Parabéns! Você completou tudo 🎉";
+    } else {
+        document.getElementById("mensagem").innerText = "";
+    }
 }
 </script>
 
