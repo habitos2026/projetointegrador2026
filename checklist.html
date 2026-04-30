@@ -8,50 +8,39 @@
 <link rel="stylesheet" href="estilos.css">
 
 <style>
-/* ANIMAÇÃO */
+<style>
 @keyframes fadeUp {
-    from {opacity:0; transform:translateY(25px);}
+    from {opacity:0; transform:translateY(20px);}
     to {opacity:1; transform:translateY(0);}
 }
 
-/* CONTAINER */
-.container {
+.check-container {
     max-width: 500px;
     margin: 40px auto;
     background: white;
     padding: 25px;
     border-radius: 20px;
-    animation: fadeUp 0.6s ease;
+    animation: fadeUp 0.5s ease;
 }
 
-/* TÍTULO */
-h1 {
+.check-container h1 {
     text-align: center;
-    margin-bottom: 10px;
 }
 
-/* DATA */
-input[type="date"] {
-    display: block;
-    margin: 10px auto;
-    padding: 8px;
-}
-
-/* PROGRESSO */
 .progresso {
     text-align: center;
-    margin: 20px 0;
+    margin: 15px 0;
     font-weight: bold;
     color: #0f766e;
 }
 
-/* BARRA */
 .barra {
     width: 100%;
     height: 10px;
     background: #e5e7eb;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .barra span {
@@ -62,41 +51,26 @@ input[type="date"] {
     transition: 0.3s;
 }
 
-/* ITENS */
 .habit-item {
     background: #f8fafc;
     margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 12px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: 0.25s;
+    transition: 0.2s;
 }
 
 .habit-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
-/* CHECK */
-.habit-item input {
-    width: 18px;
-    height: 18px;
-}
-
-.habit-item input:checked + label {
-    opacity: 0.6;
-}
-
-.habit-item input:checked + label strong {
-    text-decoration: line-through;
-}
-
-/* TEXTO */
 .text {
     display: flex;
     flex-direction: column;
 }
+</style>
 </style>
 
 </head>
@@ -105,7 +79,7 @@ input[type="date"] {
 
 <div id="menu"></div>
 
-<div class="container">
+<div class="check-container">
 
 <h1>Checklist Diário</h1>
 
