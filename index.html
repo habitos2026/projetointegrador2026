@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -7,37 +8,36 @@
 <link rel="stylesheet" href="estilos.css">
 </head>
 
-@@ -13,43 +11,14 @@
+<body>
+
 <div id="menu"></div>
 
 <main>
-     <main>
-    <h1>Hábitos Saudáveis e Qualidade de Vida</h1>
 
-    <p>
-        Hábitos saudáveis são rotinas que incluem tempo e compromisso com atividades benéficas para a saúde física, mental e social. A definição envolve dois conceitos importantes: hábitos e saúde.
-    </p>
+<h1>Hábitos Saudáveis e Qualidade de Vida</h1>
 
-    <p>
-        O hábito é um comportamento repetido regularmente até se tornar parte da rotina. Um exemplo simples é o horário em que acordamos diariamente. Com o tempo, nosso cérebro automatiza essas ações, tornando-as naturais no dia a dia.
-    </p>
-<h1>Hábitos Saudáveis</h1>
+<p>
+Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social.
+</p>
 
-    <p>
-        Já a saúde, segundo a Organização Mundial da Saúde (OMS), é definida como o estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças.
-    </p>
+<p>
+O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações.
+</p>
 
-    <p>
-        Isso significa que ser saudável vai além do corpo: envolve também o equilíbrio emocional e a qualidade das relações sociais. Pequenos hábitos diários podem contribuir significativamente para esse equilíbrio.
-    </p>
+<p>
+Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar.
+</p>
 
-    <p class="frase">
-        Pequenos passos diários levam a grandes transformações.
-    </p>
+<p class="frase">
+Pequenos passos diários levam a grandes transformações.
+</p>
+
 </main>
-    
-<p>Pequenos hábitos diários melhoram sua vida.</p>
-</main>
+
+<!-- BANNER CONTROLADO (SEM BUGAR O SITE) -->
+<div class="bannerIndex">
+    <img src="pasta-de-imagens/images.jpg" alt="Banner">
+</div>
 
 <script>
 fetch("menu.html")
@@ -45,12 +45,7 @@ fetch("menu.html")
 .then(data => {
     document.getElementById("menu").innerHTML = data;
 });
-fetch("menu.html").then(r=>r.text()).then(d=>menu.innerHTML=d);
 </script>
 
- <article class="bannerIndex">
-        <img src="pasta-de-imagens/images.jpg" alt="Imagem de banner">
-    </article>
-     
 </body>
 </html>
