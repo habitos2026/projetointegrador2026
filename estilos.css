@@ -1,3 +1,4 @@
+
 /* =========================
    RESET
 ========================= */
@@ -8,17 +9,28 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* IMPEDIR LAYOUT QUEBRAR */
 body {
     background: #f5f7fb;
     color: #1f2937;
-    line-height: 1.7;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================
+   IMAGENS (CORREÇÃO DO BUG)
+========================= */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* =========================
    MENU
 ========================= */
 header {
-    background: #ffffff;
+    background: white;
     height: 70px;
     display: flex;
     align-items: center;
@@ -40,7 +52,6 @@ nav a {
     text-decoration: none;
     color: #374151;
     font-weight: 500;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -48,26 +59,25 @@ nav a:hover {
 }
 
 /* =========================
-   CONTEÚDO
+   CONTEÚDO GERAL
 ========================= */
 main {
     max-width: 850px;
     margin: 50px auto;
     background: white;
-    padding: 35px 40px;
+    padding: 35px;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
+/* TEXTO */
 h1 {
-    font-size: 28px;
     color: #0f766e;
     margin-bottom: 15px;
 }
 
 h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #111827;
 }
 
@@ -82,24 +92,19 @@ p {
    IMC
 ========================= */
 .imc-box {
-    margin-top: 30px;
-    padding: 25px;
+    margin-top: 25px;
+    padding: 20px;
     border-radius: 12px;
     background: #ecfeff;
     border: 1px solid #a5f3fc;
-}
-
-.imc-box h3 {
-    color: #0f766e;
-    margin-bottom: 15px;
 }
 
 .imc-box input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #d1d5db;
     border-radius: 8px;
+    border: 1px solid #d1d5db;
 }
 
 .imc-box button {
@@ -110,14 +115,22 @@ p {
     border: none;
     border-radius: 8px;
     font-weight: bold;
-    cursor: pointer;
-}
-
-.imc-box button:hover {
-    background: #115e59;
 }
 
 .imc-resultado {
     margin-top: 15px;
     font-weight: bold;
+}
+
+/* =========================
+   BANNER (SE TIVER)
+========================= */
+.bannerIndex {
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.bannerIndex img {
+    width: 100%;
+    object-fit: cover;
 }
