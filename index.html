@@ -2,9 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Início</title>
-
 <link rel="stylesheet" href="estilos.css">
 </head>
 
@@ -13,43 +11,14 @@
 <div id="menu"></div>
 
 <main>
-     <main>
-    <h1>Hábitos Saudáveis e Qualidade de Vida</h1>
+<h1>Hábitos Saudáveis</h1>
 
-    <p>
-        Hábitos saudáveis são rotinas que incluem tempo e compromisso com atividades benéficas para a saúde física, mental e social. A definição envolve dois conceitos importantes: hábitos e saúde.
-    </p>
-
-    <p>
-        O hábito é um comportamento repetido regularmente até se tornar parte da rotina. Um exemplo simples é o horário em que acordamos diariamente. Com o tempo, nosso cérebro automatiza essas ações, tornando-as naturais no dia a dia.
-    </p>
-
-    <p>
-        Já a saúde, segundo a Organização Mundial da Saúde (OMS), é definida como o estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças.
-    </p>
-
-    <p>
-        Isso significa que ser saudável vai além do corpo: envolve também o equilíbrio emocional e a qualidade das relações sociais. Pequenos hábitos diários podem contribuir significativamente para esse equilíbrio.
-    </p>
-
-    <p class="frase">
-        Pequenos passos diários levam a grandes transformações.
-    </p>
-</main>
-    
+<p>Pequenos hábitos diários melhoram sua vida.</p>
 </main>
 
 <script>
-fetch("menu.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("menu").innerHTML = data;
-});
+fetch("menu.html").then(r=>r.text()).then(d=>menu.innerHTML=d);
 </script>
 
- <article class="bannerIndex">
-        <img src="pasta-de-imagens/images.jpg" alt="Imagem de banner">
-    </article>
-     
 </body>
 </html>
