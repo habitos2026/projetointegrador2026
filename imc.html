@@ -13,6 +13,7 @@
 <div id="menu"></div>
 
 <main>
+    <main>
     <h1>IMC</h1>
 
     <h2>Afinal, o que é IMC e para que serve?</h2>
@@ -21,6 +22,21 @@
         O IMC (Índice de Massa Corporal) é uma medida internacional baseada no peso e altura, usada para avaliar se uma pessoa está no peso ideal, com sobrepeso ou obesidade.  
         Ele é calculado por uma fórmula simples e serve como um indicador rápido de saúde, embora não diferencie massa muscular de gordura corporal.
     </p>
+
+    <!-- 🔥 AQUI ESTÁ O QUE FALTAVA -->
+    <div class="imc-box">
+
+        <h3>Calcular IMC</h3>
+
+        <input id="peso" type="number" placeholder="Peso (kg)">
+        <input id="altura" type="number" placeholder="Altura (ex: 1.75)">
+
+        <button onclick="calcularIMC()">Calcular</button>
+
+        <div id="resultado" class="imc-resultado"></div>
+
+    </div>
+</main>
 </main>
 <script>
 function calcularIMC() {
