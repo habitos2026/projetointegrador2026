@@ -1,3 +1,11 @@
+:root{
+    --cinza245: rgb(245,245,245);
+    --cinza220: rgb(220,220,220);
+    --cinza128: rgb(128,128,128);
+    --azul: rgb(0,80,120);
+    --amarelo: yellow;
+}
+
 /* RESET */
 * {
     margin: 0;
@@ -137,7 +145,7 @@ p {
 .botaoMenu div{
     width: 1.8rem;
     height: 2px;
-    background-color: white;
+    background-color: black;
     transition: background 0.5s;
 }
 
