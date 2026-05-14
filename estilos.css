@@ -113,83 +113,62 @@ p {
     margin-top: 15px;
     font-weight: bold;
 }
+/* BOTÃO MENU */
 .botaoMenu{
-    border: none;
-    background-color: transparent;
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
+    border: none;
+    background: transparent;
     cursor: pointer;
 }
 
 .botaoMenu div{
-    width: 1.8rem;
-    height: 2px;
-    background-color: white;
-    transition: background 0.5s;
+    width: 28px;
+    height: 3px;
+    background: #0f766e;
 }
 
-.botaoMenu:hover div{
-    background-color: var(--amarelo);
-}
-
-@media screen and (max-width: 950px){
-
-    header nav{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        right: -100%;
-        background-color: var(--cinza245);
-        transition: right 0.5s;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 3rem;
-    }
-
-    header nav a{
-        color: var(--cinza128);
-        width: 100%;
-        border-bottom: 1px solid var(--cinza220);
-        padding-top: 0.5rem;
-    }
-
-    header nav a:hover{
-        color: var(--azul);
-    }
+/* MOBILE */
+@media(max-width:950px){
 
     .botaoMenu{
         display: flex;
     }
 
-    header nav .topoMenu{
+    #menuNav{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: white;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        padding: 30px;
+        transition: 0.4s;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    #menuNav a{
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .topoMenu{
+        display: flex;
         justify-content: space-between;
-        width: 100%;
-        margin-bottom: 1rem;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
-    .topoMenu h3{
-        color: var(--azul);
-    }
-
-    .topoMenu button{
+    #botaoFecharMenu{
         border: none;
-        background-color: transparent;
-        color: var(--azul);
+        background: transparent;
+        font-size: 28px;
         cursor: pointer;
+        color: #0f766e;
     }
-
-    .finalMenu{
-        display:block;
-        margin-top: 1.5rem;
-        color:var(--cinza128);
-    }
-
-    .bannerIndex{
-    height: 35rem;
-}
-
 }
