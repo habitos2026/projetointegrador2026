@@ -113,6 +113,25 @@ p {
     margin-top: 15px;
     font-weight: bold;
 }
+.botaoMenu{
+    border: none;
+    background-color: transparent;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.botaoMenu div{
+    width: 1.8rem;
+    height: 2px;
+    background-color: white;
+    transition: background 0.5s;
+}
+
+.botaoMenu:hover div{
+    background-color: var(--amarelo);
+}
 
 @media screen and (max-width: 950px){
 
