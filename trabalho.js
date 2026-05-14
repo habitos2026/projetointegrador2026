@@ -17,3 +17,36 @@ fetch("menu.html")
     });
 
 });
+
+function calc() {
+
+    // pega todos os checkbox
+    const checks = document.querySelectorAll('.habit-item input');
+
+    // quantidade marcada
+    let marcados = 0;
+
+    checks.forEach(check => {
+        if(check.checked){
+            marcados++;
+        }
+    });
+
+    // calcula porcentagem
+    let porcentagem = (marcados / checks.length) * 100;
+
+    // atualiza texto
+    document.getElementById("pct").innerText = porcentagem + "%";
+
+    // atualiza barra
+    document.getElementById("bar").style.width = porcentagem + "%";
+
+    // mensagem
+    const msg = document.getElementById("msg");
+
+    if(porcentagem == 100){
+        msg.innerText = "Parabéns! Você completou todos os hábitos 🎉";
+    }else{
+        msg.innerText = "";
+    }
+}
