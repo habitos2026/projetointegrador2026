@@ -114,6 +114,7 @@
 </head>
 <body>
 
+<div id="menu"></div>
 
 <header>
     <h1>A Importância de Cuidar da Saúde</h1>
@@ -140,35 +141,15 @@
 <footer>
     <p>"Cuidar do seu corpo é a única casa que você tem para morar."</p>
 </footer>
-            
-<div id="menu"></div>
-            
+
 <script>
 fetch("menu.html")
 .then(res => res.text())
 .then(data => {
-
     document.getElementById("menu").innerHTML = data;
-
-    // MENU MOBILE
-    const botaoMenu = document.querySelector(".botaoMenu");
-    const menuNav = document.getElementById("menuNav");
-    const botaoFechar = document.getElementById("botaoFecharMenu");
-
-    if(botaoMenu){
-        botaoMenu.addEventListener("click", () => {
-            menuNav.style.right = "0";
-        });
-    }
-
-    if(botaoFechar){
-        botaoFechar.addEventListener("click", () => {
-            menuNav.style.right = "-100%";
-        });
-    }
-
 });
 </script>
 
 </body>
 </html>
+
