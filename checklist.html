@@ -154,6 +154,37 @@ Meta: <span id="pct">0%</span>
 
 
 <script src="trabalho.js"></script>
+    
+<script>
 
+function calc() {
+
+    const checks = document.querySelectorAll('.habit-item input');
+
+    let marcados = 0;
+
+    checks.forEach(check => {
+        if(check.checked){
+            marcados++;
+        }
+    });
+
+    let porcentagem = (marcados / checks.length) * 100;
+
+    document.getElementById("pct").innerText = porcentagem + "%";
+
+    document.getElementById("bar").style.width = porcentagem + "%";
+
+    const msg = document.getElementById("msg");
+
+    if(porcentagem == 100){
+        msg.innerText = "Parabéns! Você completou tudo 🎉";
+    } else {
+        msg.innerText = "";
+    }
+}
+
+</script>
+    
 </body>
 </html>
