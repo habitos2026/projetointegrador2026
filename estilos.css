@@ -135,7 +135,60 @@ p {
 
 @media screen and (max-width: 950px){
 
-     .bannerIndex{
+    header nav{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        right: -100%;
+        background-color: var(--cinza245);
+        transition: right 0.5s;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3rem;
+    }
+
+    header nav a{
+        color: var(--cinza128);
+        width: 100%;
+        border-bottom: 1px solid var(--cinza220);
+        padding-top: 0.5rem;
+    }
+
+    header nav a:hover{
+        color: var(--azul);
+    }
+
+    .botaoMenu{
+        display: flex;
+    }
+
+    header nav .topoMenu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .topoMenu h3{
+        color: var(--azul);
+    }
+
+    .topoMenu button{
+        border: none;
+        background-color: transparent;
+        color: var(--azul);
+        cursor: pointer;
+    }
+
+    .finalMenu{
+        display:block;
+        margin-top: 1.5rem;
+        color:var(--cinza128);
+    }
+
+    .bannerIndex{
     height: 35rem;
 }
 
