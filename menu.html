@@ -1,19 +1,34 @@
 <header>
+
     <img class="Logo" src="pasta-de-imagens/images.jpg">
 
-    <nav>
+    <button class="botaoMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+
+    <nav id="menuNav">
+
+        <div class="topoMenu">
+            <h3>Menu</h3>
+
+            <button id="botaoFecharMenu">
+                ✕
+            </button>
+        </div>
+
         <a href="index.html">Início</a>
         <a href="saude.html">Saúde</a>
         <a href="imc.html">IMC</a>
-        <a href="sono.html">sono</a>
+        <a href="sono.html">Sono</a>
         <a href="checklist.html">Checklist</a>
         <a href="contato.html">Contato</a>
-    </nav>
-</header>
 
-<script>
-function toggleMenu() {
-    const menu = document.getElementById("menuNav");
-    menu.style.right = (menu.style.right === "0px") ? "-100%" : "0";
-}
-</script>
+        <p class="finalMenu">
+            Hábitos Saudáveis © 2026
+        </p>
+
+    </nav>
+
+</header>
