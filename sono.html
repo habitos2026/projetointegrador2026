@@ -9,13 +9,24 @@
 
   <head>
 <body>
+  <menu>
+    
 <h1>A importancia da qualidade do sono</h1>
+    
+  </menu>
   
 
 
 
 
 
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
 
   
   </head>
