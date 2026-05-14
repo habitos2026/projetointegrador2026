@@ -71,7 +71,7 @@ p {
     height: 100%;
     display: block;
     overflow: hidden;
-    aspect-ratio: 16/9;
+    aspect-ratio: 10/9;
 }
 
 .bannerIndex img{
