@@ -98,6 +98,8 @@
 
 <body>
 
+<!-- MENU (não mexe nisso) -->
+<div id="menu"></div>
 
 <section class="intro">
 
@@ -151,9 +153,7 @@ Meta: <span id="pct">0%</span>
 <p id="msg" class="msg"></p>
 
 </div>
-    
-<div id="menu"></div>
-    
+
 <script>
 function calc(){
     let checks = document.querySelectorAll(".habit-item input");
@@ -175,31 +175,13 @@ function calc(){
         document.getElementById("msg").innerText = "";
     }
 }
-    
+</script>
+
 <script>
 fetch("menu.html")
 .then(res => res.text())
 .then(data => {
-
     document.getElementById("menu").innerHTML = data;
-
-    // MENU MOBILE
-    const botaoMenu = document.querySelector(".botaoMenu");
-    const menuNav = document.getElementById("menuNav");
-    const botaoFechar = document.getElementById("botaoFecharMenu");
-
-    if(botaoMenu){
-        botaoMenu.addEventListener("click", () => {
-            menuNav.style.right = "0";
-        });
-    }
-
-    if(botaoFechar){
-        botaoFechar.addEventListener("click", () => {
-            menuNav.style.right = "-100%";
-        });
-    }
-
 });
 </script>
 
