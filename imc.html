@@ -78,8 +78,15 @@ function calcularIMC() {
         "Seu IMC é: " + imc.toFixed(2) + "<br>" +
         "Classificação: " + classificacao;
 }
-    
-<script src="trabalho.js"></script>
+</script>
+
+<script>
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("menu").innerHTML = data;
+});
+</script>
 
 </body>
 </html>
