@@ -45,7 +45,7 @@ function calc() {
     const msg = document.getElementById("msg");
 
     if(porcentagem == 100){
-        msg.innerText = "Parabéns! Você completou todos os hábitos 🎉";
+        msg.innerText = "ParabÃ©ns! VocÃª completou todos os hÃ¡bitos ðŸŽ‰";
     }else{
         msg.innerText = "";
     }
