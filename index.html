@@ -9,7 +9,23 @@
 </head>
 
 <body>
- 
+<div id="menu"></div>
+
+<header>
+<button class="botaoMenu">
+<div></div>
+<div></div>
+<div></div>
+
+</button>
+<nav>
+    <a href="index.html">Início</a>
+    <a href="saude.html">Saúde</a>
+    <a href="checklist.html">Check List</a>
+    <a href="contato.html">Contato</a>
+    <a href="sono.html">Sono</a>
+    </nav>
+</header>
 <main>
 
 <h1>Hábitos Saudáveis e Qualidade de Vida</h1>
@@ -34,6 +50,8 @@ Pequenos passos diários levam a grandes transformações.
 </p>
 
 </main>
+<nav id="menuNav">
+<div class="topoMenu">
 
 <!-- BANNER CONTROLADO (SEM BUGAR O SITE) -->
 <div class="bannerIndex">
@@ -44,19 +62,16 @@ Pequenos passos diários levam a grandes transformações.
         Hábitos Saudáveis © 2026
     </p>
  
- <div id="menu"></div>
- 
 <script src="trabalho.js"></script>
  
 <script>
 fetch("menu.html")
 .then(res => res.text())
 .then(data => {
-
     document.getElementById("menu").innerHTML = data;
+}
 
-    // MENU MOBILE
-    const botaoMenu = document.querySelector(".botaoMenu");
+ const botaoMenu = document.querySelector(".botaoMenu");
     const menuNav = document.getElementById("menuNav");
     const botaoFechar = document.getElementById("botaoFecharMenu");
 
@@ -73,6 +88,7 @@ fetch("menu.html")
     }
 
 });
+
 </script>
 </body>
 </html>
