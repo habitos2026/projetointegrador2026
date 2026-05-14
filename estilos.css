@@ -70,6 +70,7 @@ p {
 .bannerIndex{
     height: 16rem;
     overflow: hidden;
+    aspect-ratio: 16/9;
 }
 
 .bannerIndex img{
