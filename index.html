@@ -67,9 +67,27 @@ Pequenos passos diários levam a grandes transformações.
 fetch("menu.html")
 .then(res => res.text())
 .then(data => {
+
     document.getElementById("menu").innerHTML = data;
+
+    // MENU MOBILE
+    const botaoMenu = document.querySelector(".botaoMenu");
+    const menuNav = document.getElementById("menuNav");
+    const botaoFechar = document.getElementById("botaoFecharMenu");
+
+    if(botaoMenu){
+        botaoMenu.addEventListener("click", () => {
+            menuNav.style.right = "0";
+        });
+    }
+
+    if(botaoFechar){
+        botaoFechar.addEventListener("click", () => {
+            menuNav.style.right = "-100%";
+        });
+    }
+
 });
 </script>
-
 </body>
 </html>
