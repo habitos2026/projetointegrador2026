@@ -88,9 +88,10 @@ p {
 }
 .bannerIndex{
     height: 100%;
-    display: block;
+    display: flex;
     overflow: hidden;
     aspect-ratio: 16/9;
+    justify-content: center;
 }
 
 .bannerIndex img{
@@ -251,4 +252,5 @@ p {
 }
 
 }
+
 
