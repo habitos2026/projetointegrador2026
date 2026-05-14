@@ -1,9 +1,8 @@
 <header>
 
-    <img class="Logo" src="pasta-de-imagens/images.jpg">
+    <img class="Logo" src="pasta-de-imagens/images.jpg" alt="Logo">
 
-    <nav>
-    <button class="botaoMenu">
+    <button class="botaoMenu" id="abrirMenu">
         <div></div>
         <div></div>
         <div></div>
@@ -12,32 +11,26 @@
     <nav id="menuNav">
 
         <div class="topoMenu">
+
             <h3>Menu</h3>
 
-            <button id="botaoFecharMenu">
+            <button id="fecharMenu">
                 ✕
             </button>
+
         </div>
 
         <a href="index.html">Início</a>
         <a href="saude.html">Saúde</a>
         <a href="imc.html">IMC</a>
-        <a href="sono.html">sono</a>
         <a href="sono.html">Sono</a>
         <a href="checklist.html">Checklist</a>
         <a href="contato.html">Contato</a>
 
-        <p class="finalMenu">
+        <p class="textoMenu">
             Hábitos Saudáveis © 2026
         </p>
 
     </nav>
-</header>
 
-<script>
-function toggleMenu() {
-    const menu = document.getElementById("menuNav");
-    menu.style.right = (menu.style.right === "0px") ? "-100%" : "0";
-}
-</script>
 </header>
