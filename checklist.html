@@ -154,36 +154,7 @@ Meta: <span id="pct">0%</span>
 
 </div>
 
-<script>
-function calc(){
-    let checks = document.querySelectorAll(".habit-item input");
-    let total = checks.length;
-    let marcados = 0;
-
-    checks.forEach(c => {
-        if(c.checked) marcados++;
-    });
-
-    let pct = Math.round((marcados / total) * 100);
-
-    document.getElementById("pct").innerText = pct + "%";
-    document.getElementById("bar").style.width = pct + "%";
-
-    if(pct === 100){
-        document.getElementById("msg").innerText = "Parabéns! 🎉";
-    } else {
-        document.getElementById("msg").innerText = "";
-    }
-}
-</script>
-
-<script>
-fetch("menu.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("menu").innerHTML = data;
-});
-</script>
+<script src="trabalho.js"></script>
 
 </body>
 </html>
