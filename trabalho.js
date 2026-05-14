@@ -1,30 +1,19 @@
-//capturar o botão de menu
-const botaoMenu = document.querySelector(".botaoMenu");
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
 
-//capturar o grupo de navegação
-const menu = document.querySelector("header nav");
+    document.getElementById("menu").innerHTML = data;
 
-//se encontrou o botão de menu
-if(botaoMenu){
-    //atribuir uma sondagem para o clique no botão
-    botaoMenu.addEventListener("click", abrirMenu);
-}
+    const abrir = document.getElementById("abrirMenu");
+    const fechar = document.getElementById("fecharMenu");
+    const menu = document.getElementById("menuNav");
 
-//função de abrir menu
-function abrirMenu(){
-    menu.style.right = "0";
-}
+    abrir.addEventListener("click", () => {
+        menu.style.right = "0";
+    });
 
-//capturar o botao de fechar menu
-const botaoFecharMenu = document.querySelector("#botaoFecharMenu");
+    fechar.addEventListener("click", () => {
+        menu.style.right = "-100%";
+    });
 
-//se o botao de fechar menu foi encontrado
-if(botaoFecharMenu){
-    botaoFecharMenu.addEventListener("click", fecharMenu);
-}
-
-//função de fechar o menu
-function fecharMenu(){
-    //voltar a propriedade right do css para 100%
-    menu.style.right = "-100%";
-}
+});
