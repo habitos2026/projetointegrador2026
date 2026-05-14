@@ -68,11 +68,15 @@ p {
     padding: 10px;
 }
 .bannerIndexInicio{
-    
+    height: 16rem;
+    overflow: hidden;
 }
 
 .bannerIndexInicio img{
-    
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*fixar a tela, para não esticar*/
 }
 .bannerIndex{
     height: 100%;
