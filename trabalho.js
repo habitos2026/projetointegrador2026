@@ -1,28 +1,35 @@
-fetch("menu.html")
-.then(res => res.text())
-.then(data => {
+//capturar o botão de menu
+const botaoMenu = document.querySelector(".botaoMenu");
 
-    document.getElementById("menu").innerHTML = data;
+//capturar o grupo de navegação
+const menu = document.querySelector("header nav");
 
-    const abrir = document.getElementById("abrirMenu");
-    const fechar = document.getElementById("fecharMenu");
-    const menu = document.getElementById("menuNav");
+//se encontrou o botão de menu
+if(botaoMenu){
 
-    abrir.addEventListener("click", () => {
+    botaoMenu.addEventListener("click", abrirMenu);
+}
+
+//função de abrir menu
+function abrirMenu(){
 
     menu.style.right = "0";
+}
 
-    abrir.classList.add("ativo");
+//capturar o botao de fechar menu
+const botaoFecharMenu = document.querySelector("#botaoFecharMenu");
 
-});
+//se o botao de fechar menu foi encontrado
+if(botaoFecharMenu){
 
-fechar.addEventListener("click", () => {
+    botaoFecharMenu.addEventListener("click", fecharMenu);
+}
+
+//função de fechar o menu
+function fecharMenu(){
 
     menu.style.right = "-100%";
-
-    abrir.classList.remove("ativo");
-
-});
+}
 
 function calc() {
 
