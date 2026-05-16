@@ -7,232 +7,267 @@
 }
 
 /* RESET */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-body {
+body{
     background: #f5f7fb;
     color: #1f2937;
 }
 
-/* IMAGENS SEGURAS */
-img {
+/* IMAGENS */
+img{
     max-width: 100%;
     height: auto;
 }
 
-/* MENU */
-header {
+/* HEADER */
+header{
     background: white;
     height: 70px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 6%;
+
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.Logo {
+/* LOGO */
+.logo{
     height: 40px;
 }
+
+/* MENU DESKTOP */
 nav{
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-nav a {
-    margin-left: 20px;
+nav a{
     text-decoration: none;
     color: #374151;
+    transition: 0.3s;
 }
 
-nav a:hover {
+nav a:hover{
     color: #0f766e;
 }
 
-/* CONTEÚDO */
-main {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+/* ESCONDE TOPO MENU NO PC */
+.topoMenu{
+    display: none;
 }
 
-h1 {
-    color: #0f766e;
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 15px;
-}
-
-/* IMC */
-.imc-box input,
-.imc-box button {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-.bannerIndexInicio{
-    height: 16rem;
-    overflow: hidden;
-}
-
-.bannerIndexInicio img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /*fixar a tela, para não esticar*/
-}
-.bannerIndex{
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-    justify-content: center;
-}
-
-.bannerIndex img{
-    width: 70%;
-    height: 80%;
-    object-fit: cover;
-}
-
-
-.imc-box {
-    margin-top: 20px;
-    padding: 20px;
-    background: #ecfeff;
-    border-radius: 10px;
-}
-
-.imc-box input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-.imc-box button {
-    width: 100%;
-    padding: 12px;
-    background: #0f766e;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.imc-box button:hover {
-    background: #115e59;
-}
-
-#resultado {
-    margin-top: 15px;
-    font-weight: bold;
-}
+/* BOTÃO MENU */
 .botaoMenu{
     border: none;
-    background-color: transparent;
+    background: transparent;
+
     display: none;
     flex-direction: column;
+
     gap: 6px;
+
     cursor: pointer;
 }
 
 .botaoMenu div{
-    width: 1.8rem;
-    height: 2px;
-    background-color: black;
-    transition: background 0.5s;
+    width: 28px;
+    height: 3px;
+
+    background: black;
+
+    transition: 0.3s;
 }
 
 .botaoMenu:hover div{
-    background-color: var(--amarelo);
+    background: var(--amarelo);
 }
+
+/* MAIN */
+main{
+    max-width: 800px;
+
+    margin: 40px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+h1{
+    color: #0f766e;
+    margin-bottom: 10px;
+}
+
+p{
+    margin-bottom: 15px;
+}
+
+/* BANNER */
+.bannerIndex{
+    width: 100%;
+    overflow: hidden;
+}
+
+.bannerIndex img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* IMC */
+.imc-box{
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: #ecfeff;
+
+    border-radius: 10px;
+}
+
+.imc-box input{
+    width: 100%;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+}
+
+.imc-box button{
+    width: 100%;
+
+    padding: 12px;
+
+    background: #0f766e;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.imc-box button:hover{
+    background: #115e59;
+}
+
+#resultado{
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* CALCULADORA DE ÁGUA */
 .agua-box{
-    background:#ecfeff;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
+    background: #ecfeff;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
 }
 
 .agua-box h2{
-    color:#0f766e;
-    margin-bottom:10px;
+    color: #0f766e;
+    margin-bottom: 10px;
 }
 
 .agua-box input{
-    width:100%;
-    padding:10px;
-    margin-bottom:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
+    width: 100%;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
 }
 
 .agua-box button{
-    width:100%;
-    padding:12px;
-    background:#0f766e;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+    width: 100%;
+
+    padding: 12px;
+
+    background: #0f766e;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
 }
 
 .agua-box button:hover{
-    background:#115e59;
+    background: #115e59;
 }
 
 #resultadoAgua{
-    margin-top:10px;
-    font-weight:bold;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
+/* RESPONSIVO */
 @media screen and (max-width: 950px){
 
-    header nav{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        right: -100%;
-        background-color: var(--cinza245);
-        transition: right 0.5s;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 3rem;
-    }
-
-    header nav a{
-        color: var(--cinza128);
-        width: 100%;
-        border-bottom: 1px solid var(--cinza220);
-        padding-top: 0.5rem;
-    }
-
-    header nav a:hover{
-        color: var(--azul);
-    }
-
+    /* BOTÃO MENU APARECE */
     .botaoMenu{
         display: flex;
     }
 
-    header nav .topoMenu{
+    /* MENU MOBILE */
+    header nav{
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+
+        width: 80%;
+        height: 100vh;
+
+        background: white;
+
         display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 30px;
+
+        transition: 0.5s;
+
+        z-index: 999;
+    }
+
+    /* TOPO MENU */
+    .topoMenu{
+        display: flex;
+
         align-items: center;
         justify-content: space-between;
+
         width: 100%;
-        margin-bottom: 1rem;
+
+        margin-bottom: 30px;
     }
 
     .topoMenu h3{
@@ -241,19 +276,38 @@ p {
 
     .topoMenu button{
         border: none;
-        background-color: transparent;
-        color: var(--azul);
+
+        background: transparent;
+
+        font-size: 20px;
+
         cursor: pointer;
+
+        color: var(--azul);
     }
 
-    .finalMenu{
-        display:block;
-        margin-top: 1.5rem;
-        color:var(--cinza128);
+    /* LINKS */
+    header nav a{
+        width: 100%;
+
+        padding: 12px 0;
+
+        border-bottom: 1px solid var(--cinza220);
+
+        color: var(--cinza128);
     }
 
-    .bannerIndex{
-    height: 35rem;
-}
+    header nav a:hover{
+        color: var(--azul);
+    }
 
+    /* MAIN */
+    main{
+        margin: 20px;
+    }
+
+    /* BANNER */
+    .bannerIndex img{
+        height: 250px;
+    }
 }
