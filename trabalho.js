@@ -57,3 +57,16 @@ function calc() {
         msg.innerText = "";
     }
 }
+// CALCULAR ÁGUA
+function calcularAgua(){
+
+    const peso = document.getElementById("peso").value;
+
+    const agua = peso * 35;
+
+    const litros = agua / 1000;
+
+    document.getElementById("resultadoAgua").innerText =
+    "Você deve beber " + litros.toFixed(2) + "L de água por dia.";
+
+}
