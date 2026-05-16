@@ -39,6 +39,11 @@ header {
 .Logo {
     height: 40px;
 }
+nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 nav a {
     margin-left: 20px;
