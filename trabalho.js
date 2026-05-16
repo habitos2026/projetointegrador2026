@@ -1,35 +1,41 @@
-//capturar o botão de menu
-const botaoMenu = document.querySelector(".botaoMenu");
+fetch("menu.html")
+.then(res => res.text())
+.then(data => {
 
-//capturar o grupo de navegação
-const menu = document.querySelector("header nav");
+    document.getElementById("menu").innerHTML = data;
 
-//se encontrou o botão de menu
-if(botaoMenu){
+    //capturar o botão de menu
+    const botaoMenu = document.querySelector(".botaoMenu");
 
-    botaoMenu.addEventListener("click", abrirMenu);
-}
+    //capturar o grupo de navegação
+    const menu = document.querySelector("header nav");
 
-//função de abrir menu
-function abrirMenu(){
+    //capturar botão fechar
+    const botaoFecharMenu = document.querySelector("#botaoFecharMenu");
 
-    menu.style.right = "0";
-}
+    //abrir menu
+    if(botaoMenu){
 
-//capturar o botao de fechar menu
-const botaoFecharMenu = document.querySelector("#botaoFecharMenu");
+        botaoMenu.addEventListener("click", () => {
 
-//se o botao de fechar menu foi encontrado
-if(botaoFecharMenu){
+            menu.style.right = "0";
 
-    botaoFecharMenu.addEventListener("click", fecharMenu);
-}
+        });
 
-//função de fechar o menu
-function fecharMenu(){
+    }
 
-    menu.style.right = "-100%";
-}
+    //fechar menu
+    if(botaoFecharMenu){
+
+        botaoFecharMenu.addEventListener("click", () => {
+
+            menu.style.right = "-100%";
+
+        });
+
+    }
+
+});
 
 function calc() {
 
