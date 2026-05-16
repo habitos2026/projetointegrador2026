@@ -4,39 +4,27 @@ fetch("menu.html")
 
     document.getElementById("menu").innerHTML = data;
 
-    //capturar o botão de menu
     const botaoMenu = document.querySelector(".botaoMenu");
 
-    //capturar o grupo de navegação
-    const menu = document.querySelector("header nav");
+    const menu = document.querySelector("nav");
 
-    //capturar botão fechar
     const botaoFecharMenu = document.querySelector("#botaoFecharMenu");
 
-    //abrir menu
-    if(botaoMenu){
+    // ABRIR MENU
+    botaoMenu.addEventListener("click", () => {
 
-        botaoMenu.addEventListener("click", () => {
+        menu.style.right = "0";
 
-            menu.style.right = "0";
+    });
 
-        });
+    // FECHAR MENU
+    botaoFecharMenu.addEventListener("click", () => {
 
-    }
+        menu.style.right = "-100%";
 
-    //fechar menu
-    if(botaoFecharMenu){
-
-        botaoFecharMenu.addEventListener("click", () => {
-
-            menu.style.right = "-100%";
-
-        });
-
-    }
+    });
 
 });
-
 function calc() {
 
     // pega todos os checkbox
