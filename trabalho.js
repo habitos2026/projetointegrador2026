@@ -9,12 +9,18 @@ fetch("menu.html")
     const menu = document.getElementById("menuNav");
 
     abrir.addEventListener("click", () => {
-        menu.style.right = "0";
-    });
 
-    fechar.addEventListener("click", () => {
-        menu.style.right = "-100%";
-    });
+    menu.style.right = "0";
+
+    abrir.classList.add("ativo");
+
+});
+
+fechar.addEventListener("click", () => {
+
+    menu.style.right = "-100%";
+
+    abrir.classList.remove("ativo");
 
 });
 
