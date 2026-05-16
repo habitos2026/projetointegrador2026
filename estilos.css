@@ -105,15 +105,16 @@ p{
 }
 
 .bannerIndexInicio{
-    height: 16rem;
+    width: 100%;
+    height: 300px;
     overflow: hidden;
 }
 
 .bannerIndexInicio img{
-    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; /*fixar a tela, para não esticar*/
+    object-fit: cover;
+    display: block;
 }
 
 /* BANNER */
