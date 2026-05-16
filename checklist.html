@@ -98,99 +98,81 @@
 
 <body>
 
-<!-- MENU (não mexe nisso) -->
 <div id="menu"></div>
 
 <section class="intro">
 
-<h1>Checklist de Hábitos Saudáveis</h1>
+    <h1>Checklist de Hábitos Saudáveis</h1>
 
-<p>
-Manter hábitos saudáveis é uma das formas mais simples e eficientes de melhorar sua qualidade de vida. Pequenas ações feitas diariamente têm um impacto enorme no seu bem-estar físico e mental.
-</p>
-
-<p>
-A ideia deste checklist é ajudar você a acompanhar sua rotina, criando consistência. Quando você transforma ações em hábitos, elas deixam de ser difíceis e passam a fazer parte do seu dia naturalmente.
-</p>
-
-<p>
-Use a lista abaixo para marcar o que você já realizou hoje e acompanhar sua evolução ao longo do tempo.
-</p>
+    <p>
+        Use a lista abaixo para acompanhar seus hábitos.
+    </p>
 
 </section>
 
+<!-- CALCULADORA DE ÁGUA -->
+<div class="agua-box">
+
+    <h2>💧 Calculadora de Água</h2>
+
+    <input type="number" id="peso" placeholder="Digite seu peso">
+
+    <button onclick="calcularAgua()">
+        Calcular
+    </button>
+
+    <p id="resultadoAgua"></p>
+
+</div>
+
+<!-- DATA -->
 <input type="date">
 
+<!-- PROGRESSO -->
 <div class="progresso">
-Meta: <span id="pct">0%</span>
+    Meta: <span id="pct">0%</span>
 </div>
 
 <div class="barra">
-<span id="bar"></span>
+    <span id="bar"></span>
 </div>
 
-<!-- ITENS -->
+<!-- CHECKLIST -->
+
 <label class="habit-item">
-<input type="checkbox" onchange="calc()">
-<span>💧 Bebi 2L de água</span>
+    <input type="checkbox" onchange="calc()">
+    <span>💧 Bebi 2L de água</span>
 </label>
 
 <label class="habit-item">
-<input type="checkbox" onchange="calc()">
-<span>🧘 Meditei</span>
+    <input type="checkbox" onchange="calc()">
+    <span>🧘 Meditei</span>
 </label>
 
 <label class="habit-item">
-<input type="checkbox" onchange="calc()">
-<span>🍎 Comi uma fruta</span>
+    <input type="checkbox" onchange="calc()">
+    <span>🍎 Comi uma fruta</span>
 </label>
 
 <label class="habit-item">
-<input type="checkbox" onchange="calc()">
-<span>🥗 Comi saudável</span>
+    <input type="checkbox" onchange="calc()">
+    <span>🥗 Comi saudável</span>
 </label>
 
 <label class="habit-item">
-<input type="checkbox" onchange="calc()">
-<span>🏋️‍♀️ Academia</span>
+    <input type="checkbox" onchange="calc()">
+    <span>🛌 Dormi mais de 8h</span>
 </label>
-    
+
+<label class="habit-item">
+    <input type="checkbox" onchange="calc()">
+    <span>🏋️‍♂️ Fiz exercícios</span>
+</label>
+
 <p id="msg" class="msg"></p>
 
-
 <script src="trabalho.js"></script>
-    
-<script>
 
-function calc() {
-
-    const checks = document.querySelectorAll('.habit-item input');
-
-    let marcados = 0;
-
-    checks.forEach(check => {
-        if(check.checked){
-            marcados++;
-        }
-    });
-
-    let porcentagem = (marcados / checks.length) * 100;
-
-    document.getElementById("pct").innerText = porcentagem + "%";
-
-    document.getElementById("bar").style.width = porcentagem + "%";
-
-    const msg = document.getElementById("msg");
-
-    if(porcentagem == 100){
-        msg.innerText = "Parabéns! Você completou tudo 🎉";
-    } else {
-        msg.innerText = "";
-    }
-}
-
-</script>
-    
 </body>
 </html>
 
