@@ -9,8 +9,10 @@ HTML CSS JavaScript
 - [Gabriel](https://github.com/Gabriel-HenriqueSS)
 - [Glaucia](https://github.com/glauciatauama-fatec2026)
 
+
 📄 Licença
 Este projeto está sob licença MIT.
+
 
 ## Descrição
 O objetivo principal é conseguir ajudar, por meio desse projeto, à manter um hábito consistente e saudável, para um bem estar físico, mental e social.
