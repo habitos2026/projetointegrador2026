@@ -48,4 +48,4 @@ Este projeto está sob licença MIT.
 
 ## Imagem Principal
 
-![Imagem do Projeto](pasta-de-imagens/suaimagem.png)
+![Imagem do Projeto](pasta-de-imagens/imagem.webp.webp)
