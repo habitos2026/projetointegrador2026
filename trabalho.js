@@ -52,7 +52,7 @@ function calc() {
     const msg = document.getElementById("msg");
 
     if(porcentagem == 100){
-        msg.innerText = "ParabÃ©ns! VocÃª completou todos os hÃ¡bitos ðŸŽ‰";
+        msg.innerText = "Parabens! Você completou todos os haibitos diários🎉;
     }else{
         msg.innerText = "";
     }
