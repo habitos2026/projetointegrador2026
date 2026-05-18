@@ -9,4 +9,5 @@ Hábitos Saudáveis
 ## Descrição
 O objetivo principal é conseguir ajudar, por meio desse projeto, à manter um hábito consistente e saudável, para um bem estar físico, mental e social.
 
-![Image alt](https://github.com/habitos2026/projetointegrador2026/blob/bff01f1c33a1f18a592e06e8f04c02c48848954b/pasta-de-imagens/imagem.webp.webp]
+## 📷 Imagem Principal do Projeto
+![Imagem](https://github.com/habitos2026/projetointegrador2026/blob/bff01f1c33a1f18a592e06e8f04c02c48848954b/pasta-de-imagens/imagem.webp.webp)
