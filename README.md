@@ -1,6 +1,9 @@
 # Projeto - Diário de Hábitos Saudáveis
 Hábitos Saudáveis
 
+## Tecnologias
+HTML CSS JavaScript
+
 ## Autores
 - [Adriano](https://github.com/adrianoirano)
 - [Gabriel](https://github.com/Gabriel-HenriqueSS)
