@@ -1,21 +1,51 @@
 # Projeto - Diário de Hábitos Saudáveis
-Hábitos Saudáveis
+
+## Objetivo
+
+O objetivo principal é ajudar o usuário a manter hábitos saudáveis e melhorar o bem-estar físico, mental e social.
+
+---
+
+## Estrutura do Projeto
+
+```bash
+pasta-de-imagens/
+README.md
+index.html
+estilos.css
+trabalho.js
+menu.html
+contato.html
+sono.html
+saude.html
+imc.html
+checklist.html
+```
+
+---
 
 ## Tecnologias
-HTML CSS JavaScript
+
+- HTML5
+- CSS3
+- JavaScript
+
+---
 
 ## Autores
-- [Adriano](https://github.com/adrianoirano)
-- [Gabriel](https://github.com/Gabriel-HenriqueSS)
-- [Glaucia](https://github.com/glauciatauama-fatec2026)
 
+- Adriano
+- Gabriel
+- Glaucia
 
-📄 Licença
+---
+
+## Licença
+
 Este projeto está sob licença MIT.
 
+---
 
-## Descrição
-O objetivo principal é conseguir ajudar, por meio desse projeto, à manter um hábito consistente e saudável, para um bem estar físico, mental e social.
+## Imagem Principal
 
-## 📷 Imagem Principal
-![Imagem](https://github.com/habitos2026/projetointegrador2026/blob/bff01f1c33a1f18a592e06e8f04c02c48848954b/pasta-de-imagens/imagem.webp.webp)
+![Imagem do Projeto](pasta-de-imagens/suaimagem.png)
