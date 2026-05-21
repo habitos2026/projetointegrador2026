@@ -4,27 +4,20 @@ fetch("menu.html")
 
     document.getElementById("menu").innerHTML = data;
 
-    const botaoMenu = document.querySelector(".botaoMenu");
+    const abrir = document.getElementById("abrirMenu");
+    const fechar = document.getElementById("fecharMenu");
+    const menu = document.getElementById("menuNav");
 
-    const menu = document.querySelector("nav");
-
-    const botaoFecharMenu = document.querySelector("#botaoFecharMenu");
-
-    // ABRIR MENU
-    botaoMenu.addEventListener("click", () => {
-
+    abrir.addEventListener("click", () => {
         menu.style.right = "0";
-
     });
 
-    // FECHAR MENU
-    botaoFecharMenu.addEventListener("click", () => {
-
+    fechar.addEventListener("click", () => {
         menu.style.right = "-100%";
-
     });
 
 });
+
 function calc() {
 
     // pega todos os checkbox
@@ -52,15 +45,11 @@ function calc() {
     const msg = document.getElementById("msg");
 
     if(porcentagem == 100){
-        msg.innerText = "Parabens! Você completou todos os haibitos diários🎉;
+        msg.innerText = "Parabéns! Você completou todos os hábitos 🎉";
     }else{
         msg.innerText = "";
     }
-}
-// CALCULAR ÁGUA
-function calcularAgua(){
-
-    const peso = document.getElementById("peso").value;
+}    const peso = document.getElementById("peso").value;
 
     const agua = peso * 35;
 
