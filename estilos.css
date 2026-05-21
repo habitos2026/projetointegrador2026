@@ -409,3 +409,10 @@ p{
         height:220px;
     }
 }
+
+.Saude .Imagem img{
+width: 35%;
+height: 35%;
+object-fit: cover;
+
+}
