@@ -175,6 +175,8 @@ p{
 
     .botaoMenu{
         display:flex;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: subir 0.6s ease;
     }
 
     nav{
