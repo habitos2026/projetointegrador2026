@@ -175,6 +175,179 @@ p{
 
     .botaoMenu{
         display:flex;
+    }
+
+    nav{
+        position:fixed;
+
+        top:0;
+        right:-100%;
+
+        width:80%;
+        height:100vh;
+
+        background:white;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        padding:30px;
+
+        transition:0.5s;
+
+        z-index:999;
+    }
+
+    .topoMenu{
+        display:flex;
+
+        width:100%;
+
+        justify-content:space-between;
+        align-items:center;
+
+        margin-bottom:30px;
+    }
+
+    .topoMenu button{
+        border:none;
+        background:transparent;
+
+        font-size:20px;
+
+        cursor:pointer;
+    }
+
+    nav a{
+        width:100%;
+
+        padding:12px 0;
+
+        border-bottom:1px solid var(--cinza220);
+    }
+
+    main{
+        margin:20px;
+    }
+
+    .bannerIndex img{
+        height:220px;
+    }
+}
+/* BOTÃO MENU */
+.botaoMenu{
+    border:none;
+    background:transparent;
+
+    display:none;
+    flex-direction:column;
+
+    gap:6px;
+
+    cursor:pointer;
+}
+
+.botaoMenu div{
+    width:28px;
+    height:3px;
+
+    background:black;
+}
+
+/* MAIN */
+main{
+    max-width:800px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+}
+
+/* TEXTO */
+h1{
+    color:#0f766e;
+    margin-bottom:10px;
+}
+
+p{
+    margin-bottom:15px;
+}
+
+.bannerIndexInicio{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.bannerIndexInicio img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bannerIndex{
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    justify-content: center;
+}
+
+.bannerIndex img{
+    width: 70%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.agua-box{
+    background:#ecfeff;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.agua-box h2{
+    color:#0f766e;
+    margin-bottom:10px;
+}
+
+.agua-box input{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.agua-box button{
+    width:100%;
+    padding:12px;
+    background:#0f766e;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.agua-box button:hover{
+    background:#115e59;
+}
+
+#resultadoAgua{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* MOBILE */
+@media screen and (max-width:950px){
+
+    .botaoMenu{
+        display:flex;
         box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     animation: subir 0.6s ease;
     }
