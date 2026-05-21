@@ -4,20 +4,27 @@ fetch("menu.html")
 
     document.getElementById("menu").innerHTML = data;
 
-    const abrir = document.getElementById("abrirMenu");
-    const fechar = document.getElementById("fecharMenu");
-    const menu = document.getElementById("menuNav");
+    const botaoMenu = document.querySelector(".botaoMenu");
 
-    abrir.addEventListener("click", () => {
+    const menu = document.querySelector("nav");
+
+    const botaoFecharMenu = document.querySelector("#botaoFecharMenu");
+
+    // ABRIR MENU
+    botaoMenu.addEventListener("click", () => {
+
         menu.style.right = "0";
+
     });
 
-    fechar.addEventListener("click", () => {
+    // FECHAR MENU
+    botaoFecharMenu.addEventListener("click", () => {
+
         menu.style.right = "-100%";
+
     });
 
 });
-
 function calc() {
 
     // pega todos os checkbox
@@ -45,8 +52,21 @@ function calc() {
     const msg = document.getElementById("msg");
 
     if(porcentagem == 100){
-        msg.innerText = "Parabéns! Você completou todos os hábitos 🎉";
+        msg.innerText = "Parabens! Você completou todos os haibitos diários🎉;
     }else{
         msg.innerText = "";
     }
+}
+// CALCULAR ÁGUA
+function calcularAgua(){
+
+    const peso = document.getElementById("peso").value;
+
+    const agua = peso * 35;
+
+    const litros = agua / 1000;
+
+    document.getElementById("resultadoAgua").innerText =
+    "Você deve beber " + litros.toFixed(2) + "L de água por dia.";
+
 }
