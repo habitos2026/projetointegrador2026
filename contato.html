@@ -1,126 +1,61 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contato</title>
+<!-- O Formulário -->
+<form id="meuFormulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="name" required>
 
-<link rel="stylesheet" href="estilos.css">
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
 
-<style>
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="message" required></textarea>
 
-/* ÁREA SÓ DO CONTATO */
-.contato-page {
-    background: linear-gradient(135deg, #0f766e, #38bdf8);
-    min-height: 100vh;
-    padding: 40px 10px;
-}
+    <button type="submit" id="botaoEnviar">Enviar Mensagem</button>
+</form>
 
-/* CARD */
-.contato-box {
-    max-width: 500px;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    animation: subir 0.6s ease;
-}
+<!-- Espaço onde a mensagem de sucesso ou erro vai aparecer -->
+<div id="statusMensagem" style="margin-top: 15px; font-weight: bold;"></div>
 
-/* ANIMAÇÃO */
-@keyframes subir {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+<!-- Código JavaScript para processar o envio na mesma tela -->
+<script>
+document.getElementById('meuFormulario').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede a página de recarregar
 
-.contato-box h1 {
-    text-align: center;
-    color: #0f766e;
-    margin-bottom: 20px;
-}
+    const form = e.target;
+    const botao = document.getElementById('botaoEnviar');
+    const status = document.getElementById('statusMensagem');
 
-/* FORM */
-.contato-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+    // Avisa o usuário que está enviando e desativa o botão
+    botao.disabled = true;
+    status.style.color = "blue";
+    status.innerText = "Enviando...";
 
-.contato-form input,
-.contato-form textarea {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #cbd5e1;
-    outline: none;
-    transition: 0.3s;
-    font-size: 1rem;
-}
+    // Captura os dados do formulário
+    const formData = new FormData(form);
 
-.contato-form input:focus,
-.contato-form textarea:focus {
-    border-color: #0f766e;
-    box-shadow: 0 0 8px rgba(15,118,110,0.3);
-}
-
-/* BOTÃO */
-.contato-form button {
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: #0f766e;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.contato-form button:hover {
-    background: #115e59;
-    transform: scale(1.03);
-}
-
-/* TEXTO */
-.info {
-    text-align: center;
-    margin-top: 15px;
-    color: #64748b;
-    font-size: 0.9rem;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div id="menu"></div>
-
-<div class="contato-page">
-
-    <div class="contato-box">
-        <h1>Fale com a gente 💬</h1>
-
-        <form class= method="post">
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu email" required>
-            <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
-            <button type="submit">Enviar mensagem</button>
-        </form>
-
-        <div class="info">
-            Respondemos o mais rápido possível 🚀
-        </div>
-    </div>
-
-</div>
-
-<script src="trabalho.js"></script>
-
-</body>
-</html>
+    // Envia os dados para o FormSubmit em segundo plano (mude para o seu e-mail)
+    fetch("habitos.fatec@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            status.style.color = "green";
+            status.innerText = "Mensagem enviada com sucesso!";
+            form.reset(); // Limpa os campos do formulário
+        } else {
+            status.style.color = "red";
+            status.innerText = "Ops! Ocorreu um erro ao enviar.";
+        }
+    })
+    .catch(error => {
+        status.style.color = "red";
+        status.innerText = "Erro de conexão com o servidor.";
+    })
+    .finally(() => {
+        botao.disabled = false; // Reativa o botão
+    });
+});
+</script>
