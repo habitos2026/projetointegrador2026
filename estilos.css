@@ -306,7 +306,7 @@ p{
 
     background:transparent;
 
-    box-shadow: 2px 8px 15px rgba(0,0,0,0.4);
+    box-shadow: none;
 
     font-size:20px;
 
@@ -320,8 +320,7 @@ p{
 
 
 #botaoFecharMenu:hover{
-    color:#ff0000;
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.6);
 }
 
 #botaoFecharMenu:active{
