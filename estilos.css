@@ -275,9 +275,14 @@ p{
     transition:0.5s;
 }
 
-#resultadoIMC{
+#resultado{
     margin-top:20px;
-
+    font-weight:bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
 
 }
 
