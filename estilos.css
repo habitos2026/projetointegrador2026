@@ -165,7 +165,7 @@ p{
 .agua-box button:hover{
     background:#115e59;
     transform: scale(1.01);
-    box-shadow: 0 20 20px rgba(0, 255, 170, 0.4);
+    box-shadow: 0 0 10px rgb(0, 253, 169);
 }
 
 #resultadoAgua{
