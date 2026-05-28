@@ -50,9 +50,9 @@ const gif = document.getElementById("gif");
 
 if(porcentagem === 100){ 
     msg.innerText = "Parabéns! Você completou todos os hábitos 🎉"; 
-    gif.setAttribute = "src", "pasta-de-imagens/gifParabens.gif"; 
+    gif.setAttribute("src", "pasta-de-imagens/gifParabens.gif?t=" + new Date().getTime());
 } else { 
     msg.innerText = ""; 
-    gif.setAttribute = "src", ""; 
+    gif.setAttribute("src", ""); 
 }
 }
