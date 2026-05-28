@@ -43,12 +43,16 @@ function calc() {
     // atualiza barra
     document.getElementById("bar").style.width = porcentagem + "%";
 
-    // mensagem
-    const msg = document.getElementById("msg");
 
-    if(porcentagem == 100){
-        msg.innerText = "Parabéns! Você completou todos os hábitos 🎉";
-    }else{
-        msg.innerText = "";
-    }
+    // mensagem
+const msg = document.getElementById("msg"); 
+const gif = document.getElementById("gif"); 
+
+if(porcentagem === 100){ 
+    msg.innerText = "Parabéns! Você completou todos os hábitos 🎉"; 
+    gif.setAttribute("src", "pasta-de-imagens/gifParabens.gif?t=" + new Date().getTime());
+} else { 
+    msg.innerText = ""; 
+    gif.setAttribute("src", ""); 
+}
 }
