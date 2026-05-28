@@ -159,10 +159,12 @@ p{
     border:none;
     border-radius:8px;
     cursor:pointer;
+    transition: 0.5s;
 }
 
 .agua-box button:hover{
     background:#115e59;
+    transform: scale(1.01);
 }
 
 #resultadoAgua{
