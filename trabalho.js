@@ -47,12 +47,23 @@ function calc() {
     // mensagem
 const msg = document.getElementById("msg"); 
 const gif = document.getElementById("gif"); 
+const imgGif = document.createElement('img');
 
 if(porcentagem === 100){ 
     msg.innerText = "Parabéns! Você completou todos os hábitos 🎉"; 
+<<<<<<< HEAD
     gif.setAttribute("src", "pasta-de-imagens/gifParabens.gif?t=" + new Date().getTime());
 } else { 
     msg.innerText = ""; 
     gif.setAttribute("src", ""); 
+=======
+    imgGif.src = 'pasta-de-imagens/gifParabens.gif';
+    imgGif.alt = 'Comemoração';
+    imgGif.style.width = '100px';
+    imgGif.style.marginLeft = '10px';
+} else { 
+    msg.innerText = ""; 
+    container.insertAdjacentElement('afterend', imgGif);
+>>>>>>> e2d112cea11205363ae63a62c3775d1987cd4fbf
 }
 }
