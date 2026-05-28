@@ -324,7 +324,7 @@ p{
     box-shadow: 0 0 10px red;
 }
 
-#fecharMenu:active {
+#botaoFecharMenu:active{
   animation: clickEffect 0.2s ease;
 }
 
