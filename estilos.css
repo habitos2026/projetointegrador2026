@@ -257,7 +257,7 @@ p{
         animation:subir 0.6s ease;
     }
 
-    .botaoMenu .div :hover{
+    .botaoMenu:hover{
         transform: scale(1.05);
         box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
