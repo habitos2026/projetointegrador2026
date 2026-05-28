@@ -189,8 +189,8 @@ p{
     transform:scale(1.01);
 
     box-shadow: 
-    0 0 10px rgb(0, 253, 169),
-    0 0 20px rgb(0, 253, 169);
+    0 0 10px rgb(1, 255, 234),
+    0 0 15px rgb(0, 173, 253);
 }
 
 #resultadoAgua{
