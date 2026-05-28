@@ -235,6 +235,19 @@ p{
     0 0 40px cyan;
 }
 
+.imc-box{
+    background:#fef3c7;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+
+}
+
+
 /* ANIMAÇÃO */
 @keyframes subir{
 
