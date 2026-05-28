@@ -306,13 +306,15 @@ p{
 
     background:transparent;
 
-    box-shadow: none;
+    box-shadow: 2px 8px 15px rgba(0,0,0,0.4);
 
     font-size:20px;
 
     cursor:pointer;
 
     transition: 0.5s;
+
+    border-radius: 100px;
 
 }
 
