@@ -4,9 +4,9 @@ fetch("menu.html")
 
     document.getElementById("menu").innerHTML = data;
 
-    const abrir = document.getElementById("abrirMenu");
-    const fechar = document.getElementById("fecharMenu");
-    const menu = document.getElementById("menuNav");
+    const abrir = document.querySelector("abrirMenu");
+    const fechar = document.querySelector("fecharMenu");
+    const menu = document.querySelector("menuNav");
 
     abrir.addEventListener("click", () => {
         menu.style.right = "0";
