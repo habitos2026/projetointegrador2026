@@ -7,6 +7,67 @@
 
 <link rel="stylesheet" href="estilos.css">
 
+<style>
+          :root {
+            --cor-mente: #6a89cc;    /* Azul sereno */
+            --cor-fisico: #38ada9;   /* Verde energia */
+            --cor-agua: #4a69bd;     /* Azul hidratação */
+            --cor-fundo: #f7f9fc;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: var(--cor-fundo);
+            color: #2f3542;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            color: var(--cor-mente);
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--cor-fisico);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            color: var(--cor-fisico);
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+</style>
+
   <head>
 <body>
 <menu>
