@@ -240,7 +240,7 @@ p{
 
     padding:20px;
 
-    border-radius:15px;
+    border-radius:20px;
 
     margin-top:3rem;
 
@@ -249,10 +249,38 @@ p{
 
 .imc-box input{
     width:100%;
+
     padding:10px;
+
     margin-bottom:10px;
+
     border-radius:8px;
+
     border:1px solid #ccc;
+}
+
+.imc-box button{
+    width:100%;
+
+    padding:12px;
+
+    background: white;
+
+    border: none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:0.5s;
+}
+
+#resultadoIMC{
+    margin-top:10px;
+    font-weight:bold;
+    gap: 10px;
+    
+
 }
 
 
