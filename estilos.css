@@ -72,6 +72,7 @@ nav a:hover{
     gap:6px;
 
     cursor:pointer;
+    transition:0.5s;
 }
 
 .botaoMenu div{
@@ -79,6 +80,7 @@ nav a:hover{
     height:3px;
 
     background:black;
+    transition:0.5s;
 }
 
 /* MAIN */
