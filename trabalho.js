@@ -51,12 +51,6 @@ const imgGif = document.createElement('img');
 
 if(porcentagem === 100){ 
     msg.innerText = "Parabéns! Você completou todos os hábitos 🎉"; 
-<<<<<<< HEAD
-    gif.setAttribute("src", "pasta-de-imagens/gifParabens.gif?t=" + new Date().getTime());
-} else { 
-    msg.innerText = ""; 
-    gif.setAttribute("src", ""); 
-=======
     imgGif.src = 'pasta-de-imagens/gifParabens.gif';
     imgGif.alt = 'Comemoração';
     imgGif.style.width = '100px';
@@ -64,6 +58,5 @@ if(porcentagem === 100){
 } else { 
     msg.innerText = ""; 
     container.insertAdjacentElement('afterend', imgGif);
->>>>>>> e2d112cea11205363ae63a62c3775d1987cd4fbf
 }
 }
