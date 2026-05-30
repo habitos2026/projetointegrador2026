@@ -45,18 +45,22 @@ function calc() {
 
 
     // mensagem
-const msg = document.getElementById("msg"); 
-const gif = document.getElementById("gif"); 
-const imgGif = document.createElement('img');
+const msg = document.getElementById("msg");
+const imgGif = document.getElementById("imgGif");
 
-if(porcentagem === 100){ 
-    msg.innerText = "Parabéns! Você completou todos os hábitos 🎉"; 
-    imgGif.src = 'pasta-de-imagens/gifParabens.gif';
-    imgGif.alt = 'Comemoração';
-    imgGif.style.width = '100px';
-    imgGif.style.marginLeft = '10px';
-} else { 
-    msg.innerText = ""; 
-    container.insertAdjacentElement('afterend', imgGif);
+if (porcentagem === 100) {
+
+    msg.innerText = "Parabéns! Você completou todos os hábitos 🎉";
+
+    imgGif.innerHTML = `
+        <img src="pasta-de-imagens/gifParabens.gif" alt="Parabéns">
+    `;
+
+} else {
+
+    msg.innerText = "";
+    imgGif.innerHTML = "";
+
 }
+
 }

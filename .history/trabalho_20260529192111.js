@@ -231,7 +231,7 @@
 </div>
 
 <p id="msg" class="msg"></p>
-<div id="imgGif"></div>
+<p id="imgGif" class="imgGif"></p>
 
 <script src="trabalho.js"></script>
 
