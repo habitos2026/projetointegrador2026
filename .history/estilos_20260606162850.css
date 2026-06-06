@@ -323,7 +323,7 @@ p{
 
 #botaoFecharMenu:hover{
     color: red;
-    text-shadow:  0 0 11px rgb(255, 0, 0);
+    text-shadow:  0 0 12px rgb(255, 0, 0);
 }
 
 #botaoFecharMenu:active{
