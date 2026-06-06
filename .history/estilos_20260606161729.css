@@ -50,13 +50,13 @@ nav a{
     text-decoration:none;
     color:#374151;
     transition: 0.5s;
-    font-weight: bold;
-    
 }
 
 nav a:hover{
     color:#0f766e;
     text-shadow: 0 0 6px #01b3a4;
+    font-weight: bold;
+
 }
 
 /* TOPO MENU MOBILE */
