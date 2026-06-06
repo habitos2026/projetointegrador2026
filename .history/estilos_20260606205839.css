@@ -1,0 +1,465 @@
+:root{
+    --cinza245: rgb(245,245,245);
+    --cinza220: rgb(220,220,220);
+    --cinza128: rgb(128,128,128);
+    --azul: rgb(0,80,120);
+    --amarelo: yellow;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+/* HEADER */
+header{
+    background:white;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+.logo{
+    height:70px;
+    width:auto;
+}
+
+/* MENU */
+.menu{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#374151;
+    transition: 0.5s;
+    
+}
+
+.menu a:hover{
+    color:#0f766e;
+    text-shadow: 0 0 6px #01b3a4;
+}
+
+/* TOPO MENU MOBILE */
+.topoMenu{
+    display:none;
+}
+
+/* BOTÃO MENU */
+.botaoMenu{
+    border:none;
+    background:transparent;
+
+    display:none;
+    flex-direction:column;
+
+    gap:6px;
+
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.botaoMenu div{
+    width:28px;
+    height:3px;
+
+    background:black;
+    transition:0.5s;
+}
+
+/* MAIN */
+main{
+    max-width:800px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+}
+
+/* TEXTOS */
+h1{
+    color:#0f766e;
+    margin-bottom:10px;
+}
+
+p{
+    margin-bottom:15px;
+}
+
+/* BANNER */
+.bannerIndexInicio{
+    width:100%;
+    height:300px;
+    overflow:hidden;
+}
+
+.bannerIndexInicio img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    display:block;
+}
+
+.bannerIndex{
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+
+    overflow:hidden;
+
+    aspect-ratio:16/9;
+}
+
+.bannerIndex img{
+    width:70%;
+    height:80%;
+
+    object-fit:cover;
+}
+
+/* BOX ÁGUA */
+.agua-box{
+    background:#ecfeff;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+}
+
+.agua-box h2{
+    color:#0f766e;
+    margin-bottom:10px;
+}
+
+.agua-box input{
+    width:100%;
+
+    padding:10px;
+
+    margin-bottom:10px;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+}
+
+.agua-box button{
+    width:100%;
+
+    padding:12px;
+
+    background:#0f766e;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:0.5s;
+}
+
+.agua-box button:hover{
+    background:#115e59;
+
+    transform:scale(1.01);
+
+    box-shadow: 
+    0 0 10px rgb(1, 255, 234),
+    0 0 15px rgb(0, 173, 253);
+}
+
+#resultadoAgua{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* LISTAS */
+.listas{
+    width:65%;
+
+    display:grid;
+
+    grid-template-columns:repeat(2, 1fr);
+
+    gap:1rem;
+}
+
+/* IMAGENS SAÚDE */
+.Saude .Imagem img{
+
+    width:35%;
+
+    height:auto;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    transition:0.4s;
+}
+
+.Saude .Imagem img:hover{
+
+    transform: translateX(10px);
+
+    box-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan,
+    0 0 40px cyan;
+}
+
+.imc-box{
+    background:#0f766e;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-top:3rem;
+
+
+}
+
+.imc-box input{
+    width:100%;
+
+    padding:10px;
+
+    margin-bottom:10px;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+}
+
+.imc-box button{
+    width:100%;
+
+    padding:12px;
+
+    background: white;
+
+    border: none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:0.5s;
+}
+
+.imc-box button:hover{
+    background:#f0f0f0;
+
+    transform:scale(1.002);
+
+    box-shadow: 
+    0 0 6px rgb(1, 255, 234),
+    0 0 8px rgb(0, 173, 253),
+    0 0 15px  rgba(18, 165, 153);
+}
+
+#resultado{
+    margin-top:20px;
+
+    font-weight:bold;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+#botaoFecharMenu{
+    border:none;
+
+    background:transparent;
+
+    box-shadow: none;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition: 0.5s;
+
+    border-radius: 100px;
+
+}
+
+
+#botaoFecharMenu:hover{
+    color: red;
+    text-shadow:  0 0 11px rgb(255, 0, 0);
+}
+
+#botaoFecharMenu:active{
+  animation: clickEffect 0.2s ease;
+}
+
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 10px red;
+  }
+  50% {
+    transform: scale(0.95);
+    text-shadow: 0 0 20px red;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px red;
+  }
+}
+
+/* ANIMAÇÃO */
+@keyframes subir{
+
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* MOBILE */
+@media screen and (max-width:950px){
+
+    .botaoMenu{
+        display:flex;
+
+        animation:subir 0.5s ease;
+    }
+
+    .botaoMenu:hover{
+        transform: scale(1.03);
+    }
+    .botaoMenu:hover div{
+        box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+        
+    }
+
+    .menu{
+        position:fixed;
+
+        top:0;
+        right:-100%;
+
+        width:80%;
+        height:100vh;
+
+        background:white;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:30px;
+
+        transition: right 0.5s;
+
+        z-index:999;
+    }
+
+    .menu a{
+        width:100%;
+
+        padding:12px 0;
+
+    
+        border-bottom:1px solid var(--cinza220);
+
+        text-decoration:none;
+
+        color:#374151;
+
+        transition: 0.10s;
+    
+}
+
+    .menu a:hover{
+    color:#0f766e;
+    text-shadow: 0 0 6px #01b3a4;
+    border: #01b3a4 1px solid;
+    transition: 0.5s;
+}
+
+    .topoMenu{
+        display:flex;
+
+        width:100%;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        margin-bottom:30px;
+    }
+
+    .topoMenu button{
+        border:none;
+
+        background:transparent;
+
+        font-size:20px;
+
+        cursor:pointer;
+    }
+
+    main{
+        margin:20px;
+    }
+
+    .bannerIndex img{
+        width:100%;
+        height:220px;
+    }
+
+    .listas{
+        width:100%;
+
+        grid-template-columns:1fr;
+    }
+
+    .Saude .Imagem img{
+        width:100%;
+    }
+}
