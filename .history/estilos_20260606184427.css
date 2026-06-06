@@ -377,7 +377,7 @@ p{
         
     }
 
-    .menu{
+    nav{
         position:fixed;
 
         top:0;
@@ -406,7 +406,7 @@ p{
     
 }
 
-    .menu a:hover{
+    nav a:hover{
     color:#0f766e;
     text-shadow: 0 0 6px #01b3a4;
     border: #01b3a4 1px solid;
