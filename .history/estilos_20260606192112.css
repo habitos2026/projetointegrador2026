@@ -406,12 +406,9 @@ p{
 
     
         border-bottom:1px solid var(--cinza220);
-
-        text-decoration:none;
-
+         text-decoration:none;
         color:#374151;
-
-        transition: 0.10s;
+            transition: 0.10s;
     
 }
 
