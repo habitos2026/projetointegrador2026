@@ -64,3 +64,9 @@ if (porcentagem === 100) {
 }
 
 }
+
+const data = document.getElementById("data");
+
+data.addEventListener("click", () => {
+    data.showPicker();
+});
