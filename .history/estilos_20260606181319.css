@@ -46,14 +46,14 @@ header{
     gap:20px;
 }
 
-.menu a{
+nav a{
     text-decoration:none;
     color:#374151;
     transition: 0.5s;
     
 }
 
-.menu a:hover{
+nav a:hover{
     color:#0f766e;
     text-shadow: 0 0 6px #01b3a4;
 }
