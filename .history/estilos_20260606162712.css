@@ -341,7 +341,7 @@ p{
   }
   100% {
     transform: scale(1);
-    text-shadow: 0 0 10px red;
+    box-shadow: 0 0 10px red;
   }
 }
 

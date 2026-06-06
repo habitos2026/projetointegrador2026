@@ -337,11 +337,11 @@ p{
   }
   50% {
     transform: scale(0.95);
-    text-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px red;
   }
   100% {
     transform: scale(1);
-    text-shadow: 0 0 10px red;
+    box-shadow: 0 0 10px red;
   }
 }
 
