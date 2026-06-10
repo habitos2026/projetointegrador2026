@@ -12,13 +12,13 @@ fetch("menu.html")
 
     // Botão tema
     const btnTema = document.getElementById("btnTema");
-    btnTema.textContent = document.body.classList.contains("dark") ? "Tema claro ☀️" : "Tema escuro 🌙";
+    btnTema.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 
     btnTema.addEventListener("click", () => {
         document.body.classList.toggle("dark");
         const temaDark = document.body.classList.contains("dark");
         localStorage.setItem("tema", temaDark ? "dark" : "light");
-        btnTema.textContent = temaDark ? "Tema claro ☀️" : "Tema escuro 🌙";
+        btnTema.textContent = temaDark ? "☀️" : "🌙";
     });
 
     // Botões do menu mobile
