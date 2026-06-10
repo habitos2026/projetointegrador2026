@@ -440,7 +440,7 @@ body.dark footer {
 
 /* Botão no dark — azul noite */
 body.dark #btnTema {
-    text-shadow: 0 0 8px #38bdf855;
+    box-shadow: 0 0 8px #38bdf855;
     color: #38bdf8;
 }
 

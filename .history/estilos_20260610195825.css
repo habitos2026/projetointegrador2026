@@ -332,6 +332,7 @@ p{
 
 /* ===== BOTÃO TEMA ===== */
 #btnTema {
+    background: transparent;
     width: 38px;
     height: 38px;
     font-size: 1.1rem;
@@ -440,7 +441,7 @@ body.dark footer {
 
 /* Botão no dark — azul noite */
 body.dark #btnTema {
-    text-shadow: 0 0 8px #38bdf855;
+    box-shadow: 0 0 8px #38bdf855;
     color: #38bdf8;
 }
 
