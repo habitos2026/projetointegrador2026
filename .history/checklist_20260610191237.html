@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist</title>
+
+<link rel="stylesheet" href="estilos.css">
+
+<style>
+/* SÓ O CHECKLIST (não mexe no resto do site) */
+
+        :root {
+            --cor-mente: #6a89cc;    /* Azul sereno */
+            --cor-fisico: #38ada9;   /* Verde energia */
+            --cor-agua: #4a69bd;     /* Azul hidratação */
+            --cor-fundo: #f7f9fc;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: var(--cor-fundo);
+            color: #2f3542;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            color: var(--cor-mente);
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--cor-fisico);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            color: var(--cor-fisico);
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+    }
+    
+.check-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TÍTULO */
+.check-container h1 {
+    text-align: center;
+    color: #0f766e;
+}
+
+/* DATA */
+.check-container input[type="date"] {
+    display: block;
+    margin: 10px auto 20px;
+    padding: 8px;
+}
+
+/* PROGRESSO */
+.progresso {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #0f766e;
+}
+
+/* BARRA */
+.barra {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.barra span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #0f766e;
+    transition: 0.3s;
+}
+
+/* ITENS */
+.habit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f9fafb;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.habit-item input {
+    width: 18px;
+    height: 18px;
+}
+
+/* TEXTO */
+.habit-item span {
+    font-weight: 500;
+}
+
+/* MARCADO */
+.habit-item input:checked + span {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* MENSAGEM */
+.msg {
+    text-align: center;
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}
+
+.data{
+    border-radius: 5px;
+}
+
+.data::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+}
+
+.data:hover{
+    cursor: pointer;
+    background: #00b894;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(104%);
+    transition:
+    background 0.5s,
+    box-shadow 0.5s,
+    transform 0.5s;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<section class="intro">
+
+    <h1>Checklist de Hábitos Saudáveis</h1>
+
+    <p>
+        Use a lista abaixo para acompanhar seus hábitos.
+    </p>
+
+</section>
+
+<!-- CALCULADORA DE ÁGUA -->
+<div class="agua-box">
+
+    <h2>💧 Calculadora de Água</h2>
+
+    <input type="number" id="peso" placeholder="Digite seu peso (kg)">
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <button onclick="calcularAgua()">Calcular</button>
+    <p id="resultadoAgua"></p>
+
+    <button onclick="calcularAgua()">
+        Calcular
+    </button>
+
+    <p id="resultadoAgua"></p>
+
+</div>
+
+<!-- DATA -->
+<input type="date" class="data" id="data">
+
+<!-- PROGRESSO -->
+<div class="progresso">
+    Meta: <span id="pct">0%</span>
+</div>
+
+<div class="barra">
+    <span id="bar"></span>
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="listas">
+<label class="habit-item">
+    <input type="checkbox" onchange="calc()">
+    <span>💧 Bebi 2L de água</span>
+</label>
+
+<label class="habit-item">
+    <input type="checkbox" onchange="calc()">
+    <span>🧘 Meditei</span>
+</label>
+
+<label class="habit-item">
+    <input type="checkbox" onchange="calc()">
+    <span>🍎 Comi uma fruta</span>
+</label>
+
+<label class="habit-item">
+    <input type="checkbox" onchange="calc()">
+    <span>🥗 Comi saudável</span>
+</label>
+
+<label class="habit-item">
+    <input type="checkbox" onchange="calc()">
+    <span>🛌 Dormi mais de 8h</span>
+</label>
+
+<label class="habit-item">
+    <input type="checkbox" onchange="calc()">
+    <span>🏋️‍♂️ Fiz exercícios</span>
+</label>
+</div>
+
+<p id="msg" class="msg"></p>
+<div id="imgGif"></div>
+
+<script src="trabalho.js"></script>
+
+</body>
+</html>
