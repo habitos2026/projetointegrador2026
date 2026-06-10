@@ -404,7 +404,7 @@ body.dark .contato-form textarea {
 
 #btnTema:hover {
     transform: scale(1.2);
-    text-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    box-shadow: 0 0 10;
 }
 
 @keyframes clickEffect {

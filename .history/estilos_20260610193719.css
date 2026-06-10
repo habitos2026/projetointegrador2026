@@ -399,12 +399,11 @@ body.dark .contato-form textarea {
     border: none;
     font-size: 1.4rem;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: \
 }
 
 #btnTema:hover {
-    transform: scale(1.2);
-    text-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    transform: scale(1.2) rotate(20deg);
 }
 
 @keyframes clickEffect {
