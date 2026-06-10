@@ -2,6 +2,30 @@ fetch("menu.html")
 .then(res => res.text())
 .then(data => {
 
+    // ===== DARK MODE =====
+
+// Aplica tema salvo ao carregar a página
+if (localStorage.getItem("tema") === "dark") {
+    document.body.classList.add("dark");
+}
+
+// Aguarda o menu carregar para pegar o botão
+setTimeout(() => {
+    const btnTema = document.getElementById("btnTema");
+    if (!btnTema) return;
+
+    // Ícone correto ao carregar
+    btnTema.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+
+    btnTema.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        const temaDark = document.body.classList.contains("dark");
+        localStorage.setItem("tema", temaDark ? "dark" : "light");
+        btnTema.textContent = temaDark ? "☀️" : "🌙";
+    });
+}, 100);
+
     document.getElementById("menu").innerHTML = data;
 
     const abrir = document.querySelector(".botaoMenu");
