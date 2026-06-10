@@ -10,15 +10,15 @@ fetch("menu.html")
 
     document.getElementById("menu").innerHTML = data;
 
-    // Botão tema (agora o menu já está na página)
+    // Botão tema
     const btnTema = document.getElementById("btnTema");
-    btnTema.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    btnTema.textContent = document.body.classList.contains("dark") ? "Tema claro ☀️" : "Tema escuro 🌙";
 
     btnTema.addEventListener("click", () => {
         document.body.classList.toggle("dark");
         const temaDark = document.body.classList.contains("dark");
         localStorage.setItem("tema", temaDark ? "dark" : "light");
-        btnTema.textContent = temaDark ? "☀️" : "🌙";
+        btnTema.textContent = temaDark ? "Tema claro ☀️" : "Tema escuro 🌙";
     });
 
     // Botões do menu mobile
