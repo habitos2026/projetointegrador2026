@@ -382,7 +382,6 @@ body.dark .logo {
     background: transparent;
     mix-blend-mode: screen;
 }
-
 body.dark h1 {
     color: #38bdf8;
     text-shadow: 0 0 8px #38bdf855;
