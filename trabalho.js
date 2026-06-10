@@ -70,3 +70,33 @@ const data = document.getElementById("data");
 data.addEventListener("click", () => {
     data.showPicker();
 });
+
+function calcularAgua() {
+    const peso = parseFloat(document.getElementById("peso").value);
+    const idade = parseInt(document.getElementById("idade").value);
+
+    // Validação
+    if (isNaN(peso) || peso <= 0 || isNaN(idade) || idade <= 0) {
+        document.getElementById("resultadoAgua").innerText = "Por favor, preencha peso e idade corretamente.";
+        return;
+    }
+
+    // Regra por faixa etária
+    let mlPorKg;
+
+    if (idade <= 17) {
+        mlPorKg = 40;
+    } else if (idade <= 55) {
+        mlPorKg = 35;
+    } else if (idade <= 65) {
+        mlPorKg = 30;
+    } else {
+        mlPorKg = 25;
+    }
+
+    const totalMl = peso * mlPorKg;
+    const totalLitros = (totalMl / 1000).toFixed(1); // ex: 2.5
+
+    document.getElementById("resultadoAgua").innerText = 
+        `Você deve beber aproximadamente ${totalLitros}L de água por dia.`;
+}
