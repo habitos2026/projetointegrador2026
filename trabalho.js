@@ -12,16 +12,13 @@ fetch("menu.html")
 
     // Botão tema
     const btnTema = document.getElementById("btnTema");
-    // Ícone correto ao carregar
-    btnTema.textContent = document.body.classList.contains("dark") ? "🌙" : "☀️";
+    btnTema.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 
-    // Ao clicar
     btnTema.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const temaDark = document.body.classList.contains("dark");
-    localStorage.setItem("tema", temaDark ? "dark" : "light");
-    btnTema.textContent = temaDark ? "🌙" : "☀️";
-
+        document.body.classList.toggle("dark");
+        const temaDark = document.body.classList.contains("dark");
+        localStorage.setItem("tema", temaDark ? "dark" : "light");
+        btnTema.textContent = temaDark ? "☀️" : "🌙";
     });
 
     // Botões do menu mobile
