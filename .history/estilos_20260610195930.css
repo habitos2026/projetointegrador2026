@@ -337,7 +337,7 @@ p{
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s;
-    text-shadow: 0 0 8px #f59e0b88;
+    box-shadow: 0 0 8px #f59e0b88;
 }
 
 #btnTema:hover {
