@@ -48,7 +48,7 @@ function calc() {
 
     let porcentagem = (marcados / checks.length) * 100;
 
-    document.getElementById("pct").innerText = porcentagem + "%";
+    document.getElementById("pct").innerText = Math.round (porcentagem) + "%";
     document.getElementById("bar").style.width = porcentagem + "%";
 
     const msg = document.getElementById("msg");
