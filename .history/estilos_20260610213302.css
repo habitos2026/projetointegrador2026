@@ -330,7 +330,7 @@ p{
   animation: clickEffect 0.2s ease;
 }
 
-
+/* ===== BOTÃO TEMA ===== */
 /* ===== BOTÃO TEMA ===== */
 #btnTema {
     background: transparent;
@@ -362,7 +362,6 @@ body.dark #btnTema:hover {
     transform: scale(1.2);
     filter: drop-shadow(0 0 10px #38bdf8) drop-shadow(0 0 20px #7dd3fc);
 }
-
 /* ===== DARK MODE ===== */
 body.dark {
     background: #0a0f1e;
