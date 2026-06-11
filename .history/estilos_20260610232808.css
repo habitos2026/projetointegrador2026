@@ -506,11 +506,6 @@ body.dark footer {
         transform: scale(1.03);
         filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
     }
-
-    body.dark .botaoMenu Div{
-     background-color: white;   
-    border-color: #1e3a5f;
-    }
     
     .menu{
         position:fixed;

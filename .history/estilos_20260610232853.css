@@ -507,8 +507,8 @@ body.dark footer {
         filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
     }
 
-    body.dark .botaoMenu Div{
-     background-color: white;   
+    body.dark .botaoMenu Na{
+    color: #e2e8f0;
     border-color: #1e3a5f;
     }
     
