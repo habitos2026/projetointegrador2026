@@ -56,7 +56,8 @@ function calc() {
 
     if (porcentagem === 100) {
         msg.innerText = "Parabéns! Você completou todos os hábitos 🎉";
-        imgGif.innerHTML = `<img src="pasta-de-imagens/gifParabens.gif" alt="Parabéns">`;
+        imgGif.innerHTML = `<img src="https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif" alt="Parabéns">
+`
     } else {
         msg.innerText = "";
         imgGif.innerHTML = "";
