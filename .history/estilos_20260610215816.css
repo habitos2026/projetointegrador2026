@@ -347,7 +347,7 @@ p{
 }
 
 #btnTema:hover {
-    transform: scale(1.12) rotate(10deg);
+    transform: scale(1.1) rotate(10deg);
     filter: drop-shadow(0 0 10px #38bdf8) drop-shadow(0 0 20px #7dd3fc);
 }
 

@@ -347,8 +347,9 @@ p{
 }
 
 #btnTema:hover {
-    transform: scale(1.12) rotate(10deg);
+    transform: scale(1.2);
     filter: drop-shadow(0 0 10px #38bdf8) drop-shadow(0 0 20px #7dd3fc);
+    transform: scale(1.2) rotate(20deg);
 }
 
 /* Tema ESCURO ativo — botão mostra ☀️ — neon amarelo */
@@ -359,7 +360,8 @@ body.dark #btnTema {
 }
 
 body.dark #btnTema:hover {
-    transform: scale(1.2) rotate(50deg);
+    transform: scale(1.2);
+    transition: transform 0.3s;
     filter: drop-shadow(0 0 10px #f59e0b) drop-shadow(0 0 20px #fbbf24);
 }
 
