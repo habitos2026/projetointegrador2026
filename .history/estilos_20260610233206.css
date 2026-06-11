@@ -513,15 +513,8 @@ body.dark footer {
     }
 
     body.dark #botaoFecharMenu{
-        color: white;
-    }
-
-    body.dark #botaoFecharMenu:hover{
-        background-color: transparent;
-        text-shadow: 0 0 6px red;
-    }
-
-
+        color
+    
     .menu{
         position:fixed;
 

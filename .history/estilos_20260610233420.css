@@ -516,9 +516,23 @@ body.dark footer {
         color: white;
     }
 
-    body.dark #botaoFecharMenu:hover{
-        background-color: transparent;
-        text-shadow: 0 0 6px red;
+    body.dark #botaoFecharMenu :hover{
+        color: red;
+        text-shadow:  0 0 11px rgb(255, 0, 0);
+    }
+
+     body.dark #botaoFecharMenu :active{
+      animation: clickEffect 0.2s ease;
+     }
+
+     .menu a{
+        font-size:18px;
+     }
+
+     .menu a:hover{
+        color:#7dd3fc;
+        text-shadow: 0 0 6px #7dd3fc88;
+     }
     }
 
 
