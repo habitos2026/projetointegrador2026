@@ -361,6 +361,7 @@ body.dark #btnTema {
 body.dark #btnTema:hover {
     transform: scale(1.2);
     filter: drop-shadow(0 0 10px #f59e0b) drop-shadow(0 0 20px #fbbf24);
+    
 }
 
 /* ===== DARK MODE ===== */

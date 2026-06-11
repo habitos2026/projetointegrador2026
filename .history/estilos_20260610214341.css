@@ -359,7 +359,7 @@ body.dark #btnTema {
 }
 
 body.dark #btnTema:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(1);
     filter: drop-shadow(0 0 10px #f59e0b) drop-shadow(0 0 20px #fbbf24);
 }
 

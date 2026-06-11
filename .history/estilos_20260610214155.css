@@ -462,7 +462,6 @@ body.dark .contato-form textarea {
 body.dark footer {
     color: #475569;
 }
-
 @keyframes clickEffect {
   0% {
     transform: scale(1);
