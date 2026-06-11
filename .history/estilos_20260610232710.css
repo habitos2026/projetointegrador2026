@@ -464,9 +464,7 @@ body.dark footer {
 }
 
     body.dark .botaoMenu{
-         background: #0a0f1e;
-    color: #e2e8f0;
-    border-color: #1e3a5f;
+        
     }
 
     body.dark .botaoMenu:hover{

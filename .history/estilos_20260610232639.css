@@ -463,14 +463,15 @@ body.dark footer {
     color: #475569;
 }
 
-    body.dark .botaoMenu{
-         background: #0a0f1e;
-    color: #e2e8f0;
-    border-color: #1e3a5f;
+body.dark .botaoMenu{
+        display:flex;
+
+        animation:subir 0.5s ease;
     }
 
     body.dark .botaoMenu:hover{
-        
+        transform: scale(1.03);
+        filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
     }
 
 @keyframes clickEffect {
