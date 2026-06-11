@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato</title>
+
+<link rel="stylesheet" href="estilos.css">
+
+<style>
+
+    :root {
+            --cor-mente: #6a89cc;    /* Azul sereno */
+            --cor-fisico: #38ada9;   /* Verde energia */
+            --cor-agua: #4a69bd;     /* Azul hidratação */
+            --cor-fundo: #f7f9fc;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body 
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: var(--cor-fundo);
+            color: #2f3542;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            color: var(--cor-mente);
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--cor-fisico);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            color: var(--cor-fisico);
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+/* ÁREA SÓ DO CONTATO */
+.contato-page {
+    background: linear-gradient(135deg, #0f766e, #38bdf8);
+    min-height: 100vh;
+    padding: 40px 10px;
+}
+
+/* CARD */
+.contato-box {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: subir 0.6s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contato-box h1 {
+    text-align: center;
+    color: #0f766e;
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-form input,
+.contato-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 8px rgba(15,118,110,0.3);
+}
+
+/* BOTÃO */
+.contato-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #0f766e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato-form button:hover {
+    background: #115e59;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+/* TEXTO */
+.info {
+    text-align: center;
+    margin-top: 15px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<div class="contato-page">
+
+    <div class="contato-box">
+        <h1>Fale Conosco 💬</h1>
+
+        <form class= method="post">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
+            <button type="submit">Enviar mensagem</button>
+        </form>
+
+        <div class="info">
+            Responderemos o mais breve possível 🚀  contato: habitossaudaveis@gmail.com             
+        </div>
+    </div>
+
+</div>
+
+<script src="trabalho.js"></script>
+
+</body>
+</html>
+
+
