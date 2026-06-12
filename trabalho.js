@@ -130,7 +130,7 @@ function lancarConfetes() {
     ];
 
     // Cria 150 confetes
-    const confetes = Array.from({ length: 500 }, () => ({
+    const confetes = Array.from({ length: 150 }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * -canvas.height,
         w: Math.random() * 10 + 6,
