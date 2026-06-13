@@ -1,4 +1,4 @@
-// ===== DARK MODE — roda ANTES de tudo =====
+// ===== DARK MODE=====
 if (localStorage.getItem("tema") === "dark") {
     document.body.classList.add("dark");
 }
