@@ -78,31 +78,68 @@
         <img src="pasta-de-imagens/imagem.webp.webp" alt="Banner">
     </div>
 
-    <!-- CONTEÚDO -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hábitos Saudáveis</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        button { padding: 8px 12px; cursor: pointer; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    
+    <button onclick="mudarIdioma()" id="btn-lang">English</button>
+
     <main>
-
-        <h1>Hábitos Saudáveis e Qualidade de Vida</h1>
-
-        <p>
-            Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social.
+        <h1 data-pt="Hábitos Saudáveis e Qualidade de Vida" data-en="Healthy Habits and Quality of Life">Hábitos Saudáveis e Qualidade de Vida</h1>
+        
+        <p data-pt="Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social." 
+           data-en="Healthy habits are routines that contribute to physical, mental, and social well-being.">
+           Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social.
         </p>
-
-        <p>
-            O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações.
+        
+        <p data-pt="O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações." 
+           data-en="A habit is a repeated behavior that becomes automatic over time, while health involves balance between body, mind, and relationships.">
+           O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações.
         </p>
-
-        <p>
-            Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar.
+        
+        <p data-pt="Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar." 
+           data-en="According to the World Health Organization, health is not merely the absence of disease, but a complete state of well-being.">
+           Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar.
         </p>
-
-        <p>
-            Segundo o slogan "Todo movimento conta" da OMS, pode ser uma grande mudança de vida então comece do básico e com o tempo, se tornará rotina.
+        
+        <p data-pt='Segundo o slogan "Todo movimento conta" da OMS, pode ser uma grande mudança de vida então comece do básico e com o tempo, se tornará rotina.' 
+           data-en='According to the WHO slogan "Todo movimento conta/Every move counts", it can be a major life change so start with the basics and over time it will become a routine.'>
+           Segundo o slogan "Todo movimento conta" da OMS, pode ser uma grande mudança de vida então comece do básico e com o tempo, se tornará rotina.
         </p>
-
-        <p><strong></p>"Pequenos passos diários levam a grandes transformações."</strong>
-        </p>
-
+        
+        <p><strong><span data-pt='"Pequenos passos diários levam a grandes transformações."' data-en='"Small daily steps lead to big transformations."'>"Pequenos passos diários levam a grandes transformações."</span></strong></p>
     </main>
+
+    <script>
+        let idiomaAtual = 'pt';
+
+        function mudarIdioma() {
+            const elementos = document.querySelectorAll('[data-pt]');
+            const botao = document.getElementById('btn-lang');
+
+            if (idiomaAtual === 'pt') {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
+                document.documentElement.lang = 'en';
+                botao.innerText = 'Português';
+                idiomaAtual = 'en';
+            } else {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
+                document.documentElement.lang = 'pt-BR';
+                botao.innerText = 'English';
+                idiomaAtual = 'pt';
+            }
+        }
+    </script>
 
     <script src="trabalho.js"></script>
 
