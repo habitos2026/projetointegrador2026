@@ -125,8 +125,22 @@
 
 <div id="menu"></div>
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hábitos Saudáveis</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        button { padding: 8px 12px; cursor: pointer; margin-bottom: 20px; }
+    </style>
+</head>
+
+    <button onclick="mudarIdioma()" id="btn-lang">English</button>
+
 <header>
-    <h1>A Importância de Cuidar da Saúde</h1>
+     <h1 data-pt="A Importância de Cuidar da Saúde" data-en="Importance Taking Care of Health">A Importância de Cuidar da Saúde</h1>
 </header>
 
 <section>
@@ -169,6 +183,29 @@
 
 <script src="trabalho.js"></script>
 
+<script>
+        let idiomaAtual = 'pt';
+
+        function mudarIdioma() {
+            const elementos = document.querySelectorAll('[data-pt]');
+            const botao = document.getElementById('btn-lang');
+
+            if (idiomaAtual === 'pt') {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
+                document.documentElement.lang = 'en';
+                botao.innerText = 'Português';
+                idiomaAtual = 'en';
+            } else {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
+                document.documentElement.lang = 'pt-BR';
+                botao.innerText = 'English';
+                idiomaAtual = 'pt';
+            }
+        }
+    </script>
+
 </body>
 </html>
+
+
 
