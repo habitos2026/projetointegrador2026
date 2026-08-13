@@ -173,3 +173,10 @@ function lancarConfetes() {
 
     animar();
 }
+
+const paragrafo = document.getElementById('meu-texto');
+
+
+const textoIngles = paragrafo.getAttribute('data-en');
+
+console.log(textoIngles);
