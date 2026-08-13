@@ -493,6 +493,12 @@ body.dark footer {
 
 }
 
+strong {
+  color:  #41424C; 
+  font-weight: 800; 
+}
+
+
 /* MOBILE */
 @media screen and (max-width:950px){
 
