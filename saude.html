@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Importância da Saúde</title>
-
-<link rel="stylesheet" href="estilos.css">
-
-<style>
-/* TODO seu CSS ORIGINAL aqui (sem mudar nada) */
-            /* Variáveis de Cores */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-pt="A Importância da Saúde" data-en="The Importance of Health">A Importância da Saúde</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Variáveis de Cores */
         :root {
-            --cor-mente: #6a89cc;    /* Azul sereno */
-            --cor-fisico: #38ada9;   /* Verde energia */
-            --cor-agua: #4a69bd;     /* Azul hidratação */
+            --cor-mente: #6a89cc; /* Azul sereno */
+            --cor-fisico: #38ada9; /* Verde energia */
+            --cor-agua: #4a69bd; /* Azul hidratação */
             --cor-fundo: #f7f9fc;
         }
-
         /* Animação de Entrada */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
@@ -38,13 +27,11 @@
             margin: 0 auto;
             padding: 40px 20px;
         }
-
         header {
             text-align: center;
             margin-bottom: 50px;
             animation: fadeInUp 0.8s ease-out;
         }
-
         h1 {
             color: var(--cor-mente);
             font-size: 2.5rem;
@@ -52,7 +39,6 @@
             display: inline-block;
             padding-bottom: 10px;
         }
-
         section {
             background: white;
             padding: 30px;
@@ -60,7 +46,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             animation: fadeInUp 1s ease-out;
         }
-
         h2 {
             color: var(--cor-fisico);
             margin-top: 30px;
@@ -68,13 +53,8 @@
             align-items: center;
             gap: 10px;
         }
-
         /* Estilização dos Ícones/Lista */
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
+        ul { list-style: none; padding: 0; }
         li {
             background: #fff;
             margin: 10px 0;
@@ -84,17 +64,12 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: default;
         }
-
         li:hover {
             transform: translateX(10px);
             box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
             background-color: #f0f7ff;
         }
-
-        li strong {
-            color: var(--cor-agua);
-        }
-
+        li strong { color: var(--cor-agua); }
         footer {
             margin-top: 40px;
             text-align: center;
@@ -102,110 +77,127 @@
             font-style: italic;
             animation: fadeInUp 1.2s ease-out;
         }
-
         /* Destaque para Hidratação */
         .agua-badge {
             color: var(--cor-agua);
             font-weight: bold;
             text-decoration: underline;
         }
-
-        .imagem img{
-            transition: 0.3s;
-        }
-
-        .imagem img:hover{
+        .imagem img { transition: 0.3s; }
+        .imagem img:hover {
             transform: scale(1.01);
             box-shadow: 0 0 15px rgba(0,0,0,0.4);
         }
-</style>
-
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
-<div id="menu"></div>
+    <div id="menu"></div>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hábitos Saudáveis</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 0 20px; }
-        button { padding: 8px 12px; cursor: pointer; margin-bottom: 20px; }
-    </style>
-</head>
+    <button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
 
-    <button onclick="mudarIdioma()" id="btn-lang">English</button>
+    <header>
+        <h1 data-pt="A Importância de Cuidar da Saúde" data-en="The Importance of Taking Care of Health">A Importância de Cuidar da Saúde</h1>
+    </header>
 
-<header>
-     <h1 data-pt="A Importância de Cuidar da Saúde" data-en="Importance Taking Care of Health">A Importância de Cuidar da Saúde</h1>
-</header>
-
-<section>
-<p id="meu-texto" data-pt="Cuidar da saúde é cultivar <strong>equilíbrio</strong>, bem-estar e qualidade de vida..." data-en="Taking care of health means cultivating balance, well-being, and quality of life...">Cuidar da saúde é cultivar <strong>equilíbrio</strong>, bem-estar e qualidade de vida...</p>
-
-    <h2>Por que se cuidar?</h2>
-    <p>Investir na sua saúde hoje garante uma vida mais longa...</p>
-
-    <h2>Pilares de uma Vida Saudável</h2>
-    <ul>
-        <li><strong>🧠 Saúde Mental:</strong> Praticar o autoconhecimento...</li>
+    <section>
+        <p id="meu-texto" data-pt="Cuidar da saúde é cultivar <strong>equilíbrio</strong>, bem-estar e qualidade de vida..." data-en="Taking care of health means cultivating balance, well-being, and quality of life...">Cuidar da saúde é cultivar <strong>equilíbrio</strong>, bem-estar e qualidade de vida...</p>
+        
+        <h2 data-pt="Por que se cuidar?" data-en="Why take care of yourself?">Por que se cuidar?</h2>
+        <p data-pt="Investir na sua saúde hoje garante uma vida mais longa..." data-en="Investing in your health today ensures a longer life...">Investir na sua saúde hoje garante uma vida mais longa...</p>
+        
+        <h2 data-pt="Pilares de uma Vida Saudável" data-en="Pillars of a Healthy Life">Pilares de uma Vida Saudável</h2>
+        
         <section class="Saude">
-        <div class="imagem">
-        <a href="" class="Img1">
-        <img src="pasta-de-imagens/autoconhecimento.webp" alt="imagem saúde">
-        </a>
-        <li><strong>🏃 Atividade Física:</strong> Movimentar o corpo...</li>
-        <a href="" class="Img2">
-        <img src="pasta-de-imagens/exercicios.webp" alt="imagem exercício">
-        </a>
-        <li><strong>💧 Hidratação Constante:</strong> Beber água...</li>
-        <a href="" class="Img3">
-        <img src="pasta-de-imagens/agua.webp" alt="imagem água">
-        </a>
-        <li><strong>😴 Sono de Qualidade:</strong> O repouso...</li>
-         <a href="" class="Img4">
-        <img src="pasta-de-imagens/repouso.webp" alt="imagem repouso">
-        </a>
-    </ul>
+            <ul>
+                <li>
+                    <strong data-pt="🧠 Saúde Mental:" data-en="🧠 Mental Health:">🧠 Saúde Mental:</strong> 
+                    <span data-pt="Praticar o autoconhecimento..." data-en="Practicing self-knowledge...">Praticar o autoconhecimento...</span>
+                    <div class="imagem">
+                        <a href="#" class="Img1">
+                            <img src="pasta-de-imagens/autoconhecimento.webp" alt="imagem saúde">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <strong data-pt="🏃 Atividade Física:" data-en="🏃 Physical Activity:">🏃 Atividade Física:</strong> 
+                    <span data-pt="Movimentar o corpo..." data-en="Moving the body...">Movimentar o corpo...</span>
+                    <div class="imagem">
+                        <a href="#" class="Img2">
+                            <img src="pasta-de-imagens/exercicios.webp" alt="imagem exercício">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <strong data-pt="💧 Hidratação Constante:" data-en="💧 Constant Hydration:">💧 Hidratação Constante:</strong> 
+                    <span data-pt="Beber água..." data-en="Drinking water...">Beber água...</span>
+                    <div class="imagem">
+                        <a href="#" class="Img3">
+                            <img src="pasta-de-imagens/agua.webp" alt="imagem água">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <strong data-pt="😴 Sono de Qualidade:" data-en="😴 Quality Sleep:">😴 Sono de Qualidade:</strong> 
+                    <span data-pt="O repouso..." data-en="Rest...">O repouso...</span>
+                    <div class="imagem">
+                        <a href="#" class="Img4">
+                            <img src="pasta-de-imagens/repouso.webp" alt="imagem repouso">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-    <h2>Prevenção é Amor</h2>
-    <p>Não espere ficar doente...</p>
-</section>
+        <h2 data-pt="Prevenção é Amor" data-en="Prevention is Love">Prevenção é Amor</h2>
+        <p data-pt="Não espere ficar doente..." data-en="Don't wait until you get sick...">Não espere ficar doente...</p>
+    </section>
 
-<footer>
-    <p>"Cuidar do seu corpo é a única casa que você tem para morar."</p>
-</footer>
+    <footer>
+        <p data-pt="&quot;Cuidar do seu corpo é a única casa que você tem para morar.&quot;" data-en="&quot;Taking care of your body is the only house you have to live in.&quot;">"Cuidar do seu corpo é a única casa que você tem para morar."</p>
+    </footer>
 
-<div id="menu"></div>
+    <div id="menu"></div>
 
-<script src="trabalho.js"></script>
-
-<script>
+    <script src="trabalho.js"></script>
+    <script>
         let idiomaAtual = 'pt';
-
         function mudarIdioma() {
             const elementos = document.querySelectorAll('[data-pt]');
             const botao = document.getElementById('btn-lang');
-
             if (idiomaAtual === 'pt') {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
+                elementos.forEach(el => {
+                    // Mantém tags HTML internas se houver, ou usa innerHTML caso prefira renderizar forte/ênfases
+                    if (el.getAttribute('data-en').includes('<')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    } else {
+                        el.innerText = el.getAttribute('data-en');
+                    }
+                });
                 document.documentElement.lang = 'en';
-                botao.innerText = 'Português';
                 idiomaAtual = 'en';
             } else {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
+                elementos.forEach(el => {
+                    if (el.getAttribute('data-pt').includes('<')) {
+                        el.innerHTML = el.getAttribute('data-pt');
+                    } else {
+                        el.innerText = el.getAttribute('data-pt');
+                    }
+                });
                 document.documentElement.lang = 'pt-BR';
-                botao.innerText = 'English';
                 idiomaAtual = 'pt';
             }
         }
     </script>
-
 </body>
 </html>
+
 
 
 
