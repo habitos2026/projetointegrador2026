@@ -73,75 +73,110 @@
 
 <div id="menu"></div>
 
-<main>
+    <button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
+    
+    <main>
+        <h1 data-pt="Índice de Massa Corporal (IMC)" data-en="Body Mass Index (BMI)">Índice de Massa Corporal (IMC)</h1>
+        
+        <h2 data-pt="O que é IMC?" data-en="What is BMI?">O que é IMC?</h2>
+        <p data-pt="O IMC (Índice de Massa Corporal) é uma medida utilizada para avaliar se uma pessoa está dentro do peso ideal. Ele é calculado a partir do peso e da altura e serve como um indicador simples de saúde." 
+           data-en="BMI (Body Mass Index) is a measure used to assess whether a person is within their ideal weight. It is calculated from weight and height and serves as a simple indicator of health.">
+            O IMC (Índice de Massa Corporal) é uma medida utilizada para avaliar se uma pessoa está dentro do peso ideal. Ele é calculado a partir do peso e da altura e serve como um indicador simples de saúde.
+        </p>
+        
+        <h2 data-pt="Para que serve?" data-en="What is it for?">Para que serve?</h2>
+        <p data-pt="O IMC ajuda a identificar possíveis problemas relacionados ao peso, como baixo peso, sobrepeso ou obesidade. Embora não leve em conta a composição corporal (músculo x gordura), ele é amplamente utilizado como referência inicial." 
+           data-en="BMI helps identify potential weight-related problems such as underweight, overweight, or obesity. Although it does not take body composition into account (muscle vs. fat), it is widely used as an initial reference.">
+            O IMC ajuda a identificar possíveis problemas relacionados ao peso, como baixo peso, sobrepeso ou obesidade. Embora não leve em conta a composição corporal (músculo x gordura), ele é amplamente utilizado como referência inicial.
+        </p>
+        
+        <h2 data-pt="Calcule seu IMC" data-en="Calculate your BMI">Calcule seu IMC</h2>
+        <div class="imc-box">
+            <input id="peso" type="number" placeholder="Peso (kg)" data-pt="Peso (kg)" data-en="Weight (kg)">
+            <input id="altura" type="number" placeholder="Altura (ex: 1.75)" data-pt="Altura (ex: 1.75)" data-en="Height (e.g., 1.75)">
+            <button id="btn-calc" onclick="calcularIMC()" data-pt="Calcular" data-en="Calculate">Calcular</button>
+            <div id="resultado"></div>
+        </div>
+        
+        <h2 data-pt="Classificação do IMC" data-en="BMI Classification">Classificação do IMC</h2>
+        <p data-pt="A classificação geralmente segue este padrão:" data-en="The classification generally follows this pattern:">
+            A classificação geralmente segue este padrão:
+        </p>
+        <ul>
+            <li data-pt="Abaixo de 18.5 → Abaixo do peso" data-en="Under 18.5 → Underweight">Abaixo de 18.5 → Abaixo do peso</li>
+            <li data-pt="18.5 a 24.9 → Peso normal" data-en="18.5 to 24.9 → Normal weight">18.5 a 24.9 → Peso normal</li>
+            <li data-pt="25 a 29.9 → Sobrepeso" data-en="25 to 29.9 → Overweight">25 a 29.9 → Sobrepeso</li>
+            <li data-pt="30 ou mais → Obesidade" data-en="30 or more → Obesity">30 ou mais → Obesidade</li>
+        </ul>
+    </main>
 
-<h1>Índice de Massa Corporal (IMC)</h1>
+    <script>
+        let idiomaAtual = 'pt';
 
-<h2>O que é IMC?</h2>
-<p>
-O IMC (Índice de Massa Corporal) é uma medida utilizada para avaliar se uma pessoa está dentro do peso ideal. 
-Ele é calculado a partir do peso e da altura e serve como um indicador simples de saúde.
-</p>
+        function calcularIMC() {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+            let resultado = document.getElementById("resultado");
+            
+            if (!peso || !altura) {
+                resultado.innerHTML = idiomaAtual === 'pt' ? "Preencha corretamente." : "Please fill in correctly.";
+                return;
+            }
+            
+            let imc = peso / (altura * altura);
+            let classificacao = "";
+            
+            if (imc < 18.5) {
+                classificacao = idiomaAtual === 'pt' ? "Abaixo do peso" : "Underweight";
+            } else if (imc < 24.9) {
+                classificacao = idiomaAtual === 'pt' ? "Peso normal" : "Normal weight";
+            } else if (imc < 29.9) {
+                classificacao = idiomaAtual === 'pt' ? "Sobrepeso" : "Overweight";
+            } else {
+                classificacao = idiomaAtual === 'pt' ? "Obesidade" : "Obesity";
+            }
+            
+            let textoImc = idiomaAtual === 'pt' ? "Seu IMC é: " : "Your BMI is: ";
+            let textoClassif = idiomaAtual === 'pt' ? "Classificação: " : "Classification: ";
+            
+            resultado.innerHTML = textoImc + imc.toFixed(2) + "<br>" + textoClassif + classificacao;
+        }
 
-<h2>Para que serve?</h2>
-<p>
-O IMC ajuda a identificar possíveis problemas relacionados ao peso, como baixo peso, sobrepeso ou obesidade. 
-Embora não leve em conta a composição corporal (músculo x gordura), ele é amplamente utilizado como referência inicial.
-</p>
+        function mudarIdioma() {
+            const elementos = document.querySelectorAll('[data-pt]');
+            const botao = document.getElementById('btn-lang');
+            
+            if (idiomaAtual === 'pt') {
+                elementos.forEach(el => {
+                    // Se o elemento for um input, muda o placeholder. Caso contrário, muda o texto interno.
+                    if (el.tagName === 'INPUT') {
+                        el.placeholder = el.getAttribute('data-en');
+                    } else {
+                        el.innerText = el.getAttribute('data-en');
+                    }
+                });
+                document.documentElement.lang = 'en';
+                botao.innerText = 'Português';
+                idiomaAtual = 'en';
+            } else {
+                elementos.forEach(el => {
+                    if (el.tagName === 'INPUT') {
+                        el.placeholder = el.getAttribute('data-pt');
+                    } else {
+                        el.innerText = el.getAttribute('data-pt');
+                    }
+                });
+                document.documentElement.lang = 'pt-BR';
+                botao.innerText = 'English';
+                idiomaAtual = 'pt';
+            }
 
-<h2>Calcule seu IMC</h2>
-
-<div class="imc-box">
-
-<input id="peso" type="number" placeholder="Peso (kg)">
-<input id="altura" type="number" placeholder="Altura (ex: 1.75)">
-
-<button onclick="calcularIMC()">Calcular</button>
-
-<div id="resultado"></div>
-
-</div>
-
-<h2>Classificação do IMC</h2>
-<p>
-A classificação geralmente segue este padrão:
-</p>
-
-<ul>
-<li>Abaixo de 18.5 → Abaixo do peso</li>
-<li>18.5 a 24.9 → Peso normal</li>
-<li>25 a 29.9 → Sobrepeso</li>
-<li>30 ou mais → Obesidade</li>
-</ul>
-
-</main>
-
-<script>
-function calcularIMC() {
-    let peso = parseFloat(document.getElementById("peso").value);
-    let altura = parseFloat(document.getElementById("altura").value);
-    let resultado = document.getElementById("resultado");
-
-    if (!peso || !altura) {
-        resultado.innerHTML = "Preencha corretamente.";
-        return;
-    }
-
-    let imc = peso / (altura * altura);
-    let classificacao = "";
-
-    if (imc < 18.5) classificacao = "Abaixo do peso";
-    else if (imc < 24.9) classificacao = "Peso normal";
-    else if (imc < 29.9) classificacao = "Sobrepeso";
-    else classificacao = "Obesidade";
-
-    resultado.innerHTML =
-        "Seu IMC é: " + imc.toFixed(2) + "<br>" +
-        "Classificação: " + classificacao;
-}
-</script>
-
-<script src="trabalho.js"></script>
-
+            // Se já houver um resultado na tela, recalcula para atualizar o idioma do resultado
+            if (document.getElementById("resultado").innerHTML !== "") {
+                calcularIMC();
+            }
+        }
+    </script>
+    <script src="trabalho.js"></script>
 </body>
 </html>
