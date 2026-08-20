@@ -178,81 +178,90 @@
 <body>
 
 <div id="menu"></div>
+<button onclick="mudarIdioma()" id="btn-lang">English</button>
 
 <section class="intro">
 
-    <h1>Checklist de Hábitos Saudáveis</h1>
-
-    <p>
-        Use a lista abaixo para acompanhar seus hábitos.
-    </p>
+  <h1 data-pt="Checklist de Hábitos Saudáveis" data-en="Healthy Habits Checklist">Checklist de Hábitos Saudáveis</h1> 
+  <p data-pt="Use a lista abaixo para acompanhar seus hábitos." data-en="Use the list below to track your habits.">Use a lista abaixo para acompanhar seus hábitos.</p>
 
 </section>
 
-<!-- CALCULADORA DE ÁGUA -->
-<div class="agua-box">
+    <!-- CALCULADORA DE ÁGUA --> 
+    <div class="agua-box"> 
+        <h2 data-pt="💧 Calculadora de Água" data-en="💧 Water Calculator">💧 Calculadora de Água</h2> 
+        <input type="number" id="peso" placeholder="Digite seu peso (kg)" data-pt="Digite seu peso (kg)" data-en="Enter your weight (kg)"> 
+        <input type="number" id="idade" placeholder="Digite sua idade" data-pt="Digite sua idade" data-en="Enter your age"> 
+        <button onclick="calcularAgua()" data-pt="Calcular" data-en="Calculate">Calcular</button> 
+        <p id="resultadoAgua"></p> 
+    </div> 
 
-    <h2>💧 Calculadora de Água</h2>
+    <!-- DATA --> 
+    <input type="date" class="data" id="data"> 
 
-    <input type="number" id="peso" placeholder="Digite seu peso (kg)">
-    <input type="number" id="idade" placeholder="Digite sua idade">
+    <!-- PROGRESSO --> 
+    <div class="progresso"> 
+        <span data-pt="Meta: " data-en="Goal: ">Meta: </span><span id="pct">0%</span> 
+    </div> 
+    <div class="barra"> 
+        <span id="bar"></span> 
+    </div> 
 
-    <button onclick="calcularAgua()">Calcular</button>
+    <!-- CHECKLIST --> 
+    <div class="listas"> 
+        <label class="habit-item"> 
+            <input type="checkbox" onchange="calc()"> 
+            <span data-pt="💧 Bebi 2L de água" data-en="💧 Drank 2L of water">💧 Bebi 2L de água</span> 
+        </label> 
+        <label class="habit-item"> 
+            <input type="checkbox" onchange="calc()"> 
+            <span data-pt="🧘 Meditei" data-en="🧘 Meditated">🧘 Meditei</span> 
+        </label> 
+        <label class="habit-item"> 
+            <input type="checkbox" onchange="calc()"> 
+            <span data-pt="🍎 Comi uma fruta" data-en="🍎 Ate a fruit">🍎 Comi uma fruta</span> 
+        </label> 
+        <label class="habit-item"> 
+            <input type="checkbox" onchange="calc()"> 
+            <span data-pt="🥗 Comi saudável" data-en="🥗 Ate healthy">🥗 Comi saudável</span> 
+        </label> 
+        <label class="habit-item"> 
+            <input type="checkbox" onchange="calc()"> 
+            <span data-pt="🛌 Dormi mais de 8h" data-en="🛌 Slept more than 8h">🛌 Dormi mais de 8h</span> 
+        </label> 
+        <label class="habit-item"> 
+            <input type="checkbox" onchange="calc()"> 
+            <span data-pt="🏋️‍♂️ Fiz exercícios" data-en="🏋️‍♂️ Exercised">🏋️‍♂️ Fiz exercícios</span> 
+        </label> 
+    </div> 
 
-    <p id="resultadoAgua"></p>
+    <p id="msg" class="msg"></p> 
+    <div id="imgGif"></div> 
 
-</div>
-
-<!-- DATA -->
-<input type="date" class="data" id="data">
-
-<!-- PROGRESSO -->
-<div class="progresso">
-    Meta: <span id="pct">0%</span>
-</div>
-
-<div class="barra">
-    <span id="bar"></span>
-</div>
-
-<!-- CHECKLIST -->
-
-<div class="listas">
-<label class="habit-item">
-    <input type="checkbox" onchange="calc()">
-    <span>💧 Bebi 2L de água</span>
-</label>
-
-<label class="habit-item">
-    <input type="checkbox" onchange="calc()">
-    <span>🧘 Meditei</span>
-</label>
-
-<label class="habit-item">
-    <input type="checkbox" onchange="calc()">
-    <span>🍎 Comi uma fruta</span>
-</label>
-
-<label class="habit-item">
-    <input type="checkbox" onchange="calc()">
-    <span>🥗 Comi saudável</span>
-</label>
-
-<label class="habit-item">
-    <input type="checkbox" onchange="calc()">
-    <span>🛌 Dormi mais de 8h</span>
-</label>
-
-<label class="habit-item">
-    <input type="checkbox" onchange="calc()">
-    <span>🏋️‍♂️ Fiz exercícios</span>
-</label>
-</div>
-
-<p id="msg" class="msg"></p>
-<div id="imgGif"></div>
-
-<script src="trabalho.js"></script>
-
-</body>
+    <script> 
+        let idiomaAtual = 'pt'; 
+        function mudarIdioma() { 
+            const elementos = document.querySelectorAll('[data-pt]'); 
+            const botao = document.getElementById('btn-lang'); 
+            if (idiomaAtual === 'pt') { 
+                elementos.forEach(el => { 
+                    el.innerText = el.getAttribute('data-en'); 
+                }); 
+                document.documentElement.lang = 'en'; 
+                botao.innerText = 'Português'; 
+                idiomaAtual = 'en'; 
+            } else { 
+                elementos.forEach(el => { 
+                    el.innerText = el.getAttribute('data-pt'); 
+                }); 
+                document.documentElement.lang = 'pt-br'; 
+                botao.innerText = 'English'; 
+                idiomaAtual = 'pt'; 
+            } 
+        } 
+    </script> 
+    <script src="trabalho.js"></script> 
+</body> 
 </html>
+
+
