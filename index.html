@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<style>
-            :root {
-            --cor-mente: #6a89cc;    /* Azul sereno */
-            --cor-fisico: #38ada9;   /* Verde energia */
-            --cor-agua: #4a69bd;     /* Azul hidratação */
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-pt="Início" data-en="The Beginning">Início</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        :root {
+            --cor-mente: #6a89cc;
+            --cor-fisico: #38ada9;
+            --cor-agua: #4a69bd;
             --cor-fundo: #f7f9fc;
         }
-
-        /* Animação de Entrada */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
@@ -29,120 +25,75 @@
             margin: 0 auto;
             padding: 40px 20px;
         }
-
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             animation: fadeInUp 0.8s ease-out;
         }
-
-        h1 {
-            color: var(--cor-mente);
-            font-size: 2.5rem;
-            border-bottom: 3px solid var(--cor-fisico);
-            display: inline-block;
-            padding-bottom: 10px;
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-bottom: 20px;
         }
-
-        section {
+        section, main {
             background: white;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             animation: fadeInUp 1s ease-out;
+            margin-bottom: 20px;
         }
-
-        h2 {
-            color: var(--cor-fisico);
-            margin-top: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-</style>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
-
-    <link rel="stylesheet" href="estilos.css">
+    </style>
 </head>
-
 <body>
 
     <!-- MENU -->
     <div id="menu"></div>
+
+    <!-- BOTÃO IDIOMA -->
+    <button onclick="mudarIdioma()" id="btn-lang">English</button>
 
     <!-- BANNER -->
     <div class="bannerIndexInicio">
         <img src="pasta-de-imagens/imagem.webp.webp" alt="Banner">
     </div>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hábitos Saudáveis</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 0 20px; }
-        button { padding: 8px 12px; cursor: pointer; margin-bottom: 20px; }
-    </style>
-</head>
-<body>
-
-    
-    <button onclick="mudarIdioma()" id="btn-lang">English</button>
-
     <main>
         <h1 data-pt="Hábitos Saudáveis e Qualidade de Vida" data-en="Healthy Habits and Quality of Life">Hábitos Saudáveis e Qualidade de Vida</h1>
-        
-        <p data-pt="Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social." 
-           data-en="Healthy habits are routines that contribute to physical, mental, and social well-being.">
-           Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social.
-        </p>
-        
-        <p data-pt="O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações." 
-           data-en="A habit is a repeated behavior that becomes automatic over time, while health involves balance between body, mind, and relationships.">
-           O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações.
-        </p>
-        
-        <p data-pt="Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar." 
-           data-en="According to the World Health Organization, health is not merely the absence of disease, but a complete state of well-being.">
-           Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar.
-        </p>
-        
-        <p data-pt='Segundo o slogan "Todo movimento conta" da OMS, pode ser uma grande mudança de vida então comece do básico e com o tempo, se tornará rotina.' 
-           data-en='According to the WHO slogan "Todo movimento conta/Every move counts", it can be a major life change so start with the basics and over time it will become a routine.'>
-           Segundo o slogan "Todo movimento conta" da OMS, pode ser uma grande mudança de vida então comece do básico e com o tempo, se tornará rotina.
-        </p>
-        
+        <p data-pt="Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social." data-en="Healthy habits are routines that contribute to physical, mental, and social well-being.">Hábitos saudáveis são rotinas que contribuem para o bem-estar físico, mental e social.</p>
+        <p data-pt="O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações." data-en="A habit is a repeated behavior that becomes automatic over time, while health involves balance between body, mind, and relationships.">O hábito é um comportamento repetido que se torna automático com o tempo, enquanto a saúde envolve equilíbrio entre corpo, mente e relações.</p>
+        <p data-pt="Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar." data-en="According to the World Health Organization, health is not merely the absence of disease, but a complete state of well-being.">Segundo a OMS, saúde não é apenas ausência de doenças, mas um estado completo de bem-estar.</p>
+        <p data-pt='Segundo o slogan "Todo movimento conta" da OMS, pode ser uma grande mudança de vida então comece do básico e com o tempo, se tornará rotina.' data-en='According to the WHO slogan "Todo movimento conta/Every move counts", it can be a major life change so start with the basics and over time it will become a routine.'>Segundo o slogan "Todo movimento conta" da OMS, pode ser uma grande mudança de vida então comece do básico e com o tempo, se tornará rotina.</p>
         <p><strong><span data-pt='"Pequenos passos diários levam a grandes transformações."' data-en='"Small daily steps lead to big transformations."'>"Pequenos passos diários levam a grandes transformações."</span></strong></p>
     </main>
 
     <script>
         let idiomaAtual = 'pt';
-
         function mudarIdioma() {
             const elementos = document.querySelectorAll('[data-pt]');
             const botao = document.getElementById('btn-lang');
-
+            
             if (idiomaAtual === 'pt') {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
+                elementos.forEach(el => {
+                    if (el.tagName === 'TITLE') {
+                        el.innerText = el.getAttribute('data-en');
+                    } else {
+                        el.innerText = el.getAttribute('data-en');
+                    }
+                });
                 document.documentElement.lang = 'en';
                 botao.innerText = 'Português';
                 idiomaAtual = 'en';
             } else {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
+                elementos.forEach(el => {
+                    el.innerText = el.getAttribute('data-pt');
+                });
                 document.documentElement.lang = 'pt-BR';
                 botao.innerText = 'English';
                 idiomaAtual = 'pt';
             }
         }
     </script>
-
     <script src="trabalho.js"></script>
-
 </body>
-
 </html>
