@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contato</title>
-
-<link rel="stylesheet" href="estilos.css">
-
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Corrigido: adicionada a classe lang-text para o script encontrar o título -->
+    <title class="lang-text" data-pt="Contato" data-en="Contact">Contato</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
 
     :root {
             --cor-mente: #6a89cc;    /* Azul sereno */
@@ -179,27 +178,48 @@
 <body>
 
 <div id="menu"></div>
+<button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
 
 <div class="contato-page">
 
     <div class="contato-box">
-        <h1>Fale Conosco 💬</h1>
-
-        <form class= method="post">
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu email" required>
-            <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
-            <button type="submit">Enviar mensagem</button>
-        </form>
-
-        <div class="info">
-            Responderemos o mais breve possível 🚀  contato: habitos.fatec@gmail.com          
+        <h1 class="lang-text" data-pt="Fale Conosco 💬" data-en="Contact Us 💬">Fale Conosco 💬</h1>
+            
+        <form class="contato-form" method="post">
+        <input type="text" placeholder="Seu nome" required data-pt="Seu nome" data-en="Your name">
+        <input type="email" placeholder="Seu email" required data-pt="Seu email" data-en="Your email">
+        <textarea rows="4" placeholder="Sua mensagem..." required data-pt="Sua mensagem..." data-en="Your message..."></textarea>
+                
+        <button type="submit" class="lang-text" data-pt="Enviar mensagem" data-en="Send message">Enviar mensagem</button>
+            </form>
+            <div class="info lang-text" data-pt="Responderemos o mais breve possível 🚀 contato: habitos.fatec@gmail.com" data-en="We will reply as soon as possible 🚀 contact: habitos.fatec@gmail.com">
+                Responderemos o mais breve possível 🚀 contato: habitos.fatec@gmail.com      
         </div>
     </div>
 
 </div>
 
 <script src="trabalho.js"></script>
+<script>
+        let idiomaAtual = 'pt';
+
+        function mudarIdioma() {
+            const elementos = document.querySelectorAll('[data-pt]');
+            const botao = document.getElementById('btn-lang');
+
+            if (idiomaAtual === 'pt') {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
+                document.documentElement.lang = 'en';
+                botao.innerText = 'Português';
+                idiomaAtual = 'en';
+            } else {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
+                document.documentElement.lang = 'pt-BR';
+                botao.innerText = 'English';
+                idiomaAtual = 'pt';
+            }
+        }
+    </script>
 
 </body>
 </html>
