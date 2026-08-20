@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Qualidade de Sono</title>
-
-<link rel="stylesheet" href="estilos.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-pt="Qualidade de Sono" data-en="Sleep Quality">Qualidade de Sono</title>
+    <link rel="stylesheet" href="estilos.css">
 <style>
           :root {
             --cor-mente: #6a89cc;    /* Azul sereno */
@@ -68,18 +66,20 @@
         }
 </style>
 
-  <head>
+
+</head>
 <body>
-<menu>
-<div id="menu"></div>
-<main>
+    <menu>
+        <div id="menu"></div>
+        <button onclick="mudarIdioma()" id="btn-lang">English</button>
+    </menu>
 
-<h1>A importancia da qualidade do sono</h1>
-
-<p>Uma boa qualidade de sono é tão importante quanto os outros tópicos.</p>
-<p>Segundo a OMS, 7/8 horas é o tempo ideal para uma pessoa adulta.</p>
-<p>Para isso, além do horário, é preciso ter uma rotina coerente de sono.</p>
-<P><strong>"Durma bem e tenha maior produtividade."</strong></P>
+    <main>
+            <h1 data-pt="A importância da qualidade do sono" data-en="The importance of sleep quality">A importância da qualidade do sono</h1>
+            <p data-pt="Uma boa qualidade de sono é tão importante quanto os outros tópicos." data-en="Good sleep quality is as important as the other topics.">Uma boa qualidade de sono é tão importante quanto os outros tópicos.</p>
+            <p data-pt="Segundo a OMS, 7/8 horas é o tempo ideal para uma pessoa adulta." data-en="According to WHO, 7/8 hours is the ideal time for an adult.">Segundo a OMS, 7/8 horas é o tempo ideal para uma pessoa adulta.</p>
+            <p data-pt="Para isso, além do horário, é preciso ter uma rotina coerente de sono." data-en="For this, besides the schedule, you need a coherent sleep routine.">Para isso, além do horário, é preciso ter uma rotina coerente de sono.</p>
+            <p><strong data-pt='"Durma bem e tenha maior produtividade."' data-en='"Sleep well and have greater productivity."'>"Durma bem e tenha maior produtividade."</strong></p>
 
 </p>
 </menu>
@@ -94,7 +94,28 @@
     <img src="pasta-de-imagens/qualidade_sono_banner.webp" alt="Banner2" class="imgresp">
 </div>
 
-<script src="trabalho.js"></script>
-  
-</head>
+    <script>
+        let idiomaAtual = 'pt';
+        function mudarIdioma() {
+            const elementos = document.querySelectorAll('[data-pt]');
+            const botao = document.getElementById('btn-lang');
+            if (idiomaAtual === 'pt') {
+                elementos.forEach(el => {
+                    el.innerText = el.getAttribute('data-en');
+                });
+                document.documentElement.lang = 'en';
+                botao.innerText = 'Português';
+                idiomaAtual = 'en';
+            } else {
+                elementos.forEach(el => {
+                    el.innerText = el.getAttribute('data-pt');
+                });
+                document.documentElement.lang = 'pt-br';
+                botao.innerText = 'English';
+                idiomaAtual = 'pt';
+            }
+        }
+    </script>
+    <script src="trabalho.js"></script>
 </body>
+</html>
