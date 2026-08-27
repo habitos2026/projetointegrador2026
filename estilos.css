@@ -614,3 +614,10 @@ strong {
         width:100%;
     }
 }
+
+/* Oculta o texto apenas em telas menores que 768px*/
+@media (max-width: 768px) {
+  .menu-text {
+    display: none;
+  }
+}
