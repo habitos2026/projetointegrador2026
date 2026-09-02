@@ -4,6 +4,7 @@
     --cinza128: rgb(128,128,128);
     --azul: rgb(0,80,120);
     --amarelo: yellow;
+    --verde: rgb(8, 84, 8);
 }
 
 /* RESET */
@@ -498,6 +499,10 @@ strong {
   font-weight: 800; 
 }
 
+.plista{
+    display: flex;
+    color: var(--verde);
+}
 
 /* MOBILE */
 @media screen and (max-width:950px){
