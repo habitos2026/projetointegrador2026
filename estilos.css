@@ -511,6 +511,13 @@ strong {
     color: var(--verde);
 }
 
+#btn-lang {
+position: absolute; 
+top: 11.8%;          
+left: 30%;         
+z-index: 1000;    
+}
+
 /* MOBILE */
 @media screen and (max-width:950px){
 
