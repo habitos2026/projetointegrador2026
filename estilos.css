@@ -17,8 +17,9 @@
 
 body{
     background:#f5f7fb;
-    color:#1f2937;
+    color:#1f2937;             
 }
+
 
 /* HEADER */
 header{
@@ -143,15 +144,21 @@ p{
 }
 
 /* BOX ÁGUA */
-.agua-box{
-    background:#ecfeff;
+.agua-box { 
+  background: #ecfeff; 
+  padding: 35px; 
+  border-radius: 20%; 
+  max-width: 250px; 
+  width: fit-content; 
+  position: absolute;
+  top: 13%;    
+  right: 10%;   
+  margin: 6%; 
 
-    padding:20px;
-
-    border-radius:15px;
-
-    margin-bottom:20px;
 }
+
+
+
 
 .agua-box h2{
     color:#0f766e;
