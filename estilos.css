@@ -632,4 +632,13 @@ strong {
   .menu-text {
     display: none;
   }
+
+.agua-box {
+    position: static;     
+    max-width: 100%;      
+    width: auto;          
+    padding: 20px;        
+    margin: 15px auto;   
+    border-radius: 20px;  
+  }
 }
