@@ -165,10 +165,17 @@
     background: #00b894;
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
     transform: scale(104%);
-    transition:
-    background 0.5s,
-    box-shadow 0.5s,
-    transform 0.5s;
+    transition:background 0.5s, box-shadow 0.5s, transform 0.5s;
+}
+
+/* Clicou e está vazio */
+.agua-box input:focus:invalid {
+    border: 1px solid red;
+}
+
+/* Clicou e está preenchido */
+.agua-box input:focus:valid {
+    border: 1px solid blue;
 }
 
 </style>
@@ -190,8 +197,8 @@
     <!-- CALCULADORA DE ÁGUA --> 
     <div class="agua-box"> 
         <h2 data-pt="💧 Calculadora de Água" data-en="💧 Water Calculator">💧 Calculadora de Água</h2> 
-        <input type="number" id="peso" placeholder="Digite seu peso (kg)" data-pt="Digite seu peso (kg)" data-en="Enter your weight (kg)"> 
-        <input type="number" id="idade" placeholder="Digite sua idade" data-pt="Digite sua idade" data-en="Enter your age"> 
+        <input type="number" id="peso"  required placeholder="Digite seu peso (kg)" data-pt="Digite seu peso (kg)" data-en="Enter your weight (kg)"> 
+        <input type="number" id="idade" required placeholder="Digite sua idade" data-pt="Digite sua idade" data-en="Enter your age"> 
         <button onclick="calcularAgua()" data-pt="Calcular" data-en="Calculate">Calcular</button> 
         <p id="resultadoAgua"></p> 
     </div> 
