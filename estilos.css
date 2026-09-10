@@ -148,6 +148,7 @@ p{
     justify-content:space-around;
     overflow:hidden;
     aspect-ratio:16/9;
+    background-color: #020b1f;
 }
 
 .bannerIndex2 img{
