@@ -139,7 +139,20 @@ p{
 .bannerIndex img{
     width:70%;
     height:80%;
+    object-fit:cover;
+}
 
+.bannerIndex2{
+    height:100%;
+    display:flex;
+    justify-content:space-around;
+    overflow:hidden;
+    aspect-ratio:16/9;
+}
+
+.bannerIndex2 img{
+    width:92%;
+    height:100%;
     object-fit:cover;
 }
 
@@ -661,4 +674,11 @@ z-index: 1000;
     margin: 15px auto;   
     border-radius: 20px;  
   }
+
+  #btn-lang { 
+    top: 55px; 
+    bottom: auto; 
+    padding: 10px; 
+    font-size: 13px; 
+  } 
 }
