@@ -473,6 +473,10 @@ body.dark .contato-box {
     background: #0d1b2a;
 }
 
+body.dark .contato-page {
+    background: #0a0f1e;
+}
+
 body.dark .contato-form input,
 body.dark .contato-form textarea {
     background: #0a0f1e;
