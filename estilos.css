@@ -661,4 +661,11 @@ z-index: 1000;
     margin: 15px auto;   
     border-radius: 20px;  
   }
+
+  #btn-lang { 
+    top: 55px; 
+    bottom: auto; 
+    padding: 10px; 
+    font-size: 13px; 
+  } 
 }
