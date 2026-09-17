@@ -8,7 +8,22 @@ fetch("menu.html")
 .then(res => res.text())
 .then(data => {
 
-    document.getElementById("menu").innerHTML = data;
+   document.getElementById("menu").innerHTML = data;
+
+    // ===== PÁGINA ATUAL =====
+    let paginaAtual = window.location.pathname.split("/").pop();
+
+    if (paginaAtual === "") {
+        paginaAtual = "index.html";
+    }
+
+    const linksMenu = document.querySelectorAll("#menu a");
+
+    linksMenu.forEach(link => {
+        if (link.getAttribute("href") === paginaAtual) {
+            link.classList.add("ativo");
+        }
+    });
 
     // Botão tema
     const btnTema = document.getElementById("btnTema");
