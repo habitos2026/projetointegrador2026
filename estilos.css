@@ -548,6 +548,13 @@ z-index: 1000;
     margin-bottom: 5px; 
 }
 
+.config{
+    height: 4rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
 
 /* MOBILE */
 @media screen and (max-width:950px){
