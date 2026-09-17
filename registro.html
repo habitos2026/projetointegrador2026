@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="lang-text" data-pt="Registro" data-en="Register">Registro</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        :root {
+            --cor-mente: #6a89cc;
+            --cor-fisico: #38ada9;
+            --cor-fundo: #f7f9fc;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--cor-fundo);
+            color: #2f3542;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .contato-page {
+            min-height: 100vh;
+            padding: 40px 10px;
+        }
+        .contato-box {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .contato-box h1 {
+            text-align: center;
+            color: #0f766e;
+            margin-bottom: 20px;
+        }
+        .contato-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contato-form input {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+            font-size: 1rem;
+        }
+        .contato-form button {
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #0f766e;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .info {
+            text-align: center;
+            margin-top: 15px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
+    <div class="contato-page">
+        <div class="contato-box">
+            <h1 class="lang-text" data-pt="Criar Conta 📝" data-en="Create Account 📝">Criar Conta 📝</h1>
+            <form class="contato-form" method="post">
+                <input type="text" maxlength="70" placeholder="Seu nome" required data-pt="Seu nome" data-en="Your name">
+                <input type="email" maxlength="100" placeholder="Seu email" required data-pt="Seu email" data-en="Your email">
+                <input type="password" maxlength="50" placeholder="Sua senha" required data-pt="Sua senha" data-en="Your password">
+                <div class="auth-link">
+                    <span class="lang-text" data-pt="Já tem uma conta?" data-en="Already have an account?">Já tem uma conta?</span>
+                    <a href="contato.html" class="lang-text" data-pt="Fale Conosco" data-en="Contact Us">Fale Conosco</a>
+                </div>
+                <button type="submit" class="lang-text" data-pt="Registrar" data-en="Register">Registrar</button>
+            </form>
+            <div class="info lang-text" data-pt="Preencha os campos para se cadastrar 🚀" data-en="Fill in the fields to sign up 🚀">
+                Preencha os campos para se cadastrar 🚀
+            </div>
+        </div>
+    </div>
+    <script>
+        let idiomaAtual = 'pt';
+        function mudarIdioma() {
+            const elementos = document.querySelectorAll('[data-pt]');
+            const botao = document.getElementById('btn-lang');
+            if (idiomaAtual === 'pt') {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
+                document.documentElement.lang = 'en';
+                botao.innerText = 'Português';
+                idiomaAtual = 'en';
+            } else {
+                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
+                document.documentElement.lang = 'pt-BR';
+                botao.innerText = 'English';
+                idiomaAtual = 'pt';
+            }
+        }
+    </script>
+</body>
+</html>
