@@ -555,6 +555,32 @@ z-index: 1000;
     right: 2rem;
 }
 
+  .auth-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 5px;
+  }
+  .auth-link a {
+    color: #0f766e;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .auth-link a:hover {
+    text-decoration: underline;
+  }
+  .contato-form input:focus:invalid, .contato-form textarea:focus:invalid { 
+    border: 1px solid red; 
+    color: red; 
+    box-shadow: 6px 6px 8px rgba(255, 0, 0, 0.836); 
+  }
+  .contato-form input:focus:valid, .contato-form textarea:focus:valid { 
+    border: 1px solid #38ada9; 
+    box-shadow: 6px 6px 8px rgba(0, 183, 255, 0.836); 
+  }
+  textarea { resize: none; 
+}
+  
 
 /* MOBILE */
 @media screen and (max-width:950px){
