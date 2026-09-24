@@ -254,7 +254,6 @@ p{
 
 /* IMAGENS SAÚDE */
 .Saude .Imagem img{
-
     width:35%;
 
     height:auto;
@@ -274,6 +273,12 @@ p{
     0 0 10px cyan,
     0 0 20px cyan,
     0 0 40px cyan;
+}
+
+.Img1 img, .Img2 img, .Img3 img, .Img4 img{
+    object-fit: cover;
+    width: 60%;
+
 }
 
 .imc-box{
