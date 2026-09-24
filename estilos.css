@@ -506,6 +506,16 @@ body.dark footer {
     color: #475569;
 }
 
+
+body.dark .config {
+    color: rgb(4, 182, 182);
+}
+
+body.dark .config:hover {
+    color: red;
+    transform: rotate(20deg);
+}
+
 @keyframes clickEffect {
   0% {
     transform: scale(1);
@@ -565,11 +575,23 @@ z-index: 1000;
     margin-bottom: 5px; 
 }
 
-.config{
-    height: 4rem;
+.config svg {
+    width: 40px;
+    height: 40px;
+    stroke-width: 2;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
+}
+
+.config {
+    color: black;
+    transition: all 0.3s;
+}
+
+.config:hover {
+    color: red;
+    transform: rotate(20deg);
 }
 
   .auth-link {
@@ -588,7 +610,6 @@ z-index: 1000;
   }
   .contato-form input:focus:invalid, .contato-form textarea:focus:invalid { 
     border: 1px solid red; 
-    color: red; 
     box-shadow: 6px 6px 8px rgba(255, 0, 0, 0.836); 
   }
   .contato-form input:focus:valid, .contato-form textarea:focus:valid { 
@@ -596,6 +617,23 @@ z-index: 1000;
     box-shadow: 6px 6px 8px rgba(0, 183, 255, 0.836); 
   }
   textarea { resize: none; 
+}
+
+#btn-lang {
+    background-color: #4a69bd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.4s;
+}
+
+#btn-lang:hover {
+    background-color: #38ada9;
+    box-shadow: 4px 4px 8px rgba(0, 162, 255, 0.836);
+    transform: scale(101.5%);
 }
   
 
