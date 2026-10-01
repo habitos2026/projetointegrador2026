@@ -5,6 +5,7 @@
     --azul: rgb(0,80,120);
     --amarelo: yellow;
     --verde: rgb(8, 84, 8);
+    --vermelho: rgb(180,0,0);
 }
 
 /* RESET */
@@ -640,6 +641,22 @@ z-index: 1000;
     box-shadow: 4px 4px 8px rgba(0, 162, 255, 0.836);
     transform: scale(101.5%);
 }
+
+.erro{
+    color: var(--vermelho);
+    display: none;
+}
+
+.grupoContato:has(:user-invalid) .erro{
+    display: block;
+}
+
+.grupoContato{
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
   
 
 
