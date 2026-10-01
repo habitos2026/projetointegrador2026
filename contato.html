@@ -203,11 +203,27 @@ textarea{
         <h1 class="lang-text" data-pt="Fale Conosco 💬" data-en="Contact Us 💬">Fale Conosco 💬</h1>
             
         <form class="contato-form" method="post">
-        <input type="text" maxlength="70" placeholder="Seu nome" required data-pt="Seu nome" data-en="Your name">
-        <input type="email" maxlength="100" placeholder="Seu email" required data-pt="Seu email" data-en="Your email">
-        <textarea rows="4" maxlength="367" placeholder="Sua mensagem..." required data-pt="Sua mensagem..." data-en="Your message..."></textarea>
-                
-        <div class="auth-link">
+
+        <div class="grupoContato">
+        <input type="text" maxlength="70" placeholder="Seu nome" required 
+        data-pt="Seu nome" data-en="Your name">
+        <p class="erro lang-text" data-pt="Este campo é obrigatório. Por favor, informe seu nome" data-en="This field is required. Please enter your name">Este campo é obrigatório. Por favor, informe seu nome</p>
+        </div>
+
+        <div class="grupoContato">
+        <input type="email" maxlength="100" placeholder="Seu email" required 
+        data-pt="Seu email" data-en="Your email">
+        <p class="erro lang-text" data-pt="Informe seu e-mail" data-en="Enter your email">Informe seu e-mail</p>
+        </div>
+
+        <div class="grupoContato">
+        <textarea rows="4" maxlength="367" placeholder="Sua mensagem..." required 
+        data-pt="Sua mensagem..." data-en="Your message..."></textarea>
+        <p class="erro lang-text" data-pt="Escreva a sua mensagem (max: 367 linhas)" data-en="Write your message (max: 367 characters)">Escreva a sua mensagem (max: 367 linhas)</p>
+        </div>
+
+
+    <div class="auth-link">
         <span class="lang-text" data-pt="Não tem uma conta?" data-en="Don't have an account?">Não tem uma conta?</span>
         <a href="registro.html" class="lang-text" data-pt="Registre-se" data-en="Register">Registre-se</a>
       </div>
