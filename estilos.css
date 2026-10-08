@@ -614,7 +614,7 @@ z-index: 1000;
   .auth-link a:hover {
     text-decoration: underline;
   }
-  .contato-form input:focus:invalid, .contato-form textarea:focus:invalid { 
+  .contato-form input:focus:invalid, .contato-form textarea:focus:invalid {
     border: 1px solid red; 
     box-shadow: 6px 6px 8px rgba(255, 0, 0, 0.836); 
   }
