@@ -522,6 +522,12 @@ body.dark .config:hover {
     transform: rotate(20deg);
 }
 
+body.dark .contato-box{
+    background-color: #020b1f;
+}
+
+
+
 @keyframes clickEffect {
   0% {
     transform: scale(1);

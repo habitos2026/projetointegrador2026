@@ -23,11 +23,11 @@
             margin: 0 auto;
             padding: 40px 20px;
         }
-        .contato-page {
+        .registro-page {
             min-height: 100vh;
             padding: 40px 10px;
         }
-        .contato-box {
+        .registro-box {
             max-width: 500px;
             margin: auto;
             background: white;
@@ -35,17 +35,17 @@
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
-        .contato-box h1 {
+        .registro-box h1 {
             text-align: center;
             color: #0f766e;
             margin-bottom: 20px;
         }
-        .contato-form {
+        .registro-form {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-        .contato-form input {
+        .registro-form input {
             padding: 12px;
             border-radius: 10px;
             border: 1px solid #cbd5e1;
@@ -53,7 +53,7 @@
             font-size: 1rem;
             transition: color 0.3s, box-shadow 0.3s, border 0.3s;
         }
-        .contato-form button{
+        .registro-form button{
             padding: 12px;
             border: none;
             border-radius: 10px;
@@ -64,11 +64,12 @@
             transition: background-color 0.3s, box-shadow 0.3s;
         }
 
-        .contato-form button:hover{
+        .registro-form button:hover{
             background-color: #01a373;
             box-shadow: 4px 4px 8px rgb(19, 119, 19);
             
         }
+        
 
         .info {
             text-align: center;
@@ -81,26 +82,26 @@
 </head>
 <body>
     <button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
-    <div class="contato-page">
-        <div class="contato-box">
-            <h1 class="lang-text" data-pt="Criar Conta 📝" data-en="Create Account 📝">Criar Conta 📝</h1>
+    <div class="registro-page">
+        <div class="registro-box">
+            <h1 class="registro-text" data-pt="Criar Conta 📝" data-en="Create Account 📝">Criar Conta 📝</h1>
 
-            <form class="contato-form" method="post">
+            <form class="registro-form" method="post">
 
-       <div class="grupoContato">
+       <div class="registrogrupoContato">
         <input type="text" maxlength="70" placeholder="Seu nome" required 
         data-pt="Seu nome" data-en="Your name">
         <p class="erro lang-text" data-pt="Este campo é obrigatório. Por favor, informe seu nome" data-en="This field is required. Please enter your name">Este campo é obrigatório. Por favor, informe seu nome</p>
         </div>
 
 
-      <div class="grupoContato">
+      <div class="registrogrupoContato">
         <input type="email" maxlength="100" placeholder="Seu email" required 
         data-pt="Seu email" data-en="Your email">
         <p class="erro lang-text" data-pt="Informe seu e-mail" data-en="Enter your email">Informe seu e-mail</p>
         </div>
 
-      <div class="grupoContato">
+      <div class="registrogrupoContato">
         <input type="password" maxlength="50" placeholder="Sua senha" required data-pt="Sua senha" data-en="Your password">
          <p class="erro lang-text" data-pt="Informe a sua senha" data-en="Enter your password">Informe a sua senha</p>
         </div>
