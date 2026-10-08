@@ -657,6 +657,27 @@ flex-direction: column;
 gap: 0.5rem;
 }
 
+
+.item-flex {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between; 
+    gap: 10px;              
+    list-style: none;      
+    background-color: rgb(194, 229, 252);    
+}
+
+.texto-saude {
+    flex: 1;                   
+}
+
+.imagem img {
+    max-width: 250px;          
+    width: 100%;               
+    height: auto;             
+    border-radius: 8px;        
+}
+
   
 
 
