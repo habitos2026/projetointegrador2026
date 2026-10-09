@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="lang-text" data-pt="Registro" data-en="Register">Registro</title>
     <link rel="stylesheet" href="estilos.css">
+
+<span>  
+<button id="btnTema" title="Alternar tema">🌙</button> 
+</span> 
  
     <style>
         :root {
@@ -66,14 +70,33 @@
             box-shadow: 4px 4px 8px rgb(19, 119, 19);
             
         }
+
+.registro-form input:focus:invalid,
+.registro-form textarea:focus:invalid {
+    border: 1px solid red;
+    box-shadow: 6px 6px 8px rgba(255, 0, 0, 0.836);
+
+}
+
+.registro-form input:focus:valid,
+.registro-form textarea:focus:valid {
+    border: 1px solid #38ada9;
+    box-shadow: 6px 6px 8px rgba(0, 183, 255, 0.836);
+}
+
+textarea{
+    resize: none;
+}
         
 
-        .info {
-            text-align: center;
-            margin-top: 15px;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
+.info {
+    text-align: center;
+    margin-top: 15px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+        
 
     </style>
 </head>
@@ -88,19 +111,19 @@
        <div class="registrogrupoContato">
         <input type="text" maxlength="70" placeholder="Seu nome" required 
         data-pt="Seu nome" data-en="Your name">
-        <p class="erro lang-text" data-pt="Este campo é obrigatório. Por favor, informe seu nome" data-en="This field is required. Please enter your name">Este campo é obrigatório. Por favor, informe seu nome</p>
+        <p class="errolang-text" data-pt="Este campo é obrigatório. Por favor, informe seu nome" data-en="This field is required. Please enter your name">Este campo é obrigatório. Por favor, informe seu nome</p>
         </div>
 
 
       <div class="registrogrupoContato">
         <input type="email" maxlength="100" placeholder="Seu email" required 
         data-pt="Seu email" data-en="Your email">
-        <p class="erro lang-text" data-pt="Informe seu e-mail" data-en="Enter your email">Informe seu e-mail</p>
+        <p class="errolang-text" data-pt="Informe seu e-mail" data-en="Enter your email">Informe seu e-mail</p>
         </div>
 
       <div class="registrogrupoContato">
         <input type="password" maxlength="50" placeholder="Sua senha" required data-pt="Sua senha" data-en="Your password">
-         <p class="erro lang-text" data-pt="Informe a sua senha" data-en="Enter your password">Informe a sua senha</p>
+         <p class="errolang-text" data-pt="Informe a sua senha" data-en="Enter your password">Informe a sua senha</p>
         </div>
                 <div class="auth-link">
                     <span class="lang-text" data-pt="Já tem uma conta?" data-en="Already have an account?">Já tem uma conta?</span>

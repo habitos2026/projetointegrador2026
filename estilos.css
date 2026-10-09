@@ -653,7 +653,17 @@ z-index: 1000;
     display: none;
 }
 
+
 .grupoContato:has(:user-invalid) .erro{
+    display: block;
+}
+
+.errolang-text{
+color: var(--vermelho);
+display: none;
+}
+
+.registrogrupoContato:has(:user-invalid) .errolang-text{
     display: block;
 }
 

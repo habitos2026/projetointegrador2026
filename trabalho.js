@@ -24,6 +24,9 @@ fetch("menu.html")
             link.classList.add("ativo");
         }
     });
+    
+
+    
 
     // Botão tema
     const btnTema = document.getElementById("btnTema");
