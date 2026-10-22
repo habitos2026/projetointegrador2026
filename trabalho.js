@@ -24,6 +24,8 @@ fetch("menu.html")
             link.classList.add("ativo");
         }
     });
+
+
     
 
     

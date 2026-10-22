@@ -671,6 +671,19 @@ body.dark .contato-box{
 
 }
 
+@keyframes config{
+
+    from{
+    transform:  rotatez(0deg);
+    }
+
+    to{
+    transform: rotatez(80deg);     
+    }
+    
+
+}
+
 strong {
   color:  #41424C; 
   font-weight: 800; 
@@ -707,16 +720,14 @@ z-index: 1000;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-}
-
-.config {
     color: black;
-    transition: all 0.3s;
+    transition: animation 0.5s ease, color 0.5s;
+    
 }
 
-.config:hover {
+.config svg:hover {
     color: red;
-    transform: rotate(20deg);
+    animation: config 1s linear infinite;
 }
 
   .auth-link {
@@ -784,7 +795,7 @@ gap: 0.5rem;
     justify-content: space-between; 
     gap: 10px;              
     list-style: none;      
-    background-color: rgb(194, 229, 252);    
+    background-color: rgb(194, 229, 252);
 }
 
 .texto-saude {
