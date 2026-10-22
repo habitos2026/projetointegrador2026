@@ -741,7 +741,8 @@ z-index: 1000;
     border: 1px solid #38ada9; 
     box-shadow: 6px 6px 8px rgba(0, 183, 255, 0.836); 
   }
-  textarea { resize: none; 
+
+textarea { resize: none; 
 }
 
 #btn-lang {
