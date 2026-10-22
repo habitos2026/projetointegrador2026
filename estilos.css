@@ -921,12 +921,6 @@ gap: 0.5rem;
         height:220px;
     }
 
-    .listas{
-        width:100%;
-
-        grid-template-columns:1fr;
-    }
-
     .Saude .Imagem img{
         width:100%;
     }
@@ -956,5 +950,11 @@ gap: 0.5rem;
     top: 0.5rem;
     left: 0.5rem;
   } 
+
+  .listas{
+    width:100%;
+    grid-template-columns:1fr;
+}
+
 }
  
