@@ -16,6 +16,7 @@ estilos.css
 trabalho.js
 menu.html
 contato.html
+registro.html
 sono.html
 saude.html
 imc.html
