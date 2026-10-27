@@ -792,6 +792,10 @@ z-index: 1000;
     display: block;
 }
 
+.registrogrupoContato:has(:user-invalid) .erro{
+       display: block;
+}
+
 .grupoContato{
 display: flex;
 flex-direction: column;
