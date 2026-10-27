@@ -59,13 +59,17 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        h2 {
-            color: var(--cor-fisico);
-            margin-top: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        h2, label {
+          color: var(--cor-fisico);
+          margin-top: 30px;
+          margin-bottom: 0px;
+          display: flex;
+         align-items: center;
+         gap: 10px;
+         font-size: 1.5rem;     
+         font-weight: bold;     
+}
+
 </style>
 </head>
 
@@ -95,10 +99,10 @@
             Por ser mais fácil e simples de calcular, tem certas limitações, como não diferenciar músculo de gordura, mas, como dito anteriormente, é utilizado apenas como um medidor inicial.
         </p>
         
-        <h2 data-pt="Calcule seu IMC" data-en="Calculate your BMI">Calcule seu IMC</h2>
+        <label for="imc" data-pt="Calcule seu IMC" data-en="Calculate your BMI">Calcule seu IMC:</label>
         <div class="imc-box">
-            <input id="peso" type="number" placeholder="Peso (kg)" data-pt="Peso (kg)" data-en="Weight (kg)">
-            <input id="altura" type="number" placeholder="Altura (ex: 1.75)" data-pt="Altura (ex: 1.75)" data-en="Height (e.g., 1.75)">
+            <input id="peso" name="imc" type="number" placeholder="Peso (kg)" data-pt="Peso (kg)" data-en="Weight (kg)">
+            <input id="altura" name="imc" type="number" placeholder="Altura (ex: 1.75)" data-pt="Altura (ex: 1.75)" data-en="Height (e.g., 1.75)">
             <button id="btn-calc" onclick="calcularIMC()" data-pt="Calcular" data-en="Calculate">Calcular</button>
             <div id="resultado"></div>
         </div>
@@ -185,3 +189,4 @@
     <script src="trabalho.js"></script>
 </body>
 </html>
+
