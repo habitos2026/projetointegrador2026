@@ -61,14 +61,16 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        h2 {
-            color: var(--cor-fisico);
-            margin-top: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-    }
-    
+      h2, .agua-box label { 
+    color: var(--cor-fisico);
+    margin-top: 30px;
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .check-container {
     max-width: 500px;
     margin: 40px auto;
@@ -198,9 +200,9 @@
 
     <!-- CALCULADORA DE ÁGUA --> 
     <div class="agua-box"> 
-        <h2 data-pt="💧 Calculadora de Água" data-en="💧 Water Calculator">💧 Calculadora de Água</h2> 
-        <input type="number" id="peso"  required placeholder="Digite seu peso (kg)" data-pt="Digite seu peso (kg)" data-en="Enter your weight (kg)"> 
-        <input type="number" id="idade" required placeholder="Digite sua idade" data-pt="Digite sua idade" data-en="Enter your age"> 
+        <label for="agua" data-pt="💧 Calculadora de Água" data-en="💧 Water Calculator">💧 Calculadora de Água</label> 
+        <input type="number" name="agua" id="peso"  required placeholder="Digite seu peso (kg)" data-pt="Digite seu peso (kg)" data-en="Enter your weight (kg)"> 
+        <input type="number" name="agua" id="idade" required placeholder="Digite sua idade" data-pt="Digite sua idade" data-en="Enter your age"> 
         <button onclick="calcularAgua()" data-pt="Calcular" data-en="Calculate">Calcular</button> 
         <p id="resultadoAgua"></p> 
     </div> 
