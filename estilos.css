@@ -765,6 +765,9 @@ z-index: 1000;
     cursor: pointer;
     font-size: 14px;
     transition: all 0.4s;
+    position: relative;
+    left: 10rem;
+    top: -7rem;
 }
 
 #btn-lang:hover {
