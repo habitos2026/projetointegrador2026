@@ -8,35 +8,31 @@
 <link rel="stylesheet" href="estilos.css">
 
 <style>
+
 /* SÓ O CHECKLIST (não mexe no resto do site) */
 
-        :root {
-            --cor-mente: #6a89cc;    /* Azul sereno */
-            --cor-fisico: #38ada9;   /* Verde energia */
-            --cor-agua: #4a69bd;     /* Azul hidratação */
-            --cor-fundo: #f7f9fc;
-        }
+:root {
+    --cor-mente: #6a89cc;    /* Azul sereno */
+    --cor-fisico: #38ada9;   /* Verde energia */
+    --cor-agua: #4a69bd;     /* Azul hidratação */
+    --cor-fundo: #f7f9fc;
+}
 
-        /* Animação de Entrada */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* Animação de Entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
     background-color: var(--cor-fundo);
     color: #2f3542;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
 }
 
 h1 {
@@ -56,7 +52,7 @@ section {
 }
 
 .check-container {
-    max-width: 500px;
+    max-width: 800px; /* Ajustado para caber as duas colunas confortavelmente como na imagem */
     margin: 40px auto;
     background: white;
     padding: 25px;
@@ -75,6 +71,8 @@ section {
     display: block;
     margin: 10px auto 20px;
     padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 /* PROGRESSO */
@@ -103,34 +101,42 @@ section {
     transition: 0.3s;
 }
 
-/* ITENS */
+/* ESTRUTURA DOS ITENS (Layout em duas colunas idêntico ao print) */
+.habitos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* CONTEÚDO FINALIZADO DA CLASSE QUE ESTAVA CORTADA */
 .habit-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    background: #f9fafb;
-    padding: 12px;
+    gap: 12px;
+    background: #ffffff;
+    padding: 15px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    transition: background 0.2s ease;
 }
 
-.habit-item input {
+.habit-item:hover {
+    background: #f1f5f9;
+}
+
+/* Estilização básica para os checkboxes internos */
+.habit-item input[type="checkbox"] {
     width: 18px;
     height: 18px;
+    cursor: pointer;
+    accent-color: var(--cor-fisico);
 }
 
-/* TEXTO */
-.habit-item span {
+.habit-item label {
+    cursor: pointer;
+    font-size: 1rem;
     font-weight: 500;
 }
 
-/* MARCADO */
-.habit-item input:checked + span {
-    text-decoration: line-through;
-    color: #9ca3af;
-}
-
-/* MENSAGEM */
 .msg {
     text-align: center;
     margin-top: 10px;
