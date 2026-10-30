@@ -298,9 +298,9 @@ p{
   max-width: 250px; 
   width: fit-content; 
   position: absolute;
-  top: 7%;    
-  right: 10%;   
-  margin: 6%;
+  top: 3rem;    
+  right: 0.5rem;   
+  margin: 5%;
 
 }
 
@@ -993,3 +993,4 @@ gap: 0.5rem;
         grid-template-columns: 1fr;
     }
 }
+
