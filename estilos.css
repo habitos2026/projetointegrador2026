@@ -766,8 +766,8 @@ z-index: 1000;
     font-size: 14px;
     transition: all 0.4s;
     position: relative;
-    left: 10rem;
-    top: -7rem;
+    left: 0.5rem;
+    top: -2.5rem;
 }
 
 #btn-lang:hover {
@@ -816,173 +816,180 @@ gap: 0.5rem;
     border-radius: 8px;        
 }
 
-  
-
-
-/* MOBILE */
 @media screen and (max-width:950px){
-
-    .botaoMenu{
-        display:flex;
-
-        animation:subir 0.5s ease;
+    .listaMenu {
+    	display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    } 
+    
+    .botaoMenu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px; 
+        cursor: pointer;
+        animation: subir 0.5s ease;
     }
 
-    .botaoMenu:hover{
+    .botaoMenu:hover {
         transform: scale(1.03);
         filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
     }
 
-    body.dark .botaoMenu Div{
-     background-color: white;   
-    border-color: #1e3a5f;
+    body.dark .botaoMenu Div {
+        background-color: white;   
+        border-color: #1e3a5f;
     }
 
-    body.dark #botaoFecharMenu{
+    body.dark #botaoFecharMenu {
         color: white;
     }
 
-    body.dark #botaoFecharMenu:hover{
+    body.dark #botaoFecharMenu:hover {
         background-color: transparent;
         text-shadow: 0 0 6px red;
     }
 
-
-    .menu{
-        position:fixed;
-
-        top:0;
-        right:-100%;
-
-        width:80%;
-        height:100vh;
-
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
         background: var(--azul);
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        padding:30px;
-
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
         transition: right 0.5s;
-
-        z-index:999;
+        z-index: 999;
     }
 
-    .menu a{
-        width:100%;
-
-        padding:12px 0;
-
-    
-        border-bottom:1px solid var(--cinza220);
-
-        text-decoration:none;
-
-        color:#374151;
-
+    .menu a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--cinza220);
+        text-decoration: none;
+        color: #374151;
         transition: 0.10s;
-    
-}
-
-    .menu a:hover{
-    color:white;
-    text-shadow: 0 0 6px #01b3a4;
-    border: #01b3a4 1px solid;
-    transition: 0.5s;
-}
-
-    .topoMenu{
-        display:flex;
-
-        width:100%;
-
-        justify-content:space-between;
-
-        align-items:center;
-
-        margin-bottom:30px;
     }
 
-    .topoMenu button{
-        border:none;
-
-        background:transparent;
-
-        font-size:20px;
-
-        cursor:pointer;
-    }
-    
-    .listaMenu{
-    	display: flex;
-       flex-direction: column;
-       gap: 0.5rem;
-
-    main{
-        margin:20px;
+    .menu a:hover {
+        color: white;
+        text-shadow: 0 0 6px #01b3a4;
+        border: #01b3a4 1px solid;
+        transition: 0.5s;
     }
 
-    .bannerIndex img{
-        width:100%;
-        height:220px;
+    .topoMenu {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
     }
 
-    .Saude .Imagem img{
-        width:100%;
+    .topoMenu button {
+        border: none;
+        background: transparent;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    main {
+        margin: 20px;
+    }
+
+    .bannerIndex img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Saude .Imagem img {
+        width: 100%;
     }
 }
 
-	
-}
+@media screen and (max-width: 768px) {
 
-/* Oculta o texto apenas em telas menores que 768px*/
-@media (max-width: 768px) {
+    .mainPagina {
+        min-height: 90px;
+        padding: 10px 4%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
 
-.agua-box {
-    position: static;     
-    max-width: 100%;      
-    width: auto;          
-    padding: 20px;        
-    margin: 15px auto;   
-    border-radius: 20px;  
-  }
-
-  #btn-lang { 
-    top: 55px; 
-    bottom: auto; 
-    padding: 10px; 
-    font-size: 13px; 
-    position: relative;
-    top: 0.5rem;
-    left: 0.5rem;
-  } 
-
-  .listas{
-    width:100%;
-    grid-template-columns:1fr;
-}
-
- .mainPagina {
-        min-height: 75px;
-        padding: 10px 15px;
+    .mainPagina nav:not(.menu) {
+        display: none;
     }
 
     .logo img {
-        width: 75px;
-        max-height: 75px;
+        width: 65px;
+        max-height: 65px;
+    }
+
+    #btn-lang, .botaoMenu {
+        vertical-align: middle;
     }
 
     .botaoMenu {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .botaoMenu div {
+        width: 100%;
+        height: 3px;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+    }
+
+    main {
+        margin: 15px;
+        padding: 15px;
+        width: calc(100% - 30px);
+        max-width: 100%;
+    }
+
+    .bannerIndex, .bannerIndexInicio, .bannerIndex2, .Saude .Imagem {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
     }
 
     .bannerIndex img,
     .bannerIndexInicio img,
-    .bannerIndex2 img {
+    .bannerIndex2 img,
+    .Saude .Imagem img {
         width: 100%;
         height: auto;
+        max-width: 550px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+    }
+
+    .agua-box {
+        position: static;     
+        max-width: 100%;      
+        width: auto;          
+        padding: 20px;        
+        margin: 15px auto;   
+        border-radius: 20px;  
+    }
+
+    .listas {
+        width: 100%;
+        grid-template-columns: 1fr;
     }
 }
- 
