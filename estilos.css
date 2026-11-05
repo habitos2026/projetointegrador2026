@@ -213,7 +213,7 @@ section {
   font-weight: 600;
   background-color: transparent;
   transition: all 0.2s ease;
-  white-space: nowrap; 
+  white-space: nowrap; /*todo o conteúdo a permanece em uma única linha horizontal*/
 }
 
 .btn-registro:hover {
