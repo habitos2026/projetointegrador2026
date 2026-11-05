@@ -17,6 +17,7 @@
 }
 
 
+/*serve para animar a rolagem da página de forma gradual e fluida; está funcionando principalmente em links (como a href="")*/
 html {
     scroll-behavior: smooth;
 }
@@ -30,7 +31,7 @@ body{
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;      
+    overflow-x: hidden; /*Impede rolagem horizontal, se necessário*/
 }
 
 
@@ -45,7 +46,7 @@ body{
     justify-content: space-between;
     padding: 0.625rem 4%;
     position: relative;
-    z-index: 100;
+    z-index: 100; /*Quanto maior o valor, mais para frente o elemento aparece*/
 }
 
 .mainPagina nav {
@@ -86,10 +87,10 @@ section {
    display: flex;
    align-items: left;
    gap: 0.938rem; /*15px*/
-   flex-shrink: 0;
+   flex-shrink: 0; /*Mantém o tamanho original da logo*/
 }
 .logo:hover {
-  transform: scale(1.02); 
+  transform: scale(1.02);  /*ao passar o mouse, a logo aumenta*/
 }
 .logo img { 
     width: 6.25rem; /*100px*/
@@ -115,8 +116,8 @@ section {
   color: rgba(255, 255, 255, 0.75); 
   font-weight: 500;
   font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.031rem;
+  text-transform: uppercase; /*letra maiuscula*/
+  letter-spacing: 0.031rem; /*aumenta a distância entre as letras*/
   display: flex;
   flex-direction: column; 
   align-items: center;
@@ -538,10 +539,10 @@ body.dark section {
 }
 
 body.dark .logo {
-    filter: brightness(0.9) drop-shadow(0 0 6px rgba(56, 189, 248, 0.4));
+    filter: brightness(0.9) drop-shadow(0 0 6px rgba(56, 189, 248, 0.4)); /*reduz ligeiramente o brilho da logo*/
     border-radius: 50%;
     background: transparent;
-    mix-blend-mode: screen;
+    mix-blend-mode: screen; /*remove fundos pretos da logo e faz brilhar as cores claras*/
 }
 
 body.dark h1 {
@@ -625,7 +626,7 @@ body.dark .contato-box{
 }
 
 
-
+/*clickEffect cria um efeito ao clicar que se intensifica (no menu do celular, foi usado um brilho vermelho ao clicar em X)*/
 @keyframes clickEffect {
   0% {
     transform: scale(1);
@@ -790,7 +791,7 @@ gap: 0.5rem;
 }
 
 .texto-saude {
-    flex: 1;                   
+    flex: 1; /*ocupa o espaço disponível*/                  
 }
 
 .imagem img {
@@ -915,7 +916,7 @@ gap: 0.5rem;
     }
 
     #btn-lang, .botaoMenu {
-        vertical-align: middle;
+        vertical-align: middle; /*faz um deslocamento vertical para poder centralizar em relação à altura*/
     }
 
     .botaoMenu {
@@ -939,7 +940,7 @@ gap: 0.5rem;
     main {
         margin: 15px;
         padding: 15px;
-        width: calc(100% - 30px);
+        width: calc(100% - 30px); /*pega 100% da largura e subtrai os 15px de margin e 15px de padding. Evitando que o elemento passe do tamanho da tela e crie uma barra de rolagem*/
         max-width: 100%;
     }
 
@@ -977,4 +978,3 @@ gap: 0.5rem;
         grid-template-columns: 1fr;
     }
 }
-
