@@ -1,9 +1,13 @@
 // ===== DARK MODE=====
+
+/*Verifica se o tema salvo é "dark" e aplica a classe imediatamente ao carregar o script*/
 if (localStorage.getItem("tema") === "dark") {
     document.body.classList.add("dark");
 }
 
 // ===== MENU =====
+
+/*busca o arquivo html do menu, o conteúdo dentro dele só é executado após o menu carregar*/
 fetch("menu.html")
 .then(res => res.text())
 .then(data => {
@@ -19,16 +23,11 @@ fetch("menu.html")
 
     const linksMenu = document.querySelectorAll("#menu a");
 
-    linksMenu.forEach(link => {
+    linksMenu.forEach(link => { /* Percorre cada tag <a> (link) encontrada dentro do menu */
         if (link.getAttribute("href") === paginaAtual) {
-            link.classList.add("ativo");
+            link.classList.add("ativo"); /*adiciona uma classe "ativo" para mudar a cor do menu via css*/
         }
     });
-
-
-    
-
-    
 
     // Botão tema
     const btnTema = document.getElementById("btnTema");
@@ -194,9 +193,3 @@ function lancarConfetes() {
     animar();
 }
 
-const paragrafo = document.getElementById('meu-texto');
-
-
-const textoIngles = paragrafo.getAttribute('data-en');
-
-console.log(textoIngles);
