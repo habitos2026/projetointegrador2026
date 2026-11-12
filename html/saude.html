@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-pt="Saúde" data-en="Health">Saúde</title>
+
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/menu.css">
+
    <style>
 /* TODO seu CSS ORIGINAL aqui (sem mudar nada) */
             /* Variáveis de Cores */
@@ -117,7 +121,7 @@
 
     <div id="menu"></div>
 
-    <button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
+    
 
     <header>
         <h1 data-pt="A Importância de Cuidar da Saúde" data-en="The Importance of Taking Care of Health">A Importância de Cuidar da Saúde</h1>
@@ -148,7 +152,7 @@
             </div>
             <div class="imagem">
                 <a href="" class="Img1">
-                    <img src="assets/autoconhecimento.webp" alt="imagem saúde">
+                    <img src="/assets/autoconhecimento.webp" alt="imagem saúde">
                 </a>
     </div>
      </li>
@@ -170,7 +174,7 @@
                     </div>
                     <div class="imagem">
                         <a href="" class="Img2">
-                            <img src="assets/exercicios.webp" alt="imagem exercício">
+                            <img src="/assets/exercicios.webp" alt="imagem exercício">
                         </a>
                     </div>
                 </li>
@@ -191,7 +195,7 @@
                     </div>
                     <div class="imagem">
                         <a href="" class="Img3">
-                            <img src="assets/agua.webp" alt="imagem água">
+                            <img src="/assets/agua.webp" alt="imagem água">
                         </a>
                     </div>
                 </li>
@@ -210,7 +214,7 @@
                     </div>
                     <div class="imagem">
                         <a href="" class="Img4">
-                            <img src="assets/repouso.webp" alt="imagem repouso">
+                            <img src="/assets/repouso.webp" alt="imagem repouso">
                         </a>
                     </div>
                 </li>
@@ -227,27 +231,8 @@
 
     <div id="menu"></div>
 
-    <script src="../js/trabalho.js"></script>
-     <script>
-        let idiomaAtual = 'pt';
-
-        function mudarIdioma() {
-            const elementos = document.querySelectorAll('[data-pt]');
-            const botao = document.getElementById('btn-lang');
-
-            if (idiomaAtual === 'pt') {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
-                document.documentElement.lang = 'en';
-                botao.innerText = 'Português';
-                idiomaAtual = 'en';
-            } else {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
-                document.documentElement.lang = 'pt-BR';
-                botao.innerText = 'English';
-                idiomaAtual = 'pt';
-            }
-        }
-    </script>
+    <script type="module" src="../js/trabalho.js"></script>
+     
 </body>
 </html>
 

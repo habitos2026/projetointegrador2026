@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Corrigido: adicionada a classe lang-text para o script encontrar o título -->
     <title class="lang-text" data-pt="Contato" data-en="Contact">Contato</title>
+
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/menu.css">
+
     <style>
 
     :root {
@@ -189,7 +193,6 @@ textarea{
 <body>
 
 <div id="menu"></div>
-<button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
 
 <div class="contato-page">
 
@@ -226,27 +229,7 @@ textarea{
 
 </div>
 
-<script src="../js/trabalho.js"></script>
-<script>
-        let idiomaAtual = 'pt';
-
-        function mudarIdioma() {
-            const elementos = document.querySelectorAll('[data-pt]');
-            const botao = document.getElementById('btn-lang');
-
-            if (idiomaAtual === 'pt') {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-en'));
-                document.documentElement.lang = 'en';
-                botao.innerText = 'Português';
-                idiomaAtual = 'en';
-            } else {
-                elementos.forEach(el => el.innerText = el.getAttribute('data-pt'));
-                document.documentElement.lang = 'pt-BR';
-                botao.innerText = 'English';
-                idiomaAtual = 'pt';
-            }
-        }
-    </script>
+<script type="module" src="../js/trabalho.js"></script>
 
 </body>
 </html>

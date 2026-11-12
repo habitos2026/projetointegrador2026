@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-pt="Início" data-en="Home">Início</title>
+
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/menu.css">
+
    <style>
 /* TODO seu CSS ORIGINAL aqui (sem mudar nada) */
             /* Variáveis de Cores */
@@ -114,12 +118,9 @@
     <!-- MENU -->
     <div id="menu"></div>
 
-    <!-- BOTÃO IDIOMA -->
-    <button onclick="mudarIdioma()" id="btn-lang">English</button>
-
     <!-- BANNER -->
     <div class="bannerIndexInicio">
-        <img src="assets/imagem.webp.webp" alt="Banner">
+        <img src="/assets/imagem.webp.webp" alt="Banner">
     </div>
 
     <main>
@@ -131,33 +132,7 @@
         <p><strong><span data-pt='"Pequenos passos diários levam a grandes transformações."' data-en='"Small daily steps lead to big transformations."'>"Pequenos passos diários levam a grandes transformações."</span></strong></p>
     </main>
 
-    <script>
-        let idiomaAtual = 'pt';
-        function mudarIdioma() {
-            const elementos = document.querySelectorAll('[data-pt]');
-            const botao = document.getElementById('btn-lang');
-            
-            if (idiomaAtual === 'pt') {
-                elementos.forEach(el => {
-                    if (el.tagName === 'TITLE') {
-                        el.innerText = el.getAttribute('data-en');
-                    } else {
-                        el.innerText = el.getAttribute('data-en');
-                    }
-                });
-                document.documentElement.lang = 'en';
-                botao.innerText = 'Português';
-                idiomaAtual = 'en';
-            } else {
-                elementos.forEach(el => {
-                    el.innerText = el.getAttribute('data-pt');
-                });
-                document.documentElement.lang = 'pt-BR';
-                botao.innerText = 'English';
-                idiomaAtual = 'pt';
-            }
-        }
-    </script>
-    <script src="../js/trabalho.js"></script>
+    <script type="module" src="../js/trabalho.js"></script>
+    
 </body>
 </html>

@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="lang-text" data-pt="Registro" data-en="Register">Registro</title>
+
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/menu.css">
+
     <style>
         :root {
             --cor-mente: #6a89cc;    /* Azul sereno */
@@ -225,8 +229,6 @@
     </style>
 </head>
 <body>
-
-    <button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
     
     <div class="registro-page">
         <div class="registro-box">
@@ -262,37 +264,8 @@
         </div>
     </div>
 
-    <script>
-        let idiomaAtual = 'pt';
-        function mudarIdioma() {
-            const elementos = document.querySelectorAll('[data-pt]');
-            const botao = document.getElementById('btn-lang');
-            
-            if (idiomaAtual === 'pt') {
-                elementos.forEach(el => {
-                    if (el.tagName === 'INPUT') {
-                        el.placeholder = el.getAttribute('data-en');
-                    } else {
-                        el.innerText = el.getAttribute('data-en');
-                    }
-                });
-                document.documentElement.lang = 'en';
-                botao.innerText = 'Português';
-                idiomaAtual = 'en';
-            } else {
-                elementos.forEach(el => {
-                    if (el.tagName === 'INPUT') {
-                        el.placeholder = el.getAttribute('data-pt');
-                    } else {
-                        el.innerText = el.getAttribute('data-pt');
-                    }
-                });
-                document.documentElement.lang = 'pt-BR';
-                botao.innerText = 'English';
-                idiomaAtual = 'pt';
-            }
-        }
-    </script>
+    <script type="module" src="../js/trabalho.js"></script>
+    
 </body>
 </html>
                                                                                                                                                                                                                                 </html>

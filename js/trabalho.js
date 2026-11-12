@@ -1,3 +1,13 @@
+import { mudarIdioma, traduzirPagina } from './idioma.js';
+
+// ===== RECUPERA O IDIOMA SALVO AO CARREGAR A PÁGINA =====
+const idiomaSalvo = localStorage.getItem('idiomaSite');
+if (idiomaSalvo && idiomaSalvo !== document.documentElement.lang) {
+    // Se o idioma salvo for diferente do atual (que começa como pt-BR), chama a função para traduzir
+    traduzirPagina(idiomaSalvo);
+}
+// variaves globais
+
 // ===== DARK MODE=====
 
 /*Verifica se o tema salvo é "dark" e aplica a classe imediatamente ao carregar o script*/
@@ -28,6 +38,21 @@ fetch("menu.html")
             link.classList.add("ativo"); /*adiciona uma classe "ativo" para mudar a cor do menu via css*/
         }
     });
+
+    // ===== BOTÃO IDIOMA =====
+    const botaoLang = document.getElementById('btn-lang');
+    if (botaoLang) {
+        // Ajusta o texto do botão de acordo com o idioma atual da página
+        
+        if (document.documentElement.lang === 'en') {
+            botaoLang.innerText = 'Português';
+        } else {
+            botaoLang.innerText = 'English';
+        }
+        botaoLang.addEventListener('click', () => {
+            mudarIdioma();
+        });
+    }
 
     // Botão tema
     const btnTema = document.getElementById("btnTema");

@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-pt="Qualidade de Sono" data-en="Sleep Quality">Qualidade de Sono</title>
+
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/menu.css">
+
 <style>
           :root {
             --cor-mente: #6a89cc;    /* Azul sereno */
@@ -53,13 +57,13 @@
 </head>
 
 <body>
+    
     <menu>
         <div id="menu"></div>
-        <button onclick="mudarIdioma()" id="btn-lang">English</button>
     </menu>
 
     <div class="bannerIndex2">
-    <img src="assets/qualidade_sono_banner.webp" alt="Banner2" class="imgresp">
+    <img src="/assets/qualidade_sono_banner.webp" alt="Banner2" class="imgresp">
 </div>
 
     <main>
@@ -80,29 +84,9 @@
 </main>
 
 
-    <script>
-        let idiomaAtual = 'pt';
-        function mudarIdioma() {
-            const elementos = document.querySelectorAll('[data-pt]');
-            const botao = document.getElementById('btn-lang');
-            if (idiomaAtual === 'pt') {
-                elementos.forEach(el => {
-                    el.innerText = el.getAttribute('data-en');
-                });
-                document.documentElement.lang = 'en';
-                botao.innerText = 'Português';
-                idiomaAtual = 'en';
-            } else {
-                elementos.forEach(el => {
-                    el.innerText = el.getAttribute('data-pt');
-                });
-                document.documentElement.lang = 'pt-br';
-                botao.innerText = 'English';
-                idiomaAtual = 'pt';
-            }
-        }
-    </script>
-    <script src="../js/trabalho.js"></script>
+   
+    <script type="module" src="../js/trabalho.js"></script>
+
 </body>
 </html>
 
