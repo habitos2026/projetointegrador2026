@@ -9,7 +9,7 @@ O objetivo principal é ajudar o usuário a manter hábitos saudáveis e melhora
 ## Estrutura do Projeto
 
 ```bash
-pasta-de-imagens/
+assets/
 README.md
 index.html
 estilos.css
