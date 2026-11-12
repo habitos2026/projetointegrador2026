@@ -229,7 +229,7 @@ z-index: 1000;
     transition: all 0.4s;
     position: relative;
     left: 0.5rem;
-    top: 5.5rem;
+    top: 0.1rem;
 }
 
 #btn-lang:hover {
