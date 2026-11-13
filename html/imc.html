@@ -74,6 +74,8 @@
 <body>
 
 <div id="menu"></div>
+
+    <button onclick="mudarIdioma()" id="btn-lang" data-pt="English" data-en="Português">English</button>
     
     <main>
         <h1 data-pt="Índice de Massa Corporal (IMC)" data-en="Body Mass Index (BMI)">Índice de Massa Corporal (IMC)</h1>
@@ -115,7 +117,73 @@
         </ul>
     </main>
 
+    <script>
+        let idiomaAtual = 'pt';
 
+        function calcularIMC() {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+            let resultado = document.getElementById("resultado");
+            
+            if (!peso || !altura) {
+                resultado.innerHTML = idiomaAtual === 'pt' ? "Preencha corretamente." : "Please fill in correctly.";
+                return;
+            }
+            
+            let imc = peso / (altura * altura);
+            let classificacao = "";
+            
+            if (imc < 18.5) {
+                classificacao = idiomaAtual === 'pt' ? "Abaixo do peso" : "Underweight";
+            } else if (imc < 24.9) {
+                classificacao = idiomaAtual === 'pt' ? "Peso normal" : "Normal weight";
+            } else if (imc < 29.9) {
+                classificacao = idiomaAtual === 'pt' ? "Sobrepeso" : "Overweight";
+            } else {
+                classificacao = idiomaAtual === 'pt' ? "Obesidade" : "Obesity";
+            }
+            
+            let textoImc = idiomaAtual === 'pt' ? "Seu IMC é: " : "Your BMI is: ";
+            let textoClassif = idiomaAtual === 'pt' ? "Classificação: " : "Classification: ";
+            
+            resultado.innerHTML = textoImc + imc.toFixed(2) + "<br>" + textoClassif + classificacao;
+        }
+
+        function mudarIdioma() {
+            const elementos = document.querySelectorAll('[data-pt]');
+            const botao = document.getElementById('btn-lang');
+            
+            if (idiomaAtual === 'pt') {
+                elementos.forEach(el => {
+                    // Se o elemento for um input, muda o placeholder. Caso contrário, muda o texto interno.
+                    if (el.tagName === 'INPUT') {
+                        el.placeholder = el.getAttribute('data-en');
+                    } else {
+                        el.innerText = el.getAttribute('data-en');
+                    }
+                });
+                document.documentElement.lang = 'en';
+                botao.innerText = 'Português';
+                idiomaAtual = 'en';
+            } else {
+                elementos.forEach(el => {
+                    if (el.tagName === 'INPUT') {
+                        el.placeholder = el.getAttribute('data-pt');
+                    } else {
+                        el.innerText = el.getAttribute('data-pt');
+                    }
+                });
+                document.documentElement.lang = 'pt-BR';
+                botao.innerText = 'English';
+                idiomaAtual = 'pt';
+            }
+
+            // Se já houver um resultado na tela, recalcula para atualizar o idioma do resultado
+            if (document.getElementById("resultado").innerHTML !== "") {
+                calcularIMC();
+            }
+        }
+    </script>
     <script type="module" src="../js/trabalho.js"></script>
     
 </body>
