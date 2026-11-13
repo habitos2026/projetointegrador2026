@@ -1,0 +1,36 @@
+# Dependências e build local
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Variáveis de ambiente locais (para não expor segredos)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Pastas de build, testes e documentação
+dist
+build
+coverage
+.nyc_output
+
+# Pastas e arquivos de controle de versão / IDEs
+.git
+.gitignore
+.vscode
+.idea
+
+# Arquivos de sistema operacional
+Thumbs.db
+.DS_Store
+
+# Arquivos de uploads locais ou logs do projeto
+uploads/*
+!uploads/.gitkeep
+logs
+*.log
