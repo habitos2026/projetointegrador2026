@@ -116,6 +116,7 @@ section {
   color: #FFFFFF;
 }
 
+
 .menu a.ativo::after { 
   content: ""; 
   position: absolute; 
