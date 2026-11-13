@@ -1,0 +1,21 @@
+services:
+  # back em nodejs
+  # Servidor Web + API/Front PHP
+  web:
+    build: ./web
+    container_name: habitos_web
+    #restart: always
+    restart: unless-stopped
+    ports:
+      - "8086:80"  # Acesse o sistema via http://IP_DO_SERVIDOR:8080
+    volumes:
+      - ./web:/usr/share/nginx/html  # Mapeia a raiz inteira (bancosangue/) permitindo edição em tempo real
+    #depends_on:
+    #  - dbmaria
+    networks:
+      - fatectqnet
+
+
+networks:
+  fatectqnet:
+    external: true

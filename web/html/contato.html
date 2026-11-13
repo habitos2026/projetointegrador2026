@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Corrigido: adicionada a classe lang-text para o script encontrar o título -->
+    <title class="lang-text" data-pt="Contato" data-en="Contact">Contato</title>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/menu.css">
+
+    <style>
+
+    :root {
+            --cor-mente: #6a89cc;    /* Azul sereno */
+            --cor-fisico: #38ada9;   /* Verde energia */
+            --cor-agua: #4a69bd;     /* Azul hidratação */
+            --cor-fundo: #f7f9fc;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            color: #2f3542;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            color: var(--cor-mente);
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--cor-fisico);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            color: var(--cor-fisico);
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+/* ÁREA SÓ DO CONTATO */
+.contato-page {
+    background: linear-gradient(135deg, #f5f7fb, #f5f7fb);
+    min-height: 100vh;
+    padding: 40px 10px;
+}
+
+/* CARD */
+.contato-box {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: subir 0.6s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contato-box h1 {
+    text-align: center;
+    color: #0f766e;
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-form input,
+.contato-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 8px rgba(15,118,110,0.3);
+}
+
+/* BOTÃO */
+.contato-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #0f766e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato-form button:hover {
+    background: #115e59;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.contato-box button{
+    padding: 12px;
+    margin-left: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #0f766e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato-box button:hover {
+    background: #115e59;
+    transform: scale(1.03);
+    box-shadow: 0 0 6px var(--cor-fisico);
+    cursor: pointer;
+}
+
+/* TEXTO */
+.info {
+    text-align: center;
+    margin-top: 15px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.contato-form input:focus:invalid,
+.contato-form textarea:focus:invalid {
+    border: 1px solid red;
+    box-shadow: 6px 6px 8px rgba(255, 0, 0, 0.836);
+
+}
+
+.contato-form input:focus:valid,
+.contato-form textarea:focus:valid {
+    border: 1px solid #38ada9;
+    box-shadow: 6px 6px 8px rgba(0, 183, 255, 0.836);
+}
+
+textarea{
+    resize: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<div class="contato-page">
+
+    <div class="contato-box">
+        <h1 class="lang-text" data-pt="Fale Conosco 💬" data-en="Contact Us 💬">Fale Conosco 💬</h1>
+            
+        <form class="contato-form" method="post">
+
+        <div class="grupoContato">
+        <input type="text" maxlength="70" placeholder="Seu nome" required 
+        data-pt="Seu nome" data-en="Your name">
+        <p class="erro lang-text" data-pt="Este campo é obrigatório. Por favor, informe seu nome" data-en="This field is required. Please enter your name">Este campo é obrigatório. Por favor, informe seu nome</p>
+        </div>
+
+        <div class="grupoContato">
+        <input type="email" maxlength="100" placeholder="Seu email" required 
+        data-pt="Seu email" data-en="Your email">
+        <p class="erro lang-text" data-pt="Informe seu e-mail" data-en="Enter your email">Informe seu e-mail</p>
+        </div>
+
+        <div class="grupoContato">
+        <textarea rows="4" maxlength="367" placeholder="Sua mensagem..." required 
+        data-pt="Sua mensagem..." data-en="Your message..."></textarea>
+        <p class="erro lang-text" data-pt="Escreva a sua mensagem (max: 367 linhas)" data-en="Write your message (max: 367 characters)">Escreva a sua mensagem (max: 367 linhas)</p>
+        </div>
+
+      
+        <button type="submit" class="lang-text" data-pt="Enviar mensagem" data-en="Send message">Enviar mensagem</button>
+            </form>
+            <div class="info lang-text" data-pt="Responderemos o mais breve possível 🚀 contato: habitos.fatec@gmail.com" data-en="We will reply as soon as possible 🚀 contact: habitos.fatec@gmail.com">
+                Responderemos o mais breve possível 🚀 contato: habitos.fatec@gmail.com    
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="../js/trabalho.js"></script>
+<script type="module" src="../js/menuinterno.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
