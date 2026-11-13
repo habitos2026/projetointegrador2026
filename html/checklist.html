@@ -197,7 +197,6 @@ header {
 <body>
 
 <div id="menu"></div>
-<button onclick="mudarIdioma()" id="btn-lang">English</button>
 
 <section class="intro">
 
@@ -258,26 +257,6 @@ header {
     <div id="imgGif"></div> 
 
     <script> 
-        let idiomaAtual = 'pt'; 
-        function mudarIdioma() { 
-            const elementos = document.querySelectorAll('[data-pt]'); 
-            const botao = document.getElementById('btn-lang'); 
-            if (idiomaAtual === 'pt') { 
-                elementos.forEach(el => { 
-                    el.innerText = el.getAttribute('data-en'); 
-                }); 
-                document.documentElement.lang = 'en'; 
-                botao.innerText = 'Português'; 
-                idiomaAtual = 'en'; 
-            } else { 
-                elementos.forEach(el => { 
-                    el.innerText = el.getAttribute('data-pt'); 
-                }); 
-                document.documentElement.lang = 'pt-br'; 
-                botao.innerText = 'English'; 
-                idiomaAtual = 'pt'; 
-            } 
-        } 
         function calc() {
     const checks = document.querySelectorAll('.habit-item input');
     let marcados = 0;
